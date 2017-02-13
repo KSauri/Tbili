@@ -20,6 +20,9 @@
 * FeaturedSpotsIndexContainer
   * FeaturedSpotIndex
     * FeaturedSpotDetail
+* FeaturedDestinationsIndexContainer
+  * FeaturedDestinationsIndex
+    * FeaturedDestinationDetail
 
 **SearchResultContainer**
 * SearchResultFormContainer
@@ -41,10 +44,21 @@
 * MapContainer
 * Map
 
-**Bonus UserContainer**
+
+
+**UserTripsContainer**
 * TripsIndexContainer
   * TripsIndex
     * TripDetails
+
+**Bonus UserContainer**
+* User
+  * ListingsIndexContainer
+    * ListingsIndex
+      * ListingDetails
+  * ReviewsIndexContainer
+    * ReviewsIndex
+      * ReviewDetails
 
 **Bonus ConversationContainer**
 * InterlocutorContainer
