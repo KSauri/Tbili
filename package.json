@@ -12,6 +12,8 @@
   "npm": "3.10.7"
   },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
     "postinstall": "./node_modules/.bin/webpack"
   },
 
@@ -30,10 +32,6 @@
     "webpack": "^2.2.1"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KSauri/Tbili.git"
