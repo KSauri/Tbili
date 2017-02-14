@@ -7,7 +7,7 @@ class SignUpForm extends Component {
   }
 
   componentDidMount() {
-    this.props.clearErrors();     // Retrieve most recent errors
+    this.props.clearErrors();      // Retrieve most recent errors
   }
 
 
