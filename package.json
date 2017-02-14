@@ -7,6 +7,14 @@
     "doc": "docs",
     "test": "test"
   },
+  "engines": {
+  "node": "6.7.0",
+  "npm": "3.10.7"
+},
+"scripts": {
+  "postinstall": "./node_modules/.bin/webpack"
+},
+
   "dependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.0",
