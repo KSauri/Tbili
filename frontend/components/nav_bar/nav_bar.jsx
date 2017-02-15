@@ -1,26 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, {Component} from 'react';
+import FormModal from './form_modal';
 
-const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login" >Log In</Link>
-    <Link to="/signup" >Sign Up</Link>
-  </nav>
-);
+class NavBar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showLogIn: false,
+      showSignUp: false
+    };
+  }
 
-const userInfo = (currentUser, logout) => {
-  return (<hgroup>
-    <img src={currentUser.image_url} />
-    <button onClick={logout}>Log Out</button>
-  </hgroup>
-)};
+  showLogIn() {
+    return (e) => this.setState({
+      showLogIn: true,
+      showSignUp: false
+    });
+  }
+  showSignUp() {
+    return (e) => this.setState({
+      showLogIn: false,
+      showSignUp: true
+    });
+  }
 
-const NavBar = ({ currentUser, logout }) => (
-  currentUser ? userInfo(currentUser, logout) : sessionLinks()
-);
+  render() {
+    const sessionButtons = () => (
+      <nav className="login-signup">
+        <button onClick={ this.showLogIn() }>Log In</button>
+        <button onClick={ this.showSignUp() }>Sign Up</button>
+        <FormModal showSignUp={this.state.showSignUp} showLogIn={this.state.showLogIn} />
+      </nav>
+    );
+    const userInfo = (currentUser, logout) => (
+      <hgroup>
+        <img className="user-img" src={currentUser.image_url} />
+        <button onClick={this.props.logout}>Log Out</button>
+      </hgroup>
+    );
+    return (
+      <div>
+        { this.props.currentUser ? userInfo(this.props.currentUser, this.props.logout) : sessionButtons() }
+      </div>
+    );
+  }
+}
 
 export default NavBar;
-
-//TODO add activeClassName="current" to sessionlinks (greeting.jsx in bench)
-//TODO messages at top
-//TODO drop down on profile picture

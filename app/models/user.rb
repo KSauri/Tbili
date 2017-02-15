@@ -4,9 +4,12 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   validates :password_digest,
+    :l_name,
+    :f_name,
     presence: true
   validates :username,
     :session_token,
+    :email,
     presence: true,
     uniqueness: true
   validates :password,

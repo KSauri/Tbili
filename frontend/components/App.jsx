@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import NavBarContainer from './nav_bar/nav_bar_container';
+import LogInContainer from './auth_forms/log_in_container';
+import SignUpContainer from './auth_forms/sign_up_container';
 
-const App = ({ children }) => (
-  <div>
-    <header>
-      <h1>Tbili</h1>
-      <NavBarContainer />
-      { children }
-    </header>
-  </div>
-);
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+
+
+  render() {
+    return(
+      <div>
+        <header>
+          <h1>Tbili</h1>
+          <NavBarContainer />
+          { this.props.children }
+        </header>
+      </div>
+    );
+  }
+
+}
+
 
 export default App;

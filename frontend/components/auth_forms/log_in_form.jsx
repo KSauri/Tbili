@@ -9,7 +9,7 @@ class LogInForm extends Component {
   componentDidMount() {
     this.props.clearErrors();
   }
-  
+
   render() {
     return (
       <section>
@@ -17,7 +17,6 @@ class LogInForm extends Component {
           submitForm={ this.props.login }
           errors={ this.props.errors }/>
         <div>
-          Don't have an account?
         </div>
       </section>
     );

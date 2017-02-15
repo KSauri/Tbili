@@ -19,36 +19,46 @@ class AuthForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.submitForm(Object.assign({}, this.state))
-      .then(() => this.props.router.push('/'));
+    this.props.submitForm(Object.assign({}, this.state));
   }
 
   render() {
     const { errors } = this.props;
     return (
-      <form onSubmit={ this.handleSubmit }>
-        <ErrorList errors={ errors.base } />
+      <div className='modal-content'>
+        <form onSubmit={ this.handleSubmit }>
+          <ErrorList errors={ errors.base } />
+          <button className="modal-button guest-btn">Log in as Guest</button>
+          <label htmlFor="username">
+            <input
+              className="modal-input"
+              type="text"
+              placeholder="Username"
+              onChange={ this.update("username")}
+              value={ this.state.username }
+              />
+          </label>
+          <ErrorList errors={ errors.username } />
 
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          onChange={ this.update("username")}
-          value={ this.state.username }
-          />
-        <ErrorList errors={ errors.username } />
-
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          onChange={ this.update("password")}
-          value={ this.state.password}
-          />
-        <ErrorList errors={ errors.password } />
-        <button>{ this.props.submitText }</button>
-      </form>
+          <label htmlFor="password">
+            <input
+              className="modal-input"
+              type="password"
+              placeholder="Password"
+              onChange={ this.update("password")}
+              value={ this.state.password}
+              />
+          </label>
+          <ErrorList errors={ errors.password } />
+          <button className="modal-button">{ this.props.submitText }</button>
+        </form>
+      </div>
     );
   }
 
 }
 
 export default withRouter(AuthForm);
+
+
+// .then(() => this.props.router.push('/'))
