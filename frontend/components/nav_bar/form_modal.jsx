@@ -3,43 +3,23 @@ import SignUpContainer from '../auth_forms/sign_up_container';
 import React, { Component } from 'react';
 
 
-// export default function ({ showLogIn, showSignUp }) {
-//   if (showLogIn)
-//    { return (
-//     <div className='modal-screen'>
-//       <LogInContainer />
-//     </div>
-//    ); }
-//   else if (showSignUp)
-//   { return (
-//     <div className='modal-screen'>
-//       <SignUpContainer className='modal-content'/>
-//     </div>
-//   ); }
-//   else { return null; }
-// }
 
 export default class FormModal extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      logIn: this.props.showLogIn,
-      signUpClass: this.props.showSignUp
-    };
   }
 
-
   render() {
-    if (this.state.logIn) {
+    if (this.props.formType === "logIn") {
       return (
-      <div className="modal-screen">
-        <LogInContainer className='modal-content'/>
-      </div>);
-    } else if (this.state.signUpClass) {
+        <div>
+          <LogInContainer className='modal-content' switchForm={ this.props.switchForm("signUp") }/>
+        </div>);
+    } else if (this.props.formType === "signUp") {
       return (
-      <div className={ this.state.logInClass }>
-        <SignUpContainer className='modal-content'/>
-      </div>);
+        <div>
+          <SignUpContainer switchForm={ this.props.switchForm("logIn") }/>
+        </div>);
     } else {
       return null;
     }
