@@ -1,12 +1,33 @@
 
 
 .nav-logged-out {
-  position: fixed;
-  top: 0px;
+  display: flex;
+  width: 100%;
+  align-content: space-around;
+  position: inherit;
+}
+
+.nav-logged-in {
+  display: flex;
+  width: 100%;
+  align-content: space-around;
+  position: inherit;
 }
 
 .nav-btn {
   background-color: white;
   border-color: white;
   border: 0px;
+  padding-left: 7%;
+  font-family: 'Roboto', sans-serif;;
+  font-size: 14px;
+  color: black;
+}
+
+.search-bar {
+  width: 75%;
+}
+
+#tbili-logo {
+  padding: 15px;
 }

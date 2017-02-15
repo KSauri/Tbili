@@ -5,10 +5,11 @@ class LogInForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      email: "",
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogIn = this.guestLogIn.bind(this);
   }
 
   update(field) {
@@ -27,37 +28,44 @@ class LogInForm extends Component {
     this.props.clearErrors();
   }
 
+  guestLogIn() {
+    this.props.login({ email: "guest@fakemail.com", password: "password" });
+  }
+
   render() {
     const { errors } = this.props;
     return (
       <div className='modal-content'>
-        <form className='login-modal-content-elements' onSubmit={ this.handleSubmit }>
+        <div className='login-modal-content-elements'>
+          <button className="modal-btn" onClick={ this.guestLogIn } >Log in as Guest</button>
+          <form className="login-form" onSubmit={ this.handleSubmit }>
+            <ErrorList errors={ errors.base } />
+            <label htmlFor="email">
+              <ErrorList className="form-errors" errors={ errors.l_name } />
+              <input
+                className="modal-input"
+                type="email"
+                placeholder="Email address"
+                onChange={ this.update("email")}
+                value={ this.state.email }
+                />
+            </label>
 
-          <button className="modal-btn">Log in as Guest</button>
-          <label htmlFor="username">
-            <input
-              className="modal-input"
-              type="text"
-
-              placeholder={ errors.base? errors.base : "Username" }
-              onChange={ this.update("username")}
-              value={ this.state.username }
-              />
-          </label>
-
-          <label htmlFor="password">
-            <input
-              className="modal-input"
-              type="password"
-              placeholder="Password"
-              onChange={ this.update("password")}
-              value={ this.state.password}
-              />
-          </label>
-          <input type="submit" className="modal-btn" value="Log In" />
-        </form>
+            <label htmlFor="password">
+              <ErrorList errors={ errors.email } />
+              <input
+                className="modal-input"
+                type="password"
+                placeholder="Password"
+                onChange={ this.update("password")}
+                value={ this.state.password}
+                />
+            </label>
+            <input type="submit" className="modal-btn" value="Log In" />
+          </form>
+        </div>
         <div className="modal-switch-container">
-          <span>Don't have an account yet?</span>
+          <span className="modal-switch-text">Don't have an account yet?</span>
           <button className="modal-btn switch-form" onClick={ this.props.switchForm }>Sign Up</button>
         </div>
     </div>
