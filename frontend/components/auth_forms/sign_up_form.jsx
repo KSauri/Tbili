@@ -34,56 +34,56 @@ class SignUpForm extends Component {
   render() {
     const { errors } = this.props;
     return (
-        <form onSubmit={ this.handleSubmit }>
-        <ErrorList errors={ errors.base } />
+      <form className='modal-content' onSubmit={ this.handleSubmit }>
+        <div className='modal-content-elements'>
 
-        <label htmlFor="username"></label>
-        <input
-          className="modal-input"
-          type="text"
-          placeholder="Username"
-          onChange={ this.update("username")}
-          value={ this.state.username }
-          />
-        <ErrorList errors={ errors.username } />
+          <label htmlFor="username"></label>
+          <input
+            className="modal-input"
+            type="text"
+            placeholder={ errors.username ? "Username " + errors.username : "Username" }
+            onChange={ this.update("username")}
+            value={ this.state.username }
+            />
 
-        <label htmlFor="password"></label>
-        <input
-          className="modal-input"
-          type="password"
-          placeholder="Create a Password"
-          onChange={ this.update("password")}
-          value={ this.state.password}
-          />
-        <ErrorList errors={ errors.password } />
-        <label htmlFor="f_name"></label>
-        <input
-          className="modal-input"
-          type="text"
-          placeholder="First name"
-          onChange={ this.update("f_name")}
-          value={ this.state.f_name}
-          />
-        <ErrorList errors={ errors.f_name } />
-        <label htmlFor="l_name"></label>
-        <input
-          className="modal-input"
-          type="text"
-          placeholder="Last name"
-          onChange={ this.update("l_name")}
-          value={ this.state.l_name}
-          />
-        <ErrorList errors={ errors.l_name } />
-        <label htmlFor="email"></label>
-        <input
-          className="modal-input"
-          type="text"
-          placeholder="Email address"
-          onChange={ this.update("email")}
-          value={ this.state.email}
-          />
-        <ErrorList errors={ errors.email } />
-        <button className="modal-button">Sign Up</button>
+          <label htmlFor="password"></label>
+          <input
+            className="modal-input"
+            type="password"
+            placeholder={ errors.password ? "Password " + errors.username : "Create a Password" }
+            onChange={ this.update("password")}
+            value={ this.state.password}
+            />
+          <label htmlFor="f_name"></label>
+          <input
+            className="modal-input"
+            type="text"
+            placeholder={ errors.f_name ? "First Name " + errors.username : "First Name" }
+            onChange={ this.update("f_name")}
+            value={ this.state.f_name}
+            />
+          <label htmlFor="l_name"></label>
+          <input
+            className="modal-input"
+            type="text"
+            placeholder={ errors.f_name ? "Last Name " + errors.username : "Last Name" }
+            onChange={ this.update("l_name")}
+            value={ this.state.l_name}
+            />
+          <label htmlFor="email"></label>
+          <input
+            className="modal-input"
+            type="text"
+            placeholder={ errors.email ? "Email " + errors.username : "Email address" }
+            onChange={ this.update("email")}
+            value={ this.state.email}
+            />
+          <button className="modal-btn">Sign Up</button>
+        </div>
+        <div className="modal-switch-container">
+          <span>Already have an account?</span>
+          <button className="modal-btn switch-form" onClick={ this.props.switchForm }>Log In</button>
+        </div>
       </form>
     );
   }
@@ -91,3 +91,8 @@ class SignUpForm extends Component {
 }
 
 export default withRouter(SignUpForm);
+
+
+
+
+// <ErrorList errors={ errors.username } />

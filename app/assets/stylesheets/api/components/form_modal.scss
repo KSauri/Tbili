@@ -52,6 +52,29 @@ a:hover {
   background: white;
   border-radius: 4px;
 }
+
+.modal-content-elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 5%;
+}
+
+.modal-content-elements > * {
+  margin: 1px;
+}
+
+.login-modal-content-elements{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 25%;
+}
+
+.login-modal-content-elements > * {
+  margin: 10px;
+}
+
 .modal-close {
   position: absolute;
   top: 0;
@@ -67,4 +90,53 @@ a:hover {
 
 .turn-off {
   display: none;
+}
+
+.modal-btn {
+  width: 374px;
+  height: 70px;
+  padding: 6px 10px;
+  border-radius: 3px;
+  background-color: #ff7e82;
+  font-family: 'Roboto', 'sans-serif';
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.modal-input {
+  width: 374px;
+  height: 70px;
+  padding: 0px 10px;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  background-color: #ffffff;
+  font-family: Roboto;
+  font-size: 16px;
+  color: #4d4d4d;
+  line-height: 16px;
+}
+
+.switch-form {
+  background-color: #ffffff;
+  color: #ff7e82;
+  border: 1px solid #ff7e82;
+  width: 84px;
+  height: 39px;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.modal-switch-container {
+  border-top: 1px solid #c8c8c8;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10%;
 }
