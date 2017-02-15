@@ -12,10 +12,10 @@ class NavBar extends Component {
     this.turnFormOff = this.turnFormOff.bind(this);
   }
 
-  showFormToggle() {
-    return (e) => this.setState({
-      showForm: !this.state.showForm
-    });
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.currentUser) {
+      this.setState({ showForm: false });
+    }
   }
 
   switchForm(formType) {
@@ -45,22 +45,28 @@ class NavBar extends Component {
     }
   }
 
-  loggedIn() {
+  loggedOut() {
     return(
-      <nav className="nav-logged-out">
-        <button className="nav-btn" onClick={ this.showLogIn() }>Log In</button>
-        <button className="nav-btn" onClick={ this.showSignUp() }>Sign Up</button>
+      <section>
+        <nav className="nav-logged-out">
+          <img id="tbili-logo" src={window.fireplace} />
+          <div className="search-bar">Search Bar Holder</div>
+          <button className="nav-btn" onClick={ this.showLogIn() }>Log In</button>
+          <button className="nav-btn" onClick={ this.showSignUp() }>Sign Up</button>
+        </nav>
         { this.state.showForm ?
           <div className="modal-screen" onClick={ this.turnFormOff }>
             <FormModal onClick={ null } switchForm={ this.switchForm } formType={ this.state.formType } />
           </div>
           : null }
-      </nav>
+      </section>
     );
   }
 
   userInfo(currentUser, logout) {
     return(<hgroup className="nav-logged-in">
+        <img id="tbili-logo" src={window.fireplace} />
+        <div className="search-bar">Search Bar Holder</div>
         <img className="user-img" src={currentUser.image_url} />
         <button className="nav-btn" onClick={this.props.logout}>Log Out</button>
       </hgroup>);
@@ -69,7 +75,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        { this.props.currentUser ? this.userInfo(this.props.currentUser, this.props.logout) : this.loggedIn() }
+        { this.props.currentUser ? this.userInfo(this.props.currentUser, this.props.logout) : this.loggedOut() }
       </div>
     );
   }

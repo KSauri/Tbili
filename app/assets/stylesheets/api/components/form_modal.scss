@@ -9,7 +9,7 @@ html, body, section, article, h1, p, div, a {
 
 body {
   font-family: sans-serif;
-  padding: 100px;
+
 }
 h1 {
   margin: 0 0 20px 0;
@@ -46,7 +46,7 @@ a:hover {
 }
 .modal-content {
   width: 454px;
-  height: 560px;
+  height: 50%;
   padding: 50px;
   background: white;
   border-radius: 4px;
@@ -68,10 +68,19 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 25%;
+  padding-bottom: 22%;
 }
 
 .login-modal-content-elements > * {
+  margin: 10px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form > * {
   margin: 10px;
 }
 
@@ -98,7 +107,7 @@ a:hover {
   padding: 6px 10px;
   border-radius: 3px;
   background-color: #ff7e82;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   color: #ffffff;
   font-weight: bold;
@@ -107,16 +116,17 @@ a:hover {
 }
 
 .modal-input {
-  width: 374px;
+  width: 351px;
   height: 70px;
   padding: 0px 10px;
   border: 1px solid #c8c8c8;
   border-radius: 3px;
   background-color: #ffffff;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;;
   font-size: 16px;
   color: #4d4d4d;
   line-height: 16px;
+  margin: 3px 0px;
 }
 
 .switch-form {
@@ -139,4 +149,16 @@ a:hover {
   flex-direction: row;
   align-items: center;
   padding-top: 10%;
+}
+
+.modal-switch-text {
+  font-family: 'Roboto', sans-serif;;
+  font-size: 16px;
+  color: #4d4d4d;
+}
+
+.form-errors {
+  font-family: 'Roboto', sans-serif;;
+  font-size: 12px;
+  color: #4d4d4d;
 }
