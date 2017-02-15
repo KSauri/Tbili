@@ -6,10 +6,15 @@ import * as sesh_actions from './actions/session_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
+  let store;
+  if (window.currentUser) {
+    const preloadedState = { session: { currentUser: window.currentUser, errors: [] } };
+    store = configureStore(preloadedState);
+  } else {
+    store = configureStore();
+  }
   window.store = store;
   window.login = sesh_actions.login;
-  //TODO window.currentUser => preloadedState
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 });
