@@ -45,12 +45,12 @@ a:hover {
   background: rgba(0, 0, 0, 0.7);
 }
 .modal-content {
-  z-index: 1000;
   width: 454px;
   height: 560px;
   padding: 50px;
   background: white;
   border-radius: 4px;
+  z-index: 1000;
 }
 
 .modal-content-elements {

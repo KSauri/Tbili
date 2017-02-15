@@ -9,6 +9,7 @@ class NavBar extends Component {
       formType: null
     };
     this.switchForm = this.switchForm.bind(this);
+    this.turnFormOff = this.turnFormOff.bind(this);
   }
 
   showFormToggle() {
@@ -16,6 +17,7 @@ class NavBar extends Component {
       showForm: !this.state.showForm
     });
   }
+
   switchForm(formType) {
     return (e) => this.setState({
       showForm: true,
@@ -34,15 +36,23 @@ class NavBar extends Component {
       formType: "signUp"
     });
   }
+  turnFormOff(e) {
+      { if (e.target.className === "modal-screen") {
+        this.setState({
+          showForm: false
+        });
+      }
+    }
+  }
 
   loggedIn() {
     return(
-      <nav className="logged-out">
-        <button onClick={ this.showLogIn() }>Log In</button>
-        <button onClick={ this.showSignUp() }>Sign Up</button>
+      <nav className="nav-logged-out">
+        <button className="nav-btn" onClick={ this.showLogIn() }>Log In</button>
+        <button className="nav-btn" onClick={ this.showSignUp() }>Sign Up</button>
         { this.state.showForm ?
-          <div className="modal-screen">
-            <FormModal switchForm={ this.switchForm } formType={ this.state.formType } />
+          <div className="modal-screen" onClick={ this.turnFormOff }>
+            <FormModal onClick={ null } switchForm={ this.switchForm } formType={ this.state.formType } />
           </div>
           : null }
       </nav>
@@ -50,9 +60,9 @@ class NavBar extends Component {
   }
 
   userInfo(currentUser, logout) {
-    return(<hgroup>
+    return(<hgroup className="nav-logged-in">
         <img className="user-img" src={currentUser.image_url} />
-        <button onClick={this.props.logout}>Log Out</button>
+        <button className="nav-btn" onClick={this.props.logout}>Log Out</button>
       </hgroup>);
   }
 
@@ -66,28 +76,3 @@ class NavBar extends Component {
 }
 
 export default NavBar;
-
-
-
-
-
-
-
-
-// const sessionButtons = () => (
-//   <nav className="logged-out">
-//     <button onClick={ this.showLogIn() }>Log In</button>
-//     <button onClick={ this.showSignUp() }>Sign Up</button>
-//     { this.state.showForm ?
-//       <div className="modal-screen">
-//         <FormModal switchForm={ this.switchForm } formType={ this.state.formType } />
-//       </div>
-//       : null }
-//     </nav>
-//   );
-//   const userInfo = (currentUser, logout) => (
-//     <hgroup>
-//       <img className="user-img" src={currentUser.image_url} />
-//       <button onClick={this.props.logout}>Log Out</button>
-//     </hgroup>
-//   );
