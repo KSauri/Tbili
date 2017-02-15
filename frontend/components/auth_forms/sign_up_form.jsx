@@ -23,6 +23,9 @@ class SignUpForm extends Component {
   componentDidMount() {
     this.props.clearErrors();      // Retrieve most recent errors
   }
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
 
 
   handleSubmit(e) {

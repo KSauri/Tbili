@@ -21,7 +21,9 @@ class LogInForm extends Component {
   }
 
   componentDidMount() {
-    debugger
+    this.props.clearErrors();
+  }
+  componentWillUnmount() {
     this.props.clearErrors();
   }
 
