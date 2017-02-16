@@ -26,8 +26,166 @@
 
 .search-bar {
   width: 75%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #tbili-logo {
   padding: 15px;
 }
+
+.user-img {
+  height: 40px;
+  width: 40px;
+  padding-left: 6%;
+}
+
+.home {
+  display: none;
+}
+//
+.not-home-logo {
+  padding: inherit;
+  border-right: 1px solid #8a8a8a;
+}
+
+.not-home {
+
+}
+
+.placeholder-1 {
+  height: 938px;
+}
+.placeholder-2 {
+  height: 10000px;
+}
+
+.hidden {
+  display: none;
+}
+
+.search {
+}
+
+@keyframes comeDown {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0%); }
+}
+.stuck {
+  position: fixed;
+  top: 0px;
+  animation: comeDown 1s;
+  width: 100%;
+  height: 62px;
+}
+
+.unstuck {
+
+}
+
+
+// /* line 3, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .nav-logged-out {
+//   display: flex;
+//   width: 100%;
+//   align-content: space-around;
+//   position: static;
+// }
+//
+// /* line 10, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .nav-logged-in {
+//   display: flex;
+//   width: 100%;
+//   align-content: space-around;
+//   position: inherit;
+// }
+//
+// /* line 17, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .nav-btn {
+//   background-color: white;
+//   border-color: white;
+//   border: 0px;
+//   padding-left: 7%;
+//   font-family: 'Roboto', sans-serif;
+//   font-size: 14px;
+//   color: black;
+// }
+//
+// /* line 27, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .search-bar {
+//   width: 75%;
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+// }
+//
+// /* line 34, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// #tbili-logo {
+//   padding: 15px;
+// }
+//
+// /* line 38, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .user-img {
+//   height: 40px;
+//   width: 40px;
+//   padding-left: 3%;
+// }
+//
+// /* line 44, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .home {
+//   display: none;
+// }
+//
+// /* line 48, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .not-home-logo {
+//   padding: inherit;
+//   border-right: 1px solid #8a8a8a;
+// }
+//
+// /* line 53, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .not-home {
+//   border-bottom: 1px solid #8a8a8a;
+// }
+//
+// /* line 57, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .placeholder-1 {
+//   height: 938px;
+// }
+//
+// /* line 60, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .placeholder-2 {
+//   height: 10000px;
+// }
+//
+// /* line 64, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .hidden {
+//   display: none;
+// }
+//
+// /* line 68, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .search {
+//   background-color: blue;
+// }
+//
+// @keyframes comeDown {
+//   0% {
+//     transform: translateY(-100%);
+//   }
+//   50% {
+//     transform: translateY(-8%);
+//   }
+//   100% {
+//     transform: translateY(0%);
+//   }
+// }
+// /* line 77, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/nav.scss */
+// .stuck {
+//   position: fixed;
+//   top: 0px;
+//   /* height: 50px; */
+//   /* z-index:  10; */
+//   /* width: 100%; */
+//   animation: comeDown 5s;
+//   background-color: green;
+// }
