@@ -1,6 +1,6 @@
 import { RECEIVE_SPOTS, RECEIVE_SPOT_ERRORS } from '../actions/spot_actions';
 
-const spotReducer = (state = {}, action) => {
+const SpotReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SPOTS:
@@ -13,4 +13,4 @@ const spotReducer = (state = {}, action) => {
 };
 
 
-export default spotReducer;
+export default SpotReducer;
