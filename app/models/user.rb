@@ -15,6 +15,12 @@ class User < ActiveRecord::Base
     length: { minimum: 7, allow_nil: true }
 
   # TODO include associations
+  has_many :spots,
+    class_name: "User",
+    primary_key: :id,
+    foreign_key: :owner_id
+
+  
   has_attached_file :avatar, default_url: "fpo_avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
