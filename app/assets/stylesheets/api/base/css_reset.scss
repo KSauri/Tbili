@@ -45,3 +45,8 @@ table {
 button:focus {
   outline: none;
 }
+
+button,
+a, input[type="submit"] {
+  cursor: pointer;
+}

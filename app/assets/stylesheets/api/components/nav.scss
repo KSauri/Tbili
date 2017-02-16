@@ -64,6 +64,7 @@
 }
 
 .search {
+  background-color: white;
 }
 
 @keyframes comeDown {
@@ -76,9 +77,11 @@
   animation: comeDown 1s;
   width: 100%;
   height: 68px;
+  background-color: white;
 }
 
 .unstuck {
   width: 100%;
   height: 68px;
+
 }
