@@ -20,6 +20,7 @@ class App extends Component {
           <h1>Tbili</h1>
           { this.props.children }
         </header>
+        <div className="placeholder-1"></div>
       </div>
     );
   }

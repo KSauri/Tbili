@@ -102,7 +102,7 @@ class NavBar extends Component {
             </div>
           </div>
           <button className="nav-btn" onClick={this.props.logout}>Log Out</button>
-          <img className="user-img" src={currentUser.image_url} />
+          <img className="user-img" src={currentUser.avatar_url} />
         </hgroup>
       </div>
     );
@@ -112,8 +112,6 @@ class NavBar extends Component {
     return (
       <div>
         { this.props.currentUser ? this.userInfo(this.props.currentUser, this.props.logout) : this.loggedOut() }
-        <div className="placeholder-1"></div>
-        <div className="placeholder-2"></div>
       </div>
     );
   }

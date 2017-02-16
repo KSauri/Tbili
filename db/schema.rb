@@ -11,21 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215190834) do
+ActiveRecord::Schema.define(version: 20170216150119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "spots", force: :cascade do |t|
+    t.integer "owner_id",                                 null: false
+    t.boolean "featured",            default: false
+    t.string  "location"
+    t.float   "lng",                                      null: false
+    t.float   "lat",                                      null: false
+    t.integer "price"
+    t.text    "description"
+    t.integer "guest_limit",         default: 5,          null: false
+    t.integer "bed_number",          default: 3,          null: false
+    t.integer "bathroom_number",     default: 3,          null: false
+    t.string  "property_type",                            null: false
+    t.boolean "pets_allowed",        default: true
+    t.boolean "wireless_internet",   default: true
+    t.boolean "kitchen",             default: true
+    t.boolean "family_friendly",     default: true
+    t.integer "monthly_discount",    default: 20
+    t.integer "weekly_discount",     default: 5
+    t.string  "cancellation_policy", default: "moderate"
+    t.integer "minimum_stay",        default: 2
+  end
+
+  add_index "spots", ["lat"], name: "index_spots_on_lat", using: :btree
+  add_index "spots", ["lng"], name: "index_spots_on_lng", using: :btree
+  add_index "spots", ["owner_id"], name: "index_spots_on_owner_id", using: :btree
+
   create_table "users", force: :cascade do |t|
-    t.string "email",           null: false
-    t.string "f_name",          null: false
-    t.string "l_name",          null: false
-    t.string "password_digest", null: false
-    t.string "session_token",   null: false
-    t.string "image_url"
-    t.date   "join_date"
-    t.string "location"
-    t.text   "description"
+    t.string   "email",               null: false
+    t.string   "f_name",              null: false
+    t.string   "l_name",              null: false
+    t.string   "password_digest",     null: false
+    t.string   "session_token",       null: false
+    t.string   "image_url"
+    t.date     "join_date"
+    t.string   "location"
+    t.text     "description"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
