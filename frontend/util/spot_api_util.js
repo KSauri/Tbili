@@ -5,3 +5,11 @@ export function fetchFeaturedSpots() {
     data: { featured: true }
   });
 }
+
+export const fetchSearchSpots = (filters) => (
+  $.ajax({
+    method: "GET",
+    url: "api/spots",
+    data: { filters }
+  })
+);

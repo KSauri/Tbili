@@ -22,7 +22,7 @@ class Api::SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:featured) #TODO add filters
+    params.require(:spot).permit(:featured, :filters) #TODO add filters
   end
 
 end
