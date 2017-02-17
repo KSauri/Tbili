@@ -36,7 +36,7 @@ export default class FeaturedNonHomes extends React.Component {
 
   moveRight() {
     return (e) => {
-      if (this.state.spotViewIdx < 5) {
+      if (this.state.spotViewIdx < 3) {
         this.setState({ spotViewIdx: (this.state.spotViewIdx + 1) });
       }
     };
@@ -54,38 +54,3 @@ export default class FeaturedNonHomes extends React.Component {
 
 
 }
-
-
-
-
-
-
-
-// <Slider dots={true}>
-// <div><img src='http://placekitten.com/g/400/200' /></div>
-// <div><img src='http://placekitten.com/g/400/200' /></div>
-// <div><img src='http://placekitten.com/g/400/200' /></div>
-// <div><img src='http://placekitten.com/g/400/200' /></div>
-// </Slider>
-
-// class FeaturedNonHomes extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.spots = this.spots.bind(this);
-//   }
-//   //
-//   // spots() {
-//   //   return this.props.spots.map((spot) => {
-//   //     return (
-//   //       <FeaturedSpotDetail key={spot.id} spot={spot}/>
-//   //     );
-//   //   });
-//   // }
-//
-//   render() {
-//     return (
-//       <ul className="featured-spots-list group">{this.spots()}</ul>
-//     );
-//   }
-//
-// }
