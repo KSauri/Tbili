@@ -18,7 +18,6 @@ class App extends Component {
         <main>
           { this.props.children }
         </main>
-        <div className="placeholder-1"></div>
       </div>
     );
   }

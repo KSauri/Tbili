@@ -28,7 +28,7 @@ class NavBar extends Component {
   }
 
   checkScroll(cb) {
-    if(window.scrollY > 500) {
+    if(window.scrollY > 240) {
       !this.state.searchVisible && this.setState({ searchVisible: true });
     } else {
       this.state.searchVisible && this.setState({ searchVisible: false });

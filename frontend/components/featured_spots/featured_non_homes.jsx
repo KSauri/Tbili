@@ -15,9 +15,6 @@ export default class FeaturedNonHomes extends React.Component {
     this.moveLeft = this.moveLeft.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchFeaturedSpots();
-  }
 
   spots() {
     return this.props.spots.map((spot, idx) => (
@@ -32,7 +29,6 @@ export default class FeaturedNonHomes extends React.Component {
   moveLeft() {
     return (e) => {
       if (this.state.spotViewIdx > 1) {
-        console.log(this.state.spotViewIdx - 1);
         this.setState({ spotViewIdx: (this.state.spotViewIdx - 1) });
       }
     };
@@ -40,7 +36,7 @@ export default class FeaturedNonHomes extends React.Component {
 
   moveRight() {
     return (e) => {
-      if (this.state.spotViewIdx < 7) {
+      if (this.state.spotViewIdx < 5) {
         this.setState({ spotViewIdx: (this.state.spotViewIdx + 1) });
       }
     };
