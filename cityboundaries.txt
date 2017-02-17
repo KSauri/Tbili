@@ -1,0 +1,12 @@
+nyc North Latitude: 40.742526 South Latitude: 40.700463 East Longitude: -73.971645 West Longitude: -74.019335
+LA North Latitude: 34.062611 South Latitude: 34.023813 East Longitude: -118.225900 West Longitude: -118.274007
+Austin North Latitude: 30.284107 South Latitude: 30.261408 East Longitude: -97.730582 West Longitude: -97.756383
+Boston North Latitude: 42.368397 South Latitude: 42.342797 East Longitude: -71.047796 West Longitude: -71.072996
+Seattle North Latitude: 47.618720 South Latitude: 47.592048 East Longitude: -122.311536 West Longitude: -122.359538
+miami North Latitude: 25.795376 South Latitude: 25.728935 East Longitude: -80.136300 West Longitude: -80.206770
+chicago North Latitude: 41.890630 South Latitude: 41.867315 East Longitude: -87.602456 West Longitude: -87.638289
+DC North Latitude: 38.909637 South Latitude: 38.900185 East Longitude: -77.023972 West Longitude: -77.049608
+Berlin NE 52.32081 N 13.26555 E SW 52.29201 N 13.21582 E
+Tbilisi NE 41.701333, 44.834254 SW 41.41088 N 44.48488 E
+Rome NE 41.55341 N 12.32278 E SW 41.52545 N 12.27540 E
+Paris NE 48.52193 N 2.22120 E  SW 48.852037, 2.330684
