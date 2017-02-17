@@ -11,10 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216154925) do
+ActiveRecord::Schema.define(version: 20170217161357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availabilities", force: :cascade do |t|
+    t.integer  "spot_id",    null: false
+    t.date     "start_date", null: false
+    t.date     "end_date",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "availabilities", ["end_date"], name: "index_availabilities_on_end_date", using: :btree
+  add_index "availabilities", ["spot_id"], name: "index_availabilities_on_spot_id", using: :btree
+  add_index "availabilities", ["start_date"], name: "index_availabilities_on_start_date", using: :btree
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer  "guest_id",               null: false
+    t.integer  "spot_id",                null: false
+    t.text     "guest_review"
+    t.text     "spot_review"
+    t.integer  "spot_review_star_count"
+    t.integer  "guest_number"
+    t.date     "start_date",             null: false
+    t.date     "end_date",               null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "availability_id",        null: false
+  end
+
+  add_index "bookings", ["availability_id"], name: "index_bookings_on_availability_id", using: :btree
+  add_index "bookings", ["end_date"], name: "index_bookings_on_end_date", using: :btree
+  add_index "bookings", ["guest_id"], name: "index_bookings_on_guest_id", using: :btree
+  add_index "bookings", ["spot_id"], name: "index_bookings_on_spot_id", using: :btree
+  add_index "bookings", ["start_date"], name: "index_bookings_on_start_date", using: :btree
 
   create_table "spots", force: :cascade do |t|
     t.integer  "owner_id",                                 null: false
