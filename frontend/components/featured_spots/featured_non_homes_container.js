@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
-import FeaturedNonHomes from './featured_non_homes';
-import { selectSpotsFromState } from '../../reducers/selectors';
+import FeaturedMiddleLayer from './featured_middle_layer';
+import * as selector from '../../reducers/selectors';
 import { fetchFeaturedSpots } from '../../actions/spot_actions';
 
 const mapStateToProps = (state) => ({
-  spots: selectSpotsFromState(state)
+  non_home_spots: selector.selectFeaturedNonHomes(state),
+  home_spots: selector.selectFeaturedHomes(state),
+  fancy_home_spots: selector.selectFeaturedFancyHomes(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -14,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FeaturedNonHomes);
+)(FeaturedMiddleLayer);

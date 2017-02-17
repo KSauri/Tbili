@@ -4,7 +4,7 @@ import FeaturedSpotDetail from './featured_spot_detail';
 import ReactDOM from 'react-dom';
 
 
-export default class FeaturedHomes extends React.Component {
+export default class FeaturedFancyHomes extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -36,7 +36,8 @@ export default class FeaturedHomes extends React.Component {
 
   moveRight() {
     return (e) => {
-      if (this.state.spotViewIdx < 7) {
+      if (this.state.spotViewIdx < 4) {
+        console.log(this.state.spotViewIdx);
         this.setState({ spotViewIdx: (this.state.spotViewIdx + 1) });
       }
     };
