@@ -1,0 +1,63 @@
+
+
+/* line 2, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/spot_index.scss */
+.spot-img {
+  height: 235px;
+  width: 351px;
+}
+
+/* line 7, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/spot_index.scss */
+.spot-detail {
+  padding: 35px;
+}
+
+/* line 11, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/spot_index.scss */
+.featured-non-homes {
+  display: flex;
+  flex-direction: row;
+
+}
+
+/* line 16, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/spot_index.scss */
+.no-display {
+  display: none;
+  width: 0px !important;
+}
+
+/* line 21, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/spot_index.scss */
+.featured-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.chevron {
+  width: 27px;
+  height: 27px;
+}
+
+.chevron-holder {
+  background-color: white;
+  border: 0px;
+}
+
+.spot-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.spot-price {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.spot-property {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.featured-desc {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}

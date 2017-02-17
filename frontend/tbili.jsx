@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
-import * as sesh_actions from './actions/session_actions';
+import * as spot_actions from './actions/spot_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.store = store;
-  window.login = sesh_actions.login;
+  window.fetchFeatured = spot_actions.fetchFeaturedSpots;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 });
