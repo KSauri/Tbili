@@ -23,3 +23,15 @@ export function receiveSpotErrors(errors) {
     errors,
   };
 }
+
+export const fetchSearchedSpots = (address) => dispatch => {
+  APIUtil.fetchBoundaries(address).then(boundaries =>
+    dispatch(receiveBoundaries(boundaries)));
+};
+
+
+export const receiveBoundaries = (boundaries) => dispatch => (
+  APIUtil.receiveBoundaries(boundaries).then(spots => dispatch(
+    receiveSpots(spots)
+  ))
+);
