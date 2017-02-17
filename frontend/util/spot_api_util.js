@@ -14,14 +14,9 @@ export function fetchFeaturedSpots() {
 //   })
 // );
 
-export const fetchBounds = (address) => (
-  $.ajax({
-    method: "GET",
-    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyChWynjm5jgi46S1tGogTe9oQh6GfN-KgY`
-  })
-);
 
-export const fetchSearchSpots = (searchParams) => (
+
+export const fetchSpots = (filters) => (
   $.ajax({
     method: "GET",
     url: "api/spots",
