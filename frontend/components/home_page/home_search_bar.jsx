@@ -10,4 +10,7 @@ const HomeSearchBar = (props) => (<div className="unfinished">
 
 export default HomeSearchBar;
 
-// search-bar
+// handle submit sends off the
+// request to get the lat long
+// then, when it returns it
+// submits the form

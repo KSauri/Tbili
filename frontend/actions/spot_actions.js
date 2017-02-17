@@ -1,5 +1,7 @@
 import * as APIUtil from '../util/spot_api_util';
+import * as SearchUtil from '../util/search_api_util';
 export const RECEIVE_SPOTS = "RECEIVE_SPOTS";
+export const RECEIVE_BOUNDARIES = "RECEIVE_BOUNDARIES";
 export const RECEIVE_SPOT_ERRORS = "RECEIVE_SPOT_ERRORS";
 
 export function receiveSpots(spots) {
@@ -16,22 +18,25 @@ export const fetchFeaturedSpots = () => dispatch => (
   )
 );
 
+export const fetchSpots = (filters) => dispatch => (
+  APIUtil.fetchSpots(filters).then(spots => dispatch(
+    receiveSpots(spots)
+  ))
+);
 
 export function receiveSpotErrors(errors) {
   return {
     type: RECEIVE_SPOT_ERRORS,
-    errors,
+    errors
   };
 }
 
-export const fetchSearchedSpots = (address) => dispatch => {
-  APIUtil.fetchBoundaries(address).then(boundaries =>
+export const fetchBoundaries = (address) => dispatch => {
+  SearchUtil.fetchBoundaries(address).then(boundaries =>
     dispatch(receiveBoundaries(boundaries)));
 };
 
-
-export const receiveBoundaries = (boundaries) => dispatch => (
-  APIUtil.receiveBoundaries(boundaries).then(spots => dispatch(
-    receiveSpots(spots)
-  ))
-);
+export const receiveBoundaries = (boundaries) => ({
+    type: RECEIVE_BOUNDARIES,
+    boundaries
+  });
