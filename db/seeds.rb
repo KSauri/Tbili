@@ -38,61 +38,61 @@ owner5 = User.create!(email: "owner5@owner.com", f_name: "Sarah", password: "pas
 Spot.destroy_all
 Spot.create!(owner_id: owner5.id, name: "NYC Cozy Studio", location: "New York",
   lat: 40.7128, lng: 74.0059, price: 100, description: "Lovely little place!",
-  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/barbados.jpg"), featured: true)
+  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/barbados.png"), featured: true)
 Spot.create!(owner_id: owner2.id, name: Faker::Address.street_name + " Apartment", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " apartment",
-  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/carribean.jpg"), featured: true)
+  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/carribean.png"), featured: true)
 Spot.create!(owner_id: owner1.id, name: Faker::Address.street_name + " Apartment", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " apartment",
-  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/florida-beach.jpg"), featured: true)
+  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/florida-beach.png"), featured: true)
 Spot.create!(owner_id: owner1.id, name: Faker::Address.street_name + " Apartment", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " apartment",
-  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/garden-house.jpg"), featured: true)
+  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/garden-house.png"), featured: true)
 Spot.create!(owner_id: owner1.id, name: Faker::Address.street_name + " Apartment", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " apartment",
-  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/inside-home.jpg"), featured: true)
+  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/inside-home.png"), featured: true)
 Spot.create!(owner_id: owner2.id, name: Faker::Address.street_name + " Apartment", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " apartment",
-  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/italy-bike.jpg"), featured: true)
+  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/italy-bike.png"), featured: true)
 Spot.create!(owner_id: owner2.id, name: Faker::Address.street_name + " Apartment", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " home",
-  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/maine-cottage.jpg"), featured: true)
+  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/maine-cottage.png"), featured: true)
 Spot.create!(owner_id: owner2.id, name: Faker::Address.street_name + " Apartment", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " home",
-  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/lake-retreat.jpg"), featured: true)
+  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/lake-retreat.png"), featured: true)
 Spot.create!(owner_id: owner3.id, name: Faker::Address.street_name + " Apartment", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " home",
-  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/prague.jpg"), featured: true)
+  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/prague.png"), featured: true)
 Spot.create!(owner_id: owner3.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " home",
-  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/rome.jpg"), featured: true)
+  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/rome.png"), featured: true)
 Spot.create!(owner_id: owner4.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " home",
-  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/hip-house.jpg"), featured: true)
+  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/hip-house.png"), featured: true)
 Spot.create!(owner_id: owner4.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: rand(50..150), description: Faker::Address.street_name + " home",
-  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/fancy-house.jpg"), featured: true)
+  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/fancy-house.png"), featured: true)
 Spot.create!(owner_id: owner5.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: 300, description: Faker::Address.street_name + " home",
-  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/cozy-spot.jpg"), featured: true)
+  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/cozy-spot.png"), featured: true)
 Spot.create!(owner_id: owner5.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: 350, description: Faker::Address.street_name + " home",
-  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/breakfast.jpg"), featured: true)
+  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/breakfast.png"), featured: true)
 Spot.create!(owner_id: owner4.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: 450, description: Faker::Address.street_name + " home",
-  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/italy-venice.jpg"), featured: true)
+  guest_limit: 6, property_type: "full home", image: File.open("app/assets/images/italy-venice.png"), featured: true)
 Spot.create!(owner_id: owner4.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: 399, description: Faker::Address.street_name + " home",
-  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/french-chateau.jpg"), featured: true)
+  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/french-chateau.png"), featured: true)
 Spot.create!(owner_id: owner5.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: 400, description: Faker::Address.street_name + " home",
-  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/italy-amalfi.jpg"), featured: true)
+  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/italy-amalfi.png"), featured: true)
 Spot.create!(owner_id: owner5.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: 330, description: Faker::Address.street_name + " home",
-  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/pretty-house.jpg"), featured: true)
+  guest_limit: 4, property_type: "full home", image: File.open("app/assets/images/pretty-house.png"), featured: true)
 Spot.create!(owner_id: owner5.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: 330, description: Faker::Address.street_name + " home",
-  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/italy-coast.jpg"), featured: true)
+  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/italy-coast.png"), featured: true)
 Spot.create!(owner_id: owner5.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: 330, description: Faker::Address.street_name + " home",
-  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/coffee.jpg"), featured: true)
+  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/coffee.png"), featured: true)
