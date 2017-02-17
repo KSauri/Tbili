@@ -16,7 +16,6 @@ export const fetchFeaturedSpots = () => dispatch => (
   )
 );
 
-
 export function receiveSpotErrors(errors) {
   return {
     type: RECEIVE_SPOT_ERRORS,
