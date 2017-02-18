@@ -34,6 +34,7 @@ class Spot < ActiveRecord::Base
         available_spots.push(spot)
       end
     end
+    debugger
     available_spots
   end
 
