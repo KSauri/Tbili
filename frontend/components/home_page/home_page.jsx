@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeSearchBarContainer from './home_search_bar';
+import HomeSearchBarContainer from './home_search_bar_container';
 import FeaturedAll from '../featured_spots/featured_all';
 
 const Home = (props) => {

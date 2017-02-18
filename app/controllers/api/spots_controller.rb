@@ -5,7 +5,6 @@ class Api::SpotsController < ApplicationController
   end
 
   def index
-    debugger
     if params[:featured]
       @spots = Spot.find_by_featured
     else
@@ -18,6 +17,8 @@ class Api::SpotsController < ApplicationController
         )
     end
   end
+
+
 
 
   private
