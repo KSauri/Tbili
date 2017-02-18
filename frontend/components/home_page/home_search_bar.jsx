@@ -1,6 +1,13 @@
 import React, {Component} from 'react';
 import withRouter from 'react-router';
 import { fetchBoundaries, parseBoundaries } from "../../util/search_api_util";
+import { render } from 'react-dom';
+import InfiniteCalendar from 'react-infinite-calendar';
+import 'react-infinite-calendar/styles.css'; // only needs to be imported once
+
+
+
+
 
 export default class HomeSearchBar extends Component {
   constructor(props) {
@@ -32,6 +39,8 @@ export default class HomeSearchBar extends Component {
   }
 
   render() {
+    var today = new Date();
+    var minDate = Number(new Date()) - (24*60*60*1000) * 7;
     return (
       <div className="unfinished">
         <div className="search home-search">
@@ -40,12 +49,16 @@ export default class HomeSearchBar extends Component {
             <input value={this.state.address}
               placeholder="Destination, city, place"
               onChange={this.changeInput("address")}/>
-            <input value={this.state.start_date}
-              placeholder="Check in"
-              onChange={this.changeInput("address")}/>
-            <input value={this.state.end_date}
-              placeholder="Check out"
-              onChange={this.changeInput("address")}/>
+            <div className="calendar-container">
+              <InfiniteCalendar
+                width={400}
+                height={600}
+                selectedDate={today}
+                disabledDays={[0,6]}
+                minDate={minDate}
+                keyboardSupport={true}
+              />,
+            </div>
             <input value={this.state.guest_no}
               onChange={this.changeInput("address")}/>
             <input type="submit" />
