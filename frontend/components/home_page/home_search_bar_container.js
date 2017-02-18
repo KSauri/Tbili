@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return ({
-    fetchSearchSpots: (spots) => dispatch(fetchSearchSpots(spots)),
+    fetchSearchSpots: (filters) => dispatch(fetchSearchSpots(filters)),
     clearSpotErrors: () => dispatch(clearSpotErrors())
   });
 };

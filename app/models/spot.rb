@@ -34,8 +34,14 @@ class Spot < ActiveRecord::Base
         available_spots.push(spot)
       end
     end
-    debugger
     available_spots
+  end
+
+  def self.in_bounds(bounds)
+    self.where("lat < ?", bounds[:northEast][:lat])
+      .where("lat > ?", bounds[:southWest][:lat])
+      .where("lng > ?", bounds[:southWest][:lng])
+      .where("lng < ?", bounds[:northEast][:lng])
   end
 
   # TODO remove N+1 query from get_available_spots
