@@ -1,6 +1,6 @@
 import * as SearchUtil from '../util/search_api_util';
 import * as APIUtil from '../util/spot_api_util';
-import { receiveSpots } from './spot_actions';
+import { receiveSpots, receiveSpotErrors } from './spot_actions';
 
 export const RECEIVE_SEARCH_FILTERS = "RECEIVE_SEARCH_FILTERS";
 
