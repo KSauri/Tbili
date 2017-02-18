@@ -23,11 +23,13 @@ export const fetchFeaturedSpots = () => dispatch => (
   )
 );
 
-export const fetchSpots = (filters) => dispatch => (
-  APIUtil.fetchSpots(filters).then(spots => dispatch(
+export const fetchSpots = (filters) => dispatch => {
+
+
+  return APIUtil.fetchSpots(filters).then(spots => dispatch(
     receiveSpots(spots)
-  ), err => dispatch(receiveSpotErrors(err.responseJSON)))
-);
+  ), err => dispatch(receiveSpotErrors(err.responseJSON)));
+};
 
 export function receiveSpotErrors(errors) {
   return {

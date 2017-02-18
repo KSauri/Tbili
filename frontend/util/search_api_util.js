@@ -14,7 +14,9 @@ export const fetchBoundaries = (address) => (
 );
 
 export const parseBoundaries = (boundsObj) => {
-  return ({ northEast:
+  return ({
+    address: boundsObj.results[0].address_components[0].long_name,
+    northEast:
     { lat: boundsObj.results[0].geometry.bounds.northeast.lat,
       lng: boundsObj.results[0].geometry.bounds.northeast.lng },
     southWest:
@@ -24,6 +26,11 @@ export const parseBoundaries = (boundsObj) => {
   );
 };
 
+//
+// $.ajax({
+//   method: "GET",
+//   url: `https://maps.googleapis.com/maps/api/geocode/json?address=seattle&key=AIzaSyChWynjm5jgi46S1tGogTe9oQh6GfN-KgY`
+// })
 
 //
 // submitForm() {

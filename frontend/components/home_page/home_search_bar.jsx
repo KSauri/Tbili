@@ -20,7 +20,7 @@ class HomeSearchBar extends Component {
   submitForm(e) {
     e.preventDefault();
     if (this.state.address === "") {
-      this.props.fetchSpots({
+      this.props.fetchSearchSpots({
         start_date: this.state.start_date,
         end_date: this.state.end_date,
         guest_no: this.state.guest_no}
@@ -28,7 +28,7 @@ class HomeSearchBar extends Component {
     } else {
       fetchBoundaries(this.state.address)
       .then(rawBounds => parseBoundaries(rawBounds))
-      .then(parsedBounds => this.props.fetchSpots(
+      .then(parsedBounds => this.props.fetchSearchSpots(
         {bounds: parsedBounds,
           start_date: this.state.start_date,
           end_date: this.state.end_date,
