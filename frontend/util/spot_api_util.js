@@ -23,3 +23,5 @@ export const fetchSpots = (filters) => (
     data: { filters }
   })
 );
+
+// fetchBoundaries("new york").then(bounds => parseBoundaries(bounds)).then(bounds => store.dispatch(fetchSpots(bounds)))

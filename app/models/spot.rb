@@ -57,23 +57,23 @@ class Spot < ActiveRecord::Base
       northern_lat = bounds['northEast']['lat']
       western_lng = bounds['southWest']['lng']
       eastern_lng = bounds['northEast']['lng']
-
       spots = Spot.where(
-        lat: (southern_lat..northern_lat),
-        lng: (western_lng..eastern_lng),
-        price: (min_price..max_price)
+        lat: ((southern_lat.to_f)..(northern_lat.to_f)),
+        lng: ((western_lng.to_f)..(eastern_lng.to_f))
+        # price: (min_price..max_price)
       )
     else
       spots = Spot.all
     end
-
-    if start_date == "" || end_date == ""
-      return spots
-    else
-      return spots.select do |spot|
-        spot.is_available?(Date.parse(start_date), Date.parse(end_date))
-      end
-    end
+    return spots
+    # if start_date == "" || end_date == ""
+    #   debugger
+    #   return spots
+    # else
+    #   return spots.select do |spot|
+    #     spot.is_available?(Date.parse(start_date), Date.parse(end_date))
+    #   end
+    # end
   end
 
 end

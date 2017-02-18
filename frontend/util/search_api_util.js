@@ -14,10 +14,14 @@ export const fetchBoundaries = (address) => (
 );
 
 export const parseBoundaries = (boundsObj) => {
-  return ({ ne: { lat: boundsObj.results[0].geometry.bounds.northeast.lat,
+  return ({ northEast:
+    { lat: boundsObj.results[0].geometry.bounds.northeast.lat,
       lng: boundsObj.results[0].geometry.bounds.northeast.lng },
-      sw: { lat: boundsObj.results[0].geometry.bounds.southwest.lat,
-        lng: boundsObj.results[0].geometry.bounds.southwest.lng }});
+    southWest:
+      { lat: boundsObj.results[0].geometry.bounds.southwest.lat,
+        lng: boundsObj.results[0].geometry.bounds.southwest.lng }
+    }
+  );
 };
 
 
