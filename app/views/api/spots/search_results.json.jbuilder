@@ -8,3 +8,5 @@ json.array! @spots do |spot|
   json.property_type spot.property_type
   json.image spot.image.url
 end
+
+json.extract!!
