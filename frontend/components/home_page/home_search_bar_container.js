@@ -5,7 +5,6 @@ import { fetchSpots } from '../../actions/spot_actions';
 const mapStateToProps = null;
 
 const mapDispatchToProps = dispatch => {
-  debugger
   return ({
     fetchSpots: (spots) => dispatch(fetchSpots(spots))
   });
