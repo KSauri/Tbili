@@ -3,6 +3,7 @@ import * as SearchUtil from '../util/search_api_util';
 export const RECEIVE_SPOTS = "RECEIVE_SPOTS";
 export const RECEIVE_BOUNDARIES = "RECEIVE_BOUNDARIES";
 export const RECEIVE_SPOT_ERRORS = "RECEIVE_SPOT_ERRORS";
+export const CLEAR_SPOT_ERRORS = "CLEAR_SPOT_ERRORS";
 
 export function receiveSpots(spots) {
   return {
@@ -10,6 +11,10 @@ export function receiveSpots(spots) {
     spots
   };
 }
+
+export const clearSpotErrors = () => ({
+  type: CLEAR_SPOT_ERRORS
+});
 
 export const fetchFeaturedSpots = () => dispatch => (
   APIUtil.fetchFeaturedSpots().then(spots => dispatch(
@@ -21,7 +26,7 @@ export const fetchFeaturedSpots = () => dispatch => (
 export const fetchSpots = (filters) => dispatch => (
   APIUtil.fetchSpots(filters).then(spots => dispatch(
     receiveSpots(spots)
-  ))
+  ), err => dispatch(receiveSpotErrors(err.responseJSON)))
 );
 
 export function receiveSpotErrors(errors) {

@@ -16,8 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.store = store;
-  window.fetchBoundaries = search_utils.fetchBoundaries;
-  window.parseBoundaries = search_utils.parseBoundaries;
   window.fetchSpots = spot_actions.fetchSpots;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);

@@ -26,15 +26,18 @@ class Spot < ActiveRecord::Base
   # end
 
   #TODO is_available?
-  # def is_available?(start_date, end_date)
-  #   self.bookings.each do |booking|
-  #     if booking.start_date <= end_date && start_date <= booking.end_date
-  #       return false
-  #     end
-  #   end
-  #   true
-  # end
+  def self.get_available_spots(spots, start_date, end_date)
+    available_spots = []
+    spots.each do |spot|
+      available_days = spot.get_availability
+      if ((start_date..end_date).to_a - available_days).empty?
+        available_spots.push(spot)
+      end
+    end
+    available_spots
+  end
 
+  # TODO remove N+1 query from get_available_spots
 
   def get_availability
     unbooked_days = []
@@ -65,15 +68,11 @@ class Spot < ActiveRecord::Base
     else
       spots = Spot.all
     end
-    return spots
-    # if start_date == "" || end_date == ""
-    #   debugger
-    #   return spots
-    # else
-    #   return spots.select do |spot|
-    #     spot.is_available?(Date.parse(start_date), Date.parse(end_date))
-    #   end
-    # end
+    if start_date == "" || end_date == ""
+      return spots
+    else
+      return Spot.get_available_spots(spots, start_date, end_date)
+    end
   end
 
 end
