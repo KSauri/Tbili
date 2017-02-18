@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
-import withRouter from 'react-router';
+import { withRouter } from 'react-router';
 import { fetchBoundaries, parseBoundaries } from "../../util/search_api_util";
 import { render } from 'react-dom';
-import InfiniteCalendar from 'react-infinite-calendar';
-import 'react-infinite-calendar/styles.css'; // only needs to be imported once
+import ErrorList from '../auth_forms/error_list';
 
 
-
-
-
-export default class HomeSearchBar extends Component {
+class HomeSearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,15 +19,29 @@ export default class HomeSearchBar extends Component {
 
   submitForm(e) {
     e.preventDefault();
-    fetchBoundaries(this.state.address)
-      .then(rawBounds => parseBoundaries(rawBounds))
-      .then(parsedBounds => this.props.fetchSpots(
-        {bounds: parsedBounds,
+    if (this.state.address === "") {
+      this.props.fetchSpots({
         start_date: this.state.start_date,
         end_date: this.state.end_date,
         guest_no: this.state.guest_no}
+      ).then(() => this.props.router.push("/search"));
+    } else {
+      fetchBoundaries(this.state.address)
+      .then(rawBounds => parseBoundaries(rawBounds))
+      .then(parsedBounds => this.props.fetchSpots(
+        {bounds: parsedBounds,
+          start_date: this.state.start_date,
+          end_date: this.state.end_date,
+          guest_no: this.state.guest_no}
         )
-      );
+      ).then(() => this.props.router.push("/search"));
+    }
+  }
+
+
+
+  componentWillUnmount() {
+    this.props.clearSpotErrors();
   }
 
   changeInput(field) {
@@ -39,28 +49,19 @@ export default class HomeSearchBar extends Component {
   }
 
   render() {
-    var today = new Date();
-    var minDate = Number(new Date()) - (24*60*60*1000) * 7;
     return (
       <div className="unfinished">
         <div className="search home-search">
           <img src={window.search} className="search-icon" />
           <form className="search-form" onSubmit={ this.submitForm }>
+            <ErrorList errors={ this.props.errors.spot_errors } />
             <input value={this.state.address}
               placeholder="Destination, city, place"
               onChange={this.changeInput("address")}/>
-            <div className="calendar-container">
-              <InfiniteCalendar
-                width={400}
-                height={600}
-                selectedDate={today}
-                disabledDays={[0,6]}
-                minDate={minDate}
-                keyboardSupport={true}
-              />,
-            </div>
+            <input type="date" onChange={this.changeInput("start_date")}/>
+            <input type="date" onChange={this.changeInput("end_date")} />
             <input value={this.state.guest_no}
-              onChange={this.changeInput("address")}/>
+              onChange={this.changeInput("guest_no")}/>
             <input type="submit" />
           </form>
         </div>
@@ -68,6 +69,8 @@ export default class HomeSearchBar extends Component {
     );
   }
 }
+
+export default withRouter(HomeSearchBar);
 
 
 // = (props) => (<div className="unfinished">

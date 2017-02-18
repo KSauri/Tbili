@@ -1,12 +1,21 @@
-import { RECEIVE_SPOTS, RECEIVE_SPOT_ERRORS } from '../actions/spot_actions';
+import { RECEIVE_SPOTS, CLEAR_SPOT_ERRORS, RECEIVE_SPOT_ERRORS } from '../actions/spot_actions';
 
-const SpotReducer = (state = {}, action) => {
+
+const _defaultSpots = Object.freeze({
+  spots: {},
+  errors: {}
+});
+
+const SpotReducer = (state = _defaultSpots, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_SPOTS:
-      return action.spots;
+      return Object.assign({}, _defaultSpots, { spots: action.spots});
     case RECEIVE_SPOT_ERRORS:
-      return { errors: action.errors };
+      let newState = Object.assign({}, state, { errors: action.errors });
+      return newState;
+    case CLEAR_SPOT_ERRORS:
+      return Object.assign({}, state, { errors: {} });
     default:
       return state;
   }

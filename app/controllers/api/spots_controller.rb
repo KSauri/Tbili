@@ -5,15 +5,22 @@ class Api::SpotsController < ApplicationController
   end
 
   def index
+
     if params[:featured]
       @spots = Spot.find_by_featured
+    elsif Date.strptime(params[:filters][:start_date]) < Date.today || Date.strptime(params[:filters][:end_date]) < Date.today
+
+      render(
+      json: { spot_errors: ["Sorry but we don't have a time machine!"] },
+      status: 401
+      )
     else
       @spots = Spot.find_by_filters(
         params[:filters][:bounds],
         params[:filters][:max_price],
         params[:filters][:min_price],
-        params[:filters][:start_date],
-        params[:filters][:end_date]
+        Date.strptime(params[:filters][:start_date]),
+        Date.strptime(params[:filters][:end_date])
         )
     end
   end
