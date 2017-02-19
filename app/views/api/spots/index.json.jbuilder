@@ -6,4 +6,6 @@ json.array! @spots do |spot|
   json.bed_number spot.bed_number
   json.property_type spot.property_type
   json.image spot.image.url
+  json.lat spot.lat
+  json.lng spot.lng
 end

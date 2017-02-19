@@ -1,11 +1,9 @@
-import React, {Component} from 'react';
 import { withRouter } from 'react-router';
 import { fetchBoundaries, parseBoundaries } from "../../util/search_api_util";
 import { render } from 'react-dom';
 import ErrorList from '../auth_forms/error_list';
 
-
-class HomeSearchBar extends Component {
+class UpdateResultsForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,16 +23,7 @@ class HomeSearchBar extends Component {
         end_date: this.state.end_date,
         guest_no: this.state.guest_no}
       ).then(() => this.props.router.push("/search"));
-    } else {
-      fetchBoundaries(this.state.address)
-      .then(rawBounds => parseBoundaries(rawBounds))
-      .then(parsedBounds => this.props.fetchSearchSpots(
-        {bounds: parsedBounds,
-          start_date: this.state.start_date,
-          end_date: this.state.end_date,
-          guest_no: this.state.guest_no}
-        )
-      ).then(() => this.props.router.push("/search"));
+    }
     }
   }
 
@@ -50,24 +39,19 @@ class HomeSearchBar extends Component {
 
   render() {
     return (
-      <div className="unfinished">
-        <div className="search home-search">
-          <img src={window.search} className="search-icon" />
           <form className="search-form" onSubmit={ this.submitForm }>
+            <input type="date" onChange={this.changeInput("start_date")}/>
+            <input type="date" onChange={this.changeInput("end_date")} />
             <ErrorList errors={ this.props.errors.spot_errors } />
             <input value={this.state.address}
               placeholder="Destination, city, place"
               onChange={this.changeInput("address")}/>
-            <input type="date" onChange={this.changeInput("start_date")}/>
-            <input type="date" onChange={this.changeInput("end_date")} />
             <input value={this.state.guest_no}
               onChange={this.changeInput("guest_no")}/>
             <input type="submit" />
           </form>
-        </div>
-      </div>
     );
   }
 }
 
-export default withRouter(HomeSearchBar);
+export default withRouter(UpdateResultsForm);

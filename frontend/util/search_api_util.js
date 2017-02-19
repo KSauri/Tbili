@@ -16,6 +16,8 @@ export const fetchBoundaries = (address) => (
 export const parseBoundaries = (boundsObj) => {
   return ({
     address: boundsObj.results[0].address_components[0].long_name,
+    center_lat: boundsObj.results[0].geometry.location.lat,
+    center_lng: boundsObj.results[0].geometry.location.lng,
     northEast:
     { lat: boundsObj.results[0].geometry.bounds.northeast.lat,
       lng: boundsObj.results[0].geometry.bounds.northeast.lng },

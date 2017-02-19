@@ -5,7 +5,6 @@ class Api::SpotsController < ApplicationController
   end
 
   def index
-    debugger
     if params[:featured]
       @spots = Spot.find_by_featured
     elsif params[:filters][:start_date] == "" && params[:filters][:end_date] != ""
@@ -14,7 +13,6 @@ class Api::SpotsController < ApplicationController
       status: 401
       )
     elsif params[:filters][:start_date] == "" && params[:filters][:end_date] == ""
-      debugger
       @spots = Spot.find_by_filters(
         params[:filters][:bounds],
         params[:filters][:max_price],
