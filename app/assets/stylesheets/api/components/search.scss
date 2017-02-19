@@ -1,6 +1,88 @@
 .map {
-  width: 500px;
-  height: 500px;
-  float: left;
-  position: relative;
+    width: 835px;
+    height: 93%;
+    float: left;
+    position: fixed !important;
+    right: 0px !important;
 }
+
+.search-result-outer-container {
+  display: flex;
+}
+
+.search-spots-results {
+  display: flex;
+  flex-direction: row;
+  position:absolute;
+  left: 0px;
+  right: 1100px;
+}
+
+.map-container {
+    overflow: hidden;
+    position: fixed;
+    right: 0px;
+    height: 100%;
+}
+
+.search-spots-list {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  right: 835px;
+  left: 0px;
+}
+
+.search-result-index-item {
+  padding: 20px;
+}
+// /* line 1, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
+// .map {
+//   width: 500px;
+//   height: 500px;
+//   float: left;
+//   position: relative;
+// }
+
+// /* line 8, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
+// .search-result-outer-container {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// /* line 13, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
+// .map-container {
+//   position: absolute;
+//   right: 0px;
+// }
+
+// .map {
+//   width: 500px;
+//   height: 100%;
+//   float: left;
+//   position: relative;
+// }
+//
+// /* line 8, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
+// .search-result-outer-container {
+//   display: flex;
+//   justify-content: center;
+// }
+//
+// /* line 13, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
+// .map-container {
+//   position: absolute;
+//   right: 0px;
+// }
+
+//
+// :hov
+//
+// .cls
+//
+// element.style {
+//     /* position: relative; */
+//     overflow: hidden;
+//     position: fixed;
+//     right: 0px;
+//     height: 100%;
