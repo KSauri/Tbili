@@ -3,7 +3,6 @@ import { selectFilteredSpotsFromState } from '../../../reducers/selectors';
 import SearchResultIndex from './search_result_index';
 
 const mapStateToProps = (state) => {
-  debugger
   return({
     spots: selectFilteredSpotsFromState(state)
   });

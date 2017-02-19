@@ -1,12 +1,13 @@
 import React from 'react';
 
 
-export default class update_dates extends React.Component {
+export default class UpdateDates extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dates: this.props.filters
+      dates: this.props.dates
     };
+    this.updateDates = this.updateDates.bind(this);
   }
 
   updateDates(e) {
@@ -25,11 +26,10 @@ export default class update_dates extends React.Component {
   render() {
 
     return (
-      <form onSubmit={ this.props.changeFilters }>
-        <input type="number" min="1" max="16" value={this.state.guest_no } onChange={this.handleFilterChange("guest_no")}/>
-        <input type="checkbox" value={this.state.full_home } onChange={this.handleFilterChange("full_home")}/>
-        <input type="checkbox" value={this.state.private_room } onChange={this.handleFilterChange("private_room")}/>
-        <input type="checkbox" value={this.state.shared_room } onChange={this.submihandleFilterChangetForm("shared_room")}/>
+      <form onSubmit={ this.updateDates }>
+        <input type="date" onChange={this.changeDate("start_date")}/>
+        <input type="date" onChange={this.changeDate("end_Date")}/>
+        <input type="submit" value="Change Dates" />
       </form>
     );
   }
