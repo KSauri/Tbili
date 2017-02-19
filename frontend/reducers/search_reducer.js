@@ -5,7 +5,12 @@ const _defaultFilters = Object.freeze({
   bounds: "",
   start_date: "",
   end_date: "",
-  price: ""
+  price_low: 0,
+  price_high: 100000,
+  guest_no: 1,
+  full_home: true,
+  private_room: true,
+  shared_room: true
 });
 
 const SearchReducer = (state = _defaultFilters, action) => {

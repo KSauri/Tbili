@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
-import { selectSpotsFromState } from '../../../reducers/selectors';
+import { selectFilteredSpotsFromState } from '../../../reducers/selectors';
 import SearchResultIndex from './search_result_index';
 
 const mapStateToProps = (state) => {
+  debugger
   return({
-    spots: selectSpotsFromState(state)
+    spots: selectFilteredSpotsFromState(state)
   });
 };
 
