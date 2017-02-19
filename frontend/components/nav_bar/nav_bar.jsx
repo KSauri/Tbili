@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import FormModal from './form_modal';
 import { withRouter, hashHistory } from 'react-router';
+import SearchBarContainer from './search_bar_container';
 
 class NavBar extends Component {
   constructor(props) {
@@ -74,8 +75,7 @@ class NavBar extends Component {
           <img id="tbili-logo" src={window.fireplace} />
           <div className="search-bar">
             <div className={ this.state.searchVisible ? "search" : "search hidden"}>
-              <img src={window.search} />
-              Search Bar Holder
+              <SearchBarContainer />
             </div>
           </div>
           <button className="nav-btn" onClick={ this.showLogIn() }>Log In</button>
@@ -97,8 +97,7 @@ class NavBar extends Component {
           <img id="tbili-logo" className="not-home" src={window.fireplace} />
           <div className="search-bar">
             <div className={ this.state.searchVisible ? "search" : "search hidden"}>
-              <img src={window.search} />
-              Search Bar Holder
+              <SearchBarContainer />
             </div>
           </div>
           <button className="nav-btn" onClick={this.props.logout}>Log Out</button>

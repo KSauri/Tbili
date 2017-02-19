@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Rheostat from 'rheostat';
 
 export default class UpdateNondateFilters extends React.Component {
   constructor(props) {
@@ -27,7 +27,6 @@ export default class UpdateNondateFilters extends React.Component {
   }
 
   render() {
-
     return (
       <form onSubmit={ this.changeFilters }>
         <input type="number" min="1" max="16" value={this.state.guest_no } onChange={this.handleFilterChange("guest_no")}/>
@@ -43,6 +42,9 @@ export default class UpdateNondateFilters extends React.Component {
           checked={ this.state.shared_room }
           value={ this.state.shared_room }
           onClick={this.handleCheckboxChange("shared_room")}/>
+        <div className="rheostat-container">
+          <Rheostat min={1} max={800} values={[1,800]} />
+        </div>
         <input type="submit" value="update filters" />
       </form>
     );

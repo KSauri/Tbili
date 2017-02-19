@@ -15,8 +15,6 @@ class Api::SpotsController < ApplicationController
     elsif params[:filters][:start_date] == "" && params[:filters][:end_date] == ""
       @spots = Spot.find_by_filters(
         params[:filters][:bounds],
-        params[:filters][:max_price],
-        params[:filters][:min_price],
         "",
         ""
         )
@@ -28,8 +26,6 @@ class Api::SpotsController < ApplicationController
     else
       @spots = Spot.find_by_filters(
         params[:filters][:bounds],
-        params[:filters][:max_price],
-        params[:filters][:min_price],
         Date.strptime(params[:filters][:start_date]),
         Date.strptime(params[:filters][:end_date])
         )

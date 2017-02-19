@@ -61,7 +61,7 @@ class Spot < ActiveRecord::Base
     unbooked_days
   end
 
-  def self.find_by_filters(bounds, max_price, min_price, start_date, end_date)
+  def self.find_by_filters(bounds, start_date, end_date)
     if bounds
       southern_lat = bounds['southWest']['lat']
       northern_lat = bounds['northEast']['lat']
@@ -70,7 +70,6 @@ class Spot < ActiveRecord::Base
       spots = Spot.where(
         lat: ((southern_lat.to_f)..(northern_lat.to_f)),
         lng: ((western_lng.to_f)..(eastern_lng.to_f))
-        # price: (min_price..max_price)
       )
     else
       spots = Spot.all
