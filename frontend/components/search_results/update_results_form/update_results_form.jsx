@@ -39,17 +39,37 @@ class UpdateResultsForm extends Component {
 
   render() {
     return (
-          <form className="search-form" onSubmit={ this.submitForm }>
-            <input type="date" onChange={this.changeInput("start_date")}/>
-            <input type="date" onChange={this.changeInput("end_date")} />
-            <ErrorList errors={ this.props.errors.spot_errors } />
-            <input value={this.state.address}
-              placeholder="Destination, city, place"
-              onChange={this.changeInput("address")}/>
-            <input value={this.state.guest_no}
-              onChange={this.changeInput("guest_no")}/>
-            <input type="submit" />
-          </form>
+      <form className="search-form" onSubmit={ this.submitForm }>
+        <input type="date" onChange={this.changeInput("start_date")}/>
+        <input type="date" onChange={this.changeInput("end_date")} />
+        <input value={this.state.guest_no}
+          onChange={this.changeInput("guest_no")}/>
+        <ErrorList errors={ this.props.errors.spot_errors } />
+        <input type="submit" />
+      </form>
+      <div className="search-result-form-container">
+        <form onSubmit={ this.submitForm("start_date") }>
+          <input type="date" onChange={this.changeInput("start_date")}/>
+        </form>
+        <form onSubmit={ this.submitForm("end_date") }>
+          <input type="date" onChange={this.changeInput("end_Date")}/>
+        </form>
+        <form onSubmit={ this.submitForm("guest_no") }>
+          <input type="date" onChange={this.changeInput("guest_no")}/> // TODO change...this to subcomponent
+        </form>
+        <form onSubmit={ this.submitForm("entire_home") }>
+          <input type="date" onChange={this.changeInput("start_date")}/>
+        </form>
+        <form onSubmit={ this.submitForm("private_room") }>
+          <input type="date" onChange={this.changeInput("start_date")}/>
+        </form>
+        <form onSubmit={ this.submitForm("shared_room") }>
+          <input type="date" onChange={this.changeInput("start_date")}/>
+        </form>
+        <form onSubmit={ this.submitForm("price_range") }>
+          <input type="date" onChange={this.changeInput("start_date")}/>
+        </form>
+      </div>
     );
   }
 }
