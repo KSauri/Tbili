@@ -16,7 +16,8 @@ class SearchMap extends Component {
 
   componentDidMount() {
     let _mapOptions = {
-      center: {lat: 37.773972, lng: -122.431297}, // San Francisco coords
+      center: {lat: this.props.bounds.center_lat || 41.9028,
+        lng: this.props.bounds.center_lng || 12.4964},
       zoom: 13,
     };
     // const map = this.refs.map;
@@ -29,17 +30,13 @@ class SearchMap extends Component {
     //   this.props.fetchBench(this.props.benchId);
     // } else {
     this._registerListeners();
-    //   this.MarkerManager.updateMarkers(this.props.benches);
+    this.MarkerManager.updateMarkers(this.props.spots);
     // }
   }
 
-  // componentDidUpdate() {
-  //   if(this.props.singleBench){
-  //     this.MarkerManager.updateMarkers([this.props.benches[Object.keys(this.props.benches)[0]]]);
-  //   } else {
-  //     this.MarkerManager.updateMarkers(this.props.benches);
-  //   }
-  // }
+  componentDidUpdate() {
+    this.MarkerManager.updateMarkers(this.props.spots);
+  }
 
   _registerListeners() {
     google.maps.event.addListener(this.map, 'idle', () => {
