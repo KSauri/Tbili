@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import SearchMapContainer from './map/map_container';
-import SearchResultIndexContainer from './search_result_index/search_result_index_container';
+import SearchFormAndContainer from './search_form_and_results';
 
 const SearchResults = () => {
   return (<div className="search-result-outer-container">
-    <SearchResultIndexContainer />
+    <SearchFormAndContainer />
     <SearchMapContainer className="map-container" />
   </div>);
 };

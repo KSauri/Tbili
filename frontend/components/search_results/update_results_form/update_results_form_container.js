@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
-import UpdateResultsForm from './home_search_bar';
-import { clearSpotErrors } from '../../actions/spot_actions';
-import { fetchSearchSpots } from '../../actions/search_actions';
+import UpdateResultsForm from './update_results_form';
+import { clearSpotErrors } from '../../../actions/spot_actions';
+import { fetchSearchSpots, receiveSearchFilters } from '../../../actions/search_actions';
 
 const mapStateToProps = (state) => {
-  return { errors: state.spots.errors };
+  return {
+    filters: state.filters,
+    errors: state.spots.errors };
 };
 
 const mapDispatchToProps = dispatch => {
   return ({
     fetchSearchSpots: (filters) => dispatch(fetchSearchSpots(filters)),
-    clearSpotErrors: () => dispatch(clearSpotErrors())
+    clearSpotErrors: () => dispatch(clearSpotErrors()),
+    receiveSearchFilters: (filters) => dispatch(receiveSearchFilters(filters))
   });
 };
 

@@ -23,7 +23,8 @@ class HomeSearchBar extends Component {
       this.props.fetchSearchSpots({
         start_date: this.state.start_date,
         end_date: this.state.end_date,
-        guest_no: this.state.guest_no}
+        guest_no: this.state.guest_no,
+        }
       ).then(() => this.props.router.push("/search"));
     } else {
       fetchBoundaries(this.state.address)
