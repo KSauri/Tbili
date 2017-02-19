@@ -4,10 +4,10 @@ import { withRouter } from 'react-router';
 import styledMapType from './map_style';
 import MarkerManager from '../../../util/marker_manager';
 
-const _getCoordsObj = latLng => ({
-  lat: latLng.lat(),
-  lng: latLng.lng()
-});
+// const _getCoordsObj = latLng => ({
+//   lat: latLng.lat(),
+//   lng: latLng.lng()
+// });
 
 
 
@@ -22,6 +22,7 @@ class SearchMap extends Component {
     };
     // const map = this.refs.map;
     this.map = new google.maps.Map(this.mapNode, _mapOptions);
+
     this.map.mapTypes.set('styled_map', styledMapType);
     this.map.setMapTypeId('styled_map');
     this.MarkerManager = new MarkerManager(this.map);
@@ -72,5 +73,7 @@ class SearchMap extends Component {
 
 export default withRouter(SearchMap);
 
-
-// AIzaSyBhQVhVbmr3Gbz1mTNMpraCTvaw7bhwbJ0
+//
+// if (this.props.bounds.viewport) {
+//   this.map.fitBounds(this.props.bounds.viewport);
+// }

@@ -5,7 +5,8 @@ export default class UpdateDates extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dates: this.props.dates
+      start_date: this.props.dates.start_date,
+      end_date: this.props.dates.end_date
     };
     this.updateDates = this.updateDates.bind(this);
   }
@@ -20,15 +21,15 @@ export default class UpdateDates extends React.Component {
   }
 
   changeDate(field) {
-    return (e) => this.setState({ [field]: e.currentTarget.value });
+    return (e) => {
+      return this.setState({ [field]: e.currentTarget.value });};
   }
 
   render() {
-
     return (
       <form onSubmit={ this.updateDates }>
         <input type="date" onChange={this.changeDate("start_date")}/>
-        <input type="date" onChange={this.changeDate("end_Date")}/>
+        <input type="date" onChange={this.changeDate("end_date")}/>
         <input type="submit" value="Change Dates" />
       </form>
     );

@@ -16,7 +16,8 @@ class UpdateResultsForm extends React.Component {
       <div className="search-result-form-container">
         <UpdateDates dates={ { start_date: this.props.filters.start_date,
                                 end_date: this.props.filters.end_date } }
-          fetchSearchSpots={ this.fetchSearchSpots } />
+          bounds={ this.props.filters.bounds }
+          fetchSearchSpots={ this.props.fetchSearchSpots } />
         <UpdateNondateFilters filters={ this.props.filters }
           receiveSearchFilters={ this.props.receiveSearchFilters } />
       </div>

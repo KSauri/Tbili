@@ -36,6 +36,46 @@
 .search-result-index-item {
   padding: 20px;
 }
+
+.rheostat-container {
+  height: 30px;
+}
+
+.rheostat {
+  overflow: visible;
+  height: 10px;
+  border-bottom: 5px solid rgb(46, 244, 193);
+  border-radius: 20px;
+}
+
+.rheostat-background {
+  background-color: #fcfcfc;
+  border: 0px solid #d8d8d8;
+  position: relative;
+}
+
+.rheostat-progress {
+  background-color: #abc4e8;
+  position: absolute;
+}
+
+.rheostat-handle {
+  background-color: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 30px;
+  height: 24px;
+  outline: none;
+  z-index: 2;
+  width: 24px;
+}
+
+.rheostat-handle:before,
+.rheostat-handle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #dadfe8;
+}
 // /* line 1, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
 // .map {
 //   width: 500px;

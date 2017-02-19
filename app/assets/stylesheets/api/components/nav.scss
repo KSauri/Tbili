@@ -12,6 +12,7 @@
   width: 100%;
   align-content: space-around;
   position: inherit;
+  align-items: center;
 }
 
 .nav-btn {
@@ -85,4 +86,17 @@
   width: 100%;
   height: 68px;
 
+}
+
+
+.nav-search-bar-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-search-bar {
+  border: 0px;
+  font-size: 18px;
+  width: 250px;
+  font-family: 'Roboto', sans-serif;
 }
