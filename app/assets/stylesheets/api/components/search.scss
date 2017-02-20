@@ -1,10 +1,12 @@
 .map {
-    width: 835px;
+    width: 60%;
     height: 93%;
     float: left;
     position: fixed !important;
     right: 0px !important;
 }
+
+// true map width - 835px
 
 .search-result-outer-container {
   display: flex;
@@ -13,9 +15,9 @@
 .search-spots-results {
   display: flex;
   flex-direction: row;
-  position:absolute;
-  left: 0px;
-  right: 1100px;
+  // position:absolute;
+  // left: 0px;
+  // right: 1100px;
 }
 
 .map-container {
@@ -76,53 +78,39 @@
   position: absolute;
   background-color: #dadfe8;
 }
-// /* line 1, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
-// .map {
-//   width: 500px;
-//   height: 500px;
-//   float: left;
-//   position: relative;
-// }
 
-// /* line 8, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
-// .search-result-outer-container {
-//   display: flex;
-//   justify-content: center;
-// }
+.guest-no-input {
 
-// /* line 13, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
-// .map-container {
-//   position: absolute;
-//   right: 0px;
-// }
+}
 
-// .map {
-//   width: 500px;
-//   height: 100%;
-//   float: left;
-//   position: relative;
-// }
-//
-// /* line 8, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
-// .search-result-outer-container {
-//   display: flex;
-//   justify-content: center;
-// }
-//
-// /* line 13, /Users/appacademy/Desktop/Tbili/app/assets/stylesheets/api/components/search.scss */
-// .map-container {
-//   position: absolute;
-//   right: 0px;
-// }
+.room-type {
+  display: flex;
+  padding: 28px 0px;
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
 
-//
-// :hov
-//
-// .cls
-//
-// element.style {
-//     /* position: relative; */
-//     overflow: hidden;
-//     position: fixed;
-//     right: 0px;
-//     height: 100%;
+.room-label {
+  width: 35px;
+}
+
+.room-checkbox {
+
+}
+
+.search-form {
+
+}
+
+.search-result-form-container {
+  background-color: black;
+}
+
+.search-result-filter {
+  width: 40vw;
+}
+
+.search-result-index-item{
+  width: 200%;
+  background: pink;
+}

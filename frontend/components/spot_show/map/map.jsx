@@ -36,7 +36,7 @@ class SpotMap extends Component {
 
   render() {
     // debugger
-    return <div className="map" ref={ map => this.mapNode = map }>Map</div>;
+    return <div className="map-show" ref={ map => this.mapNode = map }>Map</div>;
   }
 }
 
