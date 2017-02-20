@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-const Spots = () => {
+const SpotShow = () => {
   return (<div>testing</div>);
 };
 
-export default Spots;
+export default SpotShow;

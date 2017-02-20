@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.store = store;
-  window.fetchSpots = spot_actions.fetchSpots;
+  window.fetchSpot = utils.fetchSpot;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 });
