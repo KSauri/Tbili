@@ -9,7 +9,8 @@ export default class UpdateNondateFilters extends React.Component {
       shared_room: this.props.filters.shared_room,
       private_room: this.props.filters.private_room,
       full_home: this.props.filters.full_home,
-      price_min: 0
+      price_low: this.props.filters.price_low,
+      price_high: this.props.filters.price_high
     };
     this.changeFilters = this.changeFilters.bind(this);
     this.priceChange = this.priceChange.bind(this);
@@ -20,15 +21,24 @@ export default class UpdateNondateFilters extends React.Component {
     this.props.receiveSearchFilters(this.state);
   }
 
-  priceChange() {
-    debugger
+
+  componentDidMount() {
+    this.price_min_button = document.querySelectorAll("button[data-handle-key='0']");
+    this.price_max_button = document.querySelectorAll("button[data-handle-key='1']");
+  }
+
+  priceChange(e) {
+    this.setState({ price_low: e.values[0], price_high: e.values[1] });
   }
 
   handleFilterChange(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
+
   handleCheckboxChange(field) {
+    // debugger
+    console.log(this.state);
     return (e) => this.setState({ [field]: !this.state[field] });
   }
 
@@ -62,7 +72,7 @@ export default class UpdateNondateFilters extends React.Component {
         <div className="price-filter-container">
           <label className="price-range-label">Price Range</label>
           <div className="rheostat-container">
-            <Rheostat min={1} max={800}  values={[1,800]} onChange={ this.priceChange }/>
+            <Rheostat min={1} max={800}  values={[this.state.price_low, this.state.price_high]} onValuesUpdated={ this.priceChange }/>
           </div>
         </div>
         <input type="submit" value="update filters" />
