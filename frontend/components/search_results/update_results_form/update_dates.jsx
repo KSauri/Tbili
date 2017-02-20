@@ -28,8 +28,8 @@ export default class UpdateDates extends React.Component {
   render() {
     return (
       <form onSubmit={ this.updateDates }>
-        <input type="date" onChange={this.changeDate("start_date")}/>
-        <input type="date" onChange={this.changeDate("end_date")}/>
+        <input className="type="date" min={ new Date() } onChange={this.changeDate("start_date")}/>
+        <input type="date"  onChange={this.changeDate("end_date")}/>
         <input type="submit" value="Change Dates" />
       </form>
     );

@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 const SearchResultIndexItem = ({ spot }) => {
   return (
     <ul className="search-result-index-item">
-      <img className="spot-img" src={spot.image}/>
+      <img className="search-spot-img" src={spot.image}/>
       <li>
         <h4 className="spot-price">${spot.price} </h4>
         <h4 className="spot-property">

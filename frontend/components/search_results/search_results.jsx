@@ -5,7 +5,7 @@ import SearchFormAndContainer from './search_form_and_results';
 const SearchResults = () => {
   return (<div className="search-result-outer-container">
     <SearchFormAndContainer />
-    <SearchMapContainer className="map-container" />
+    <SearchMapContainer  />
   </div>);
 };
 

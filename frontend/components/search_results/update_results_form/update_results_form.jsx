@@ -13,7 +13,7 @@ class UpdateResultsForm extends React.Component {
 
   render() {
     return (
-      <div className="search-result-form-container">
+      <div className="search-form">
         <UpdateDates dates={ { start_date: this.props.filters.start_date,
                                 end_date: this.props.filters.end_date } }
           bounds={ this.props.filters.bounds }
