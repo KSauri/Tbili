@@ -3,7 +3,6 @@ import UpdateResultsFormContainer from './update_results_form/update_results_for
 import SearchResultIndexContainer from './search_result_index/search_result_index_container';
 
 const SearchFormAndResults = (props) => {
-  debugger
   return (<div className="search-results-filter">
     <UpdateResultsFormContainer />
     <SearchResultIndexContainer />

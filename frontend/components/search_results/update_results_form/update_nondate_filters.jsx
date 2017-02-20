@@ -59,11 +59,12 @@ export default class UpdateNondateFilters extends React.Component {
             onClick={this.handleCheckboxChange("shared_room")}/>
           </label>
         </div>
-        <label className="price-range-label">Price Range
+        <div className="price-filter-container">
+          <label className="price-range-label">Price Range</label>
           <div className="rheostat-container">
             <Rheostat min={1} max={800}  values={[1,800]} onChange={ this.priceChange }/>
           </div>
-        </label>
+        </div>
         <input type="submit" value="update filters" />
       </form>
     );
