@@ -5,10 +5,10 @@ import { fetchSearchSpots } from '../../../actions/search_actions';
 
 import SearchMap from './map';
 
-const mapStateToProps = state => ({
-  bounds: state.filters.bounds,
-  spots: selectFilteredSpotsFromState(state)
-});
+const mapStateToProps = (state, ownProps) => {
+  return ({ bounds: state.filters.bounds,
+  spots: selectFilteredSpotsFromState(state)});
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchSearchSpots: (filters) => dispatch(fetchSearchSpots(filters))

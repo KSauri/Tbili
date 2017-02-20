@@ -24,7 +24,7 @@ json.image @spot.image.url
 json.available_days @spot.get_availability
 
 
-json.bookings_info @spot.bookings do |booking|
+json.bookings_info @spot.bookings.includes(:guest) do |booking|
   json.guest_f_name booking.guest.f_name
   json.guest_l_name booking.guest.l_name
   json.guest_avatar booking.guest.avatar.url
