@@ -6,7 +6,7 @@ const _defaultFilters = Object.freeze({
   start_date: "",
   end_date: "",
   price_low: 0,
-  price_high: 100000,
+  price_high: 800,
   guest_no: 1,
   full_home: true,
   private_room: true,
