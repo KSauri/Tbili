@@ -8,7 +8,7 @@
 
 User.destroy_all
 #
-User.create!(email: "guest@fakemail.com", f_name: "Guest", password: "password",
+guest = User.create!(email: "guest@fakemail.com", f_name: "Guest", password: "password",
   l_name: "Guestington",
   join_date: Date.today, location: "New York",
   description: "")
@@ -96,7 +96,7 @@ spot19 = Spot.create!(owner_id: owner5.id, name: Faker::Address.street_name + " 
   guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/italy-coast.png"), featured: true),
 spot20 = Spot.create!(owner_id: owner5.id, name: Faker::Address.street_name + " Home", location: "New York",
   lat: 40.7128, lng: 74.0059, price: 330, description: Faker::Address.street_name + " home",
-  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/coffee.png"), featured: true)
+  guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/flowers.jpg"), featured: true)
 ]
 # Spot.last.destroy
 # spot = Spot.create!(owner_id: owner5.id, name: Faker::Address.street_name + " Home", location: "New York",
@@ -172,7 +172,7 @@ Booking.destroy_all
 11.times do |month|
   spots.each do |spot|
     availability = Availability.create!(spot_id: spot.id, start_date: Date.new(2017,month+1,1), end_date: Date.new(2017,month+1,28))
-    Booking.create!(guest_id: owner1.id, spot_id: spot.id,
+    Booking.create!(guest_id: guest.id, spot_id: spot.id,
     start_date: Date.new(2017,month+1,rand(1..3)),
     end_date: Date.new(2017,month+1,rand(4..6)),
     availability_id: availability.id,

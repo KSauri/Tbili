@@ -44,6 +44,7 @@ class Spot < ActiveRecord::Base
       .where("lng < ?", bounds[:northEast][:lng])
   end
 
+
   # TODO remove N+1 query from get_available_spots
 
   def get_availability

@@ -1,4 +1,5 @@
 json.extract! @spot,
+  :name,
   :location,
   :lng,
   :lat,
@@ -18,13 +19,16 @@ json.extract! @spot,
   :minimum_stay
 
 #
-json.host @spot.owner
+owner = @spot.owner
+json.host_f_name owner.f_name
+json.host_image owner.avatar
+json.host_id owner.id
 json.image @spot.image.url
 #
 json.available_days @spot.get_availability
 
 
-json.bookings_info @spot.bookings.includes(:guest) do |booking|
+json.reviews_info @spot.bookings.includes(:guest) do |booking|
   json.guest_f_name booking.guest.f_name
   json.guest_l_name booking.guest.l_name
   json.guest_avatar booking.guest.avatar.url

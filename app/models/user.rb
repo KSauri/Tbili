@@ -20,7 +20,11 @@ class User < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :owner_id
 
-  
+  has_many :bookings,
+    class_name: "Booking",
+    foreign_key: :guest_id
+
+
   has_attached_file :avatar, default_url: "fpo_avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 

@@ -64,6 +64,37 @@ export const selectFilteredSpotsFromState = (state) => {
           spotsArray.push(state.spots.spots[id]);
         }
   });
-
   return spotsArray;
+};
+
+export const getAvailability({spot}) => {
+  return ({
+    available_days: spot.available_days
+  });
+}
+
+
+
+
+export const selectSpotProperties = ({spot}) => {
+  return ({
+    name: spot.name,
+    bathroom_number: spot.bathroom_number,
+    bed_number: spot.bed_number,
+    cancellation_policy: spot.cancellation_policy,
+    description: spot.description,
+    family_friendly: spot.family_friendly,
+    host_f_name: spot.host_f_name,
+    host_image: spot.host_image,
+    host_id: spot.host_id,
+    kitchen: spot.kitchen,
+    location: spot.location,
+    minimum_stay: spot.minimum_stay,
+    monthly_discount: spot.monthly_discount,
+    pets_allowed: spot.pets_allowed,
+    price: spot.price,
+    property_type: spot.property_type,
+    weekly_discount: spot.weekly_discount,
+    wireless_internet: spot.wireless_internet
+  });
 };

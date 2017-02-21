@@ -6,7 +6,6 @@ import { fetchBoundaries, parseBoundaries } from "../../util/search_api_util";
 class SearchBar extends Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = {
       address: ""
     };
