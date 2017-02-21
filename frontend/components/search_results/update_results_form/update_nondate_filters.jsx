@@ -38,44 +38,54 @@ export default class UpdateNondateFilters extends React.Component {
 
   handleCheckboxChange(field) {
     // debugger
-    console.log(this.state);
     return (e) => this.setState({ [field]: !this.state[field] });
   }
 
   render() {
     return (
       <form className="nondate-filter-form" onSubmit={ this.changeFilters }>
-        <input className="guest-no-input" type="number" min="1" max="16" value={this.state.guest_no } onChange={this.handleFilterChange("guest_no")}/>
+        <div className="guest-number-container">
+          <label className="guest-number-label">Number of guests
+            <input className="guest-no-input" type="number" min="1" max="16" value={this.state.guest_no } onChange={this.handleFilterChange("guest_no")}/>
+          </label>
+        </div>
         <div className="room-type">
-          <label className="room-label">Full Home
-            <input type="checkbox"
-              className="room-checkbox"
-              checked={ this.state.full_home }
-              value={ this.state.full_home }
-              onClick={this.handleCheckboxChange("full_home")}/>
-          </label>
-          <label className="room-label">Private Room
-            <input type="checkbox"
-              className="room-checkbox"
-              checked={ this.state.private_room }
-              value={ this.state.private_room }
-              onClick={this.handleCheckboxChange("private_room")}/>
-          </label>
-          <label className="room-label">Shared Room
-          <input type="checkbox"
-            className="room-checkbox"
-            checked={ this.state.shared_room }
-            value={ this.state.shared_room }
-            onClick={this.handleCheckboxChange("shared_room")}/>
+          <label className="property-type-label">Property Type
+            <label className="room-label">Full Home
+              <input type="checkbox"
+                className="room-checkbox"
+                checked={ this.state.full_home }
+                value={ this.state.full_home }
+                onClick={this.handleCheckboxChange("full_home")}/>
+            </label>
+            <label className="room-label">Private Room
+              <input type="checkbox"
+                className="room-checkbox"
+                checked={ this.state.private_room }
+                value={ this.state.private_room }
+                onClick={this.handleCheckboxChange("private_room")}/>
+            </label>
+            <label className="room-label">Shared Room
+              <input type="checkbox"
+                className="room-checkbox"
+                checked={ this.state.shared_room }
+                value={ this.state.shared_room }
+                onClick={this.handleCheckboxChange("shared_room")}/>
+            </label>
           </label>
         </div>
         <div className="price-filter-container">
-          <label className="price-range-label">Price Range</label>
+          <div className="curr-price-container">
+            <span className="curr-price">Minimum Price: ${this.state.price_low}</span>
+            <span className="curr-price">Maximum Price: ${this.state.price_high}</span>
+          </div>
+          <label className="price-range-label">Price Range
           <div className="rheostat-container">
             <Rheostat min={1} max={800}  values={[this.state.price_low, this.state.price_high]} onValuesUpdated={ this.priceChange }/>
           </div>
+          </label>
         </div>
-        <input type="submit" value="update filters" />
+        <input className="filter-btn" type="submit" value="update filters" />
       </form>
     );
   }

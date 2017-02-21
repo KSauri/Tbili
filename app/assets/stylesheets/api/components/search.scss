@@ -6,19 +6,6 @@
     right: 0px !important;
 }
 
-// html {
-//   height: 100%;
-// }
-// body {
-//   min-height: 100%;
-// }
-
-// true map width - 835px
-
-// .search-result-outer-container {
-//   display: flex;
-// }
-
 .no-scroll {
   overflow: hidden;
 }
@@ -36,19 +23,12 @@
     height: 100%;
 }
 
-// .search-spots-list {
-//   display: flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-//   position: fixed;
-//   right: 60vw;
-//   left: 0px;
-//   width: 60%;
-// }
 
 .price-filter-container {
-  display: flex;
-  align-items: center;
+  margin-bottom: 3%;
+  margin-top: 1%;
+  border-bottom: 1px solid lightgray;
+  padding: 2% 0%;
 }
 
 
@@ -95,12 +75,16 @@
 }
 
 .guest-no-input {
-
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0px;
+  margin-left: 2%;
 }
 
 .room-type {
   display: flex;
-  padding: 28px 0px;
+
   border-bottom: 1px solid lightgray;
   border-top: 1px solid lightgray;
 }
@@ -109,17 +93,18 @@
   min-width: 35px;
   width: 3%;
   display: flex;
-  margin: 0px 7%;
+  margin: 0px 20%;
   white-space: nowrap;
 }
 
 .room-checkbox {
-
+  width: 50px;
 }
 
 .search-form {
   margin: 0 auto;
   width: 90%;
+
 }
 
 .date-label {
@@ -129,6 +114,8 @@
   display: flex;
   align-items: center;
   align-content: space-around;
+  padding: 0px 1%;
+  margin: 1% 0px;
 }
 
 .date-form {
@@ -151,11 +138,12 @@
   padding: 7px 18px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  margin-left: 3%;
 }
 
 .date-btn {
   width: 20%;
-  margin: 5px;
+  margin: 0px 3%;
   padding: 7px 18px;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -165,10 +153,11 @@
 }
 
 .search-spot-img {
-
+  width: 100%;
   img{
     max-width: 400px;
     width: 100%;
+    max-height: 264px;
     height: auto;
   }
 }
@@ -176,11 +165,7 @@
 .search-result-outer-container {
   display: flex;
 }
-// height: 85vw;
 
-// outercontainer
-// display: flex;
-// height: 10000px;
 
 .search-results-filter {
   width: 60%;
@@ -194,16 +179,7 @@
   overflow-y: scroll;
 }
 
-// overflow-y: scroll;
-// filter
-// width: 60%;
-// display: flex;
-// flex-direction: column;
-// width: 60%;
-// display: flex;
-// flex-direction: column;
-// height: 100%;
-// overflow-y: scroll;
+
 
 .search-spots-list {
   display: flex;
@@ -214,4 +190,66 @@
   // right: 60vw;
   // left: 0px;
   // width: 60%;
+}
+
+.guest-number-container {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid lightgray;
+}
+
+.guest-number-label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 15px 0px;
+  padding-left: 1%;
+  width: 100%;
+}
+
+.filter-btn {
+  width: 20%;
+  margin: 0px 0%;
+  padding: 7px 18px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: rgba(46, 244, 193, 0.64);
+  color: white;
+  border: 0px;
+}
+
+.price-range-label {
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 15px 0px;
+  padding-left: 1%;
+  width: 100%;
+}
+
+.property-type-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  padding: 28px 0px;
+  padding-left: 1%;
+  white-space: nowrap;
+}
+
+.curr-price {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+.curr-price-container {
+  display: flex;
+  width: 87%;
+
+  justify-content: space-between;
 }

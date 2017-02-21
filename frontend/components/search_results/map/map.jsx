@@ -20,19 +20,12 @@ class SearchMap extends Component {
         lng: this.props.bounds.center_lng || 12.4964},
       zoom: 13,
     };
-    // const map = this.refs.map;
     this.map = new google.maps.Map(this.mapNode, _mapOptions);
-
     this.map.mapTypes.set('styled_map', styledMapType);
     this.map.setMapTypeId('styled_map');
     this.MarkerManager = new MarkerManager(this.map);
-    // this._handleMarkerClick.bind(this) as second arg to markermanager
-    // if (this.props.singleBench) {
-    //   this.props.fetchBench(this.props.benchId);
-    // } else {
     this._registerListeners();
     this.MarkerManager.updateMarkers(this.props.spots);
-    // }
   }
 
   componentDidUpdate() {
@@ -49,22 +42,17 @@ class SearchMap extends Component {
         start_date: "",
         end_date: ""});
     });
-    // google.maps.event.addListener(this.map, 'click', event => {
-    //   const coords = _getCoordsObj(event.latLng);
-    //   this._handleClick(coords);
-    // });
   }
 
-  // _handleMarkerClick(bench) {
-  //   this.props.router.push(`benches/${bench.id}`);
-  // }
-  //
-  // _handleClick(coords) {
-  //   this.props.router.push({
-  //     pathname: "benches/new",
-  //     query: coords
-  //   });
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.bounds === "") {
+      return;
+    } else if (nextProps.bounds.address && this.props.bounds.address !== nextProps.bounds.address) {
+      let center = new google.maps.LatLng(nextProps.bounds.center_lat, nextProps.bounds.center_lng);
+      this.map.panTo(center);
+    }
+  }
+
 
   render() {
     return <div className="map" ref={ map => this.mapNode = map }>Map</div>;
