@@ -4,7 +4,8 @@ import { clearSpotErrors } from '../../actions/spot_actions';
 import { fetchSearchSpots } from '../../actions/search_actions';
 
 const mapStateToProps = (state) => {
-  return { errors: state.spots.errors };
+  return { errors: state.spots.errors,
+    bounds: state.bounds };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -15,6 +16,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(SearchBar);

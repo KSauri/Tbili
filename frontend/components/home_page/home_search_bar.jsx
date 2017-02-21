@@ -54,16 +54,36 @@ class HomeSearchBar extends Component {
       <div className="unfinished">
         <div className="search home-search">
           <img src={window.search} className="search-icon" />
-          <form className="search-form" onSubmit={ this.submitForm }>
+          <form className="home-search-bar" onSubmit={ this.submitForm }>
             <ErrorList errors={ this.props.errors.spot_errors } />
-            <input value={this.state.address}
-              placeholder="Destination, city, place"
-              onChange={this.changeInput("address")}/>
-            <input type="date" onChange={this.changeInput("start_date")}/>
-            <input type="date" onChange={this.changeInput("end_date")} />
-            <input value={this.state.guest_no}
-              onChange={this.changeInput("guest_no")}/>
-            <input type="submit" />
+            <label className="">
+              Where
+              <input  value={this.state.address}
+                placeholder="Destination, city, place"
+                onChange={this.changeInput("address")}/>
+            </label>
+            <label >
+              When
+              <div className="home-search-date">
+                <input
+                  placeholder="Check in"
+                  type="date"
+                  onChange={this.changeInput("start_date")}/>
+                <input
+                  placeholder="Check out"
+                  type="date"
+                  onChange={this.changeInput("end_date")} />
+              </div>
+            </label>
+            <label className="home-search-input">
+              <div className="flex-column">
+                Number of Guests
+                <input  value={this.state.guest_no}
+                  placeholder="Number of guests"
+                  onChange={this.changeInput("guest_no")}/>
+              </div>
+              <input className="search-submit" value="Search" type="submit" />
+            </label>
           </form>
         </div>
       </div>
