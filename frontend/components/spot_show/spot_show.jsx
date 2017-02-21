@@ -12,7 +12,7 @@ class SpotShow extends Component {
   }
 
   render() {
-    return (<div>
+    return (<div className="spot-show-container">
       <SpotMapContainer spot={ this.props.spot }/>
     </div>);
   }
