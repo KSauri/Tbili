@@ -1,9 +1,18 @@
 import { connect } from 'react-redux';
-import HomeSearchBar from './home_search_bar_container';
+import HomeSearchBar from './home_search_bar';
+import { clearSpotErrors } from '../../actions/spot_actions';
+import { fetchSearchSpots } from '../../actions/search_actions';
 
-const mapStateToProps = null;
+const mapStateToProps = (state) => {
+  return { errors: state.spots.errors };
+};
 
-const mapDispatchToProps = null;
+const mapDispatchToProps = dispatch => {
+  return ({
+    fetchSearchSpots: (filters) => dispatch(fetchSearchSpots(filters)),
+    clearSpotErrors: () => dispatch(clearSpotErrors())
+  });
+};
 
 export default connect(
   mapStateToProps,

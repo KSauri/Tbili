@@ -8,7 +8,9 @@ class Spot < ActiveRecord::Base
   class_name: :User,
   foreign_key: :owner_id
 
-  #TODO add other associations
+  has_many :availabilities
+
+  has_many :bookings
 
 
   has_attached_file :image, default_url: "missing_image_house.png"
@@ -23,38 +25,59 @@ class Spot < ActiveRecord::Base
   #   Spot.where('featured = ? AND property_type = ?', true, "full home")
   # end
 
-
-  def is_available?(start_date, end_date)
-    self.bookings.each do |booking|
-      if booking.start_date <= end_date && start_date <= booking.end_date
-        return false
+  #TODO is_available?
+  def self.get_available_spots(spots, start_date, end_date)
+    available_spots = []
+    spots.each do |spot|
+      available_days = spot.get_availability
+      if ((start_date..end_date).to_a - available_days).empty?
+        available_spots.push(spot)
       end
     end
-    true
+    available_spots
   end
 
-  def self.find_by_filters(bounds, max_price, min_price, start_date, end_date)
+  def self.in_bounds(bounds)
+    self.where("lat < ?", bounds[:northEast][:lat])
+      .where("lat > ?", bounds[:southWest][:lat])
+      .where("lng > ?", bounds[:southWest][:lng])
+      .where("lng < ?", bounds[:northEast][:lng])
+  end
+
+  # TODO remove N+1 query from get_available_spots
+
+  def get_availability
+    unbooked_days = []
+    availability_blocks = self.availabilities.includes(:bookings)
+    availability_blocks.each do |availability_block|
+      booked_days = []
+      availability_block.bookings.each do |booking|
+        booked_days += (booking.start_date..booking.end_date).to_a
+      end
+      (availability_block.start_date..availability_block.end_date).each do |day|
+        unbooked_days.push(day) unless booked_days.include?(day)
+      end
+    end
+    unbooked_days
+  end
+
+  def self.find_by_filters(bounds, start_date, end_date)
     if bounds
       southern_lat = bounds['southWest']['lat']
       northern_lat = bounds['northEast']['lat']
       western_lng = bounds['southWest']['lng']
       eastern_lng = bounds['northEast']['lng']
-
       spots = Spot.where(
-        lat: (southern_lat..northern_lat),
-        lng: (western_lng..eastern_lng),
-        price: (min_price..max_price)
+        lat: ((southern_lat.to_f)..(northern_lat.to_f)),
+        lng: ((western_lng.to_f)..(eastern_lng.to_f))
       )
     else
       spots = Spot.all
     end
-
     if start_date == "" || end_date == ""
       return spots
     else
-      return spots.select do |spot|
-        spot.is_available?(Date.parse(start_date), Date.parse(end_date))
-      end
+      return Spot.get_available_spots(spots, start_date, end_date)
     end
   end
 

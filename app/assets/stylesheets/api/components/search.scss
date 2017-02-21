@@ -1,0 +1,255 @@
+.map {
+    width: 40%;
+    height: 93%;
+    justify-content: flex-end;
+    position: fixed !important;
+    right: 0px !important;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.search-spots-results {
+  display: flex;
+  flex-direction: row;
+  margin-left: 3%;
+}
+
+.map-container {
+    overflow: hidden;
+    position: fixed;
+    right: 0px;
+    height: 100%;
+}
+
+
+.price-filter-container {
+  margin-bottom: 3%;
+  margin-top: 1%;
+  border-bottom: 1px solid lightgray;
+  padding: 2% 0%;
+}
+
+
+.rheostat-container {
+  height: 30px;
+  max-width: 60%;
+  min-width: 60%;
+  margin: 0 auto;
+}
+
+.rheostat {
+  overflow: visible;
+  height: 10px;
+  border-bottom: 5px solid rgb(46, 244, 193);
+}
+
+.rheostat-background {
+  background-color: #fcfcfc;
+  border: 0px solid #d8d8d8;
+  position: relative;
+}
+
+.rheostat-progress {
+  background-color: #abc4e8;
+  position: absolute;
+}
+
+.rheostat-handle {
+  background-color: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 30px;
+  height: 24px;
+  outline: none;
+  z-index: 2;
+  width: 24px;
+}
+
+.rheostat-handle:before,
+.rheostat-handle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #dadfe8;
+}
+
+.guest-no-input {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0px;
+  margin-left: 2%;
+}
+
+.room-type {
+  display: flex;
+
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+
+.room-label {
+  min-width: 35px;
+  width: 3%;
+  display: flex;
+  margin: 0px 20%;
+  white-space: nowrap;
+}
+
+.room-checkbox {
+  width: 50px;
+}
+
+.search-form {
+  margin: 0 auto;
+  width: 90%;
+
+}
+
+.date-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  padding: 0px 1%;
+  margin: 1% 0px;
+}
+
+.date-form {
+
+}
+
+.search-result-form-container {
+  background-color: black;
+}
+
+.search-result-index-item{
+  padding: 25px;
+  width: 45%;
+}
+
+.date-input {
+  width: 29%;
+  max-width: 160px;
+  margin: 5px;
+  padding: 7px 18px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin-left: 3%;
+}
+
+.date-btn {
+  width: 20%;
+  margin: 0px 3%;
+  padding: 7px 18px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: rgba(46, 244, 193, 0.64);
+  color: white;
+  border: 0px;
+}
+
+.search-spot-img {
+  width: 100%;
+  img{
+    max-width: 400px;
+    width: 100%;
+    max-height: 264px;
+    height: auto;
+  }
+}
+
+.search-result-outer-container {
+  display: flex;
+}
+
+
+.search-results-filter {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  height: 46vw;
+
+  overflow-y: scroll;
+}
+
+
+
+.search-spots-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  // position: fixed;
+  // right: 60vw;
+  // left: 0px;
+  // width: 60%;
+}
+
+.guest-number-container {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid lightgray;
+}
+
+.guest-number-label {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 15px 0px;
+  padding-left: 1%;
+  width: 100%;
+}
+
+.filter-btn {
+  width: 20%;
+  margin: 0px 0%;
+  padding: 7px 18px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: rgba(46, 244, 193, 0.64);
+  color: white;
+  border: 0px;
+}
+
+.price-range-label {
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 15px 0px;
+  padding-left: 1%;
+  width: 100%;
+}
+
+.property-type-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  padding: 28px 0px;
+  padding-left: 1%;
+  white-space: nowrap;
+}
+
+.curr-price {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+.curr-price-container {
+  display: flex;
+  width: 87%;
+
+  justify-content: space-between;
+}
