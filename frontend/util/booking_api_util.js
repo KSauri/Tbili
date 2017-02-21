@@ -6,11 +6,11 @@ export function createBooking(booking) {
   });
 }
 
-export function createReview(review) {
+export function createReview(booking) {
   return $.ajax ({
     method: "PATCH",
-    url: "api/bookings",
-    data: { review }
+    url: `api/bookings/${booking.id}`,
+    data: { booking }
   });
 }
 

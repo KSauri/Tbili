@@ -4,9 +4,11 @@ import { createNewBooking } from '../../../actions/booking_actions';
 
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     available_days: state.spot.available_days,
-    guest_limit: state.spot.guest_limit
+    guest_limit: state.spot.guest_limit,
+    errors: state.errors.booking
   };
 };
 

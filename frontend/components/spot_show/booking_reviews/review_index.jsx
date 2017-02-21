@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 
-class BookingForm extends Component {
+class ReviewIndex extends Component {
   constructor(props) {
     super(props);
   }
@@ -14,4 +14,4 @@ class BookingForm extends Component {
   }
 }
 
-export default withRouter(BookingForm);
+export default withRouter(ReviewIndex);

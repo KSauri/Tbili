@@ -67,11 +67,12 @@ export const selectFilteredSpotsFromState = (state) => {
   return spotsArray;
 };
 
-export const getAvailability({spot}) => {
+export const getAvailability = ({spot}) => {
   return ({
     available_days: spot.available_days
   });
 }
+
 
 
 

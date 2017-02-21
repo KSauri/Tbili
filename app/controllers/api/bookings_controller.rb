@@ -8,21 +8,26 @@ class Api::BookingsController < ApplicationController
   def create
     booking = Booking.new(booking_params)
     booking.guest_id = current_user.id
-    if booking.save
+    if booking.spot.owner_id = current_user.id
+      render json: { booking: ["You can't book your own place, nice try tho!"]}, status: 420
+    elsif booking.save
       @spot = Spot.find(booking.spot_id)
       render "api/spots/show"
-      # render "spots/"
-      # @bookings = Booking.all
-      # render :index
-
+      #TODO change to upcoming trips
     else
       render json: booking.errors, status: 422
     end
   end
 
   def update
+    debugger
     booking = Booking.find(params[:id])
-    # TODO finish for reviews
+    if booking.update(booking_params)
+      @spot = Spot.find(booking.spot_id)
+      render "api/spots/show"
+    else
+      render json: booking.errors, status: 422
+    end
   end
 
   def destroy
@@ -34,6 +39,12 @@ class Api::BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :spot_id, :guest_number)
+    params.require(:booking).permit(:start_date,
+      :end_date,
+      :spot_id,
+      :guest_number,
+      :spot_review,
+      :spot_review_star_count,
+      :availability_id)
   end
 end
