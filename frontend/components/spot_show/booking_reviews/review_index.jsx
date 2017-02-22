@@ -11,9 +11,10 @@ class ReviewIndex extends Component {
     let reviews = this.props.reviews.map((review, idx) => {
       return (<ReviewIndexItem key={ idx } review={ review }/>);
     });
+
     return (<div className="review-index flex-column">
-      <div className="flex-row">
-        <h1>SPOT NUMBER OF REVIEWS</h1>
+      <div className="review-index-header flex-row">
+        <h1 className="">{this.props.reviews.length} Reviews</h1>
         <img className="average-stars" />
       </div>
       <section>

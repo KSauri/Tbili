@@ -34,4 +34,5 @@ json.reviews_info @spot.bookings.includes(:guest) do |booking|
   json.guest_avatar booking.guest.avatar.url
   json.spot_review booking.spot_review
   json.spot_review_star_count booking.spot_review_star_count
+  json.end_date booking.end_date
 end
