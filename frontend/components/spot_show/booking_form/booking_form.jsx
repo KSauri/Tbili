@@ -31,39 +31,39 @@ class BookingForm extends Component {
 
   render() {
     return (<div className="booking-form flex-column">
-      <section className="flex-row">
+      <section className="price-header flex-row">
         <h3>${this.props.price}</h3>
         <h4>Per Night</h4>
       </section>
       <section className="flex-column">
-        <form className="booking-form">
-          <div className="flex-row">
-            <div className="flex-column">
+        <form className="booking-form-form">
+          <div className="two-dates flex-row">
+            <div className="date-col-form flex-column">
               <h4>Check In</h4>
-              <input type="date"
+              <input className="date-input-show" type="date"
                 value={this.state.start_date}
                 onChange={ this.update("start_date") } />
             </div>
             <div className="flex-column">
               <h4>Check Out</h4>
-              <input type="date"
+              <input className="date-input-show" type="date"
                 value={this.state.end_date}
                 onChange={ this.update("end_date") } />
             </div>
           </div>
-          <div className="flex-column">
+          <div className="guest-number-form flex-column">
             <h4>Guests</h4>
-            <input type="number"
+            <input className="date-input-show" type="number"
               value={this.state.guest_number}
               onChange={ this.update("guest_number") } />
           </div>
-          <section className="flex-column">
+          <section className="monies flex-column">
             <div className="flex-column">
               <h4>${this.props.price} x { this.getDays() || "0" }</h4>
               <h4>$ { this.props.price * this.getDays() }</h4>
             </div>
           </section>
-          <input type="submit" value="Request to Book" />
+          <input className="booking-submit" type="submit" value="Request to Book" />
         </form>
       </section>
     </div>);

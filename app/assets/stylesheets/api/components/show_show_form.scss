@@ -1,0 +1,77 @@
+.booking-form {
+  height: 450px;
+  max-width: 400px;
+  border: 1px solid gray;
+}
+
+.price-header {
+  background-color: gray;
+  justify-content: space-between;
+  padding: 8px 0px;
+  h3 {
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    padding: 12px;
+  }
+  h4 {
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    padding: 12px;
+  }
+}
+
+.guest-number-form {
+  width: 90%;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 10px;
+  .input {    
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+  }
+}
+
+.two-dates {
+  justify-content: space-around;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  .date-col-form {
+    width: 54%;
+  }
+  .input {
+    height: 40px;
+  }
+}
+
+.date-input-show {
+  height: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+}
+
+.monies {
+  justify-content: space-around;
+  width: 90%;
+  padding: 20px;
+  h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    padding: 8px 0px;
+  }
+}
+
+.booking-submit {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 15px;
+  font-family: 'Roboto', sans-sarif;
+  margin-left: 20px;
+  border-radius: 3px;
+  color: white;
+  border: 1px solid rgba(46, 244, 193, 0.77);
+  background-color: rgba(46, 244, 193, 0.64);
+}
