@@ -2,7 +2,6 @@ class Api::BookingsController < ApplicationController
   before_action :require_logged_in
 
   def curr_booking
-    debugger
     spot = Spot.find(params[:spot_id]);
     @booking = spot.most_recent_booking(current_user)
   end

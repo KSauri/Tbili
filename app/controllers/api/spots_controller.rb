@@ -35,12 +35,24 @@ class Api::SpotsController < ApplicationController
 
   def create
     debugger
+    @spot = current_user.spots.new(spot_params)
+    if @spot.save!
+      render :show
+    else
+      render json: @spot.errors, status: 420
+    end
   end
 
   private
 
   def spot_params
-    params.require(:spot).permit(:featured, :filters) #TODO add filters
+    params.require(:spot).permit(:featured, :filters, :image, :location,
+      :lng, :lat, :price, :description,
+      :guest_limit, :bed_number, :bathroom_number,
+      :property_type, :pets_allowed, :wireless_internet,
+      :kitchen, :family_friendly, :monthly_discount,
+      :weekly_discount, :cancellation_policy,
+      :minimum_stay, :name)
   end
 
 end

@@ -23,12 +23,12 @@ export const fetchSpot = (spotId) => (
 );
 
 export const createSpot = (spot) => {
-
   return $.ajax({
     url: "api/spots",
     method: "POST",
+    dataType: "json",
     contentType: false,
     processData: false,
-    data: { spot }
+    data: spot
   });
 };

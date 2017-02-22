@@ -27,7 +27,7 @@ class FormStepOne extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.submitForm(this.state);
+    this.props.submitStepOne(this.state);
   }
 
   updateRadio(field) {

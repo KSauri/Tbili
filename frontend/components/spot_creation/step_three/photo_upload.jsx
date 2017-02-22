@@ -12,10 +12,12 @@ class PhotoUpload extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit () {
-    let formData = new FormData();
-    formData.append("spot[image]", this.state.imageFile);
-    this.props.submitForm(this.state);
+  handleSubmit (e) {
+    e.preventDefault();
+    this.props.submitStepTwo(this.state.imageFile);
+    // let formData = new FormData();
+    // formData.append("spot[image]", this.state.imageFile);
+    // this.props.submitForm(formData);
   }
 
   updateFile (e) {
