@@ -1,8 +1,151 @@
 .map-show {
-    width: 850px;
+    width: 90%;
     height: 850px;
+    margin: 0 auto;
 }
 
+
 .spot-properties {
-  background: blue;
+  h4 {
+    padding: 3px;
+  }
+
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+  }
+
+  hgroup {
+    padding: 15px 0px;
+
+    width: 100%;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.general-spot-info {
+  border-bottom: 1px solid lightgray;
+  justify-content:flex-start;
+  .overview-info-sub {
+    width: 100%;
+  }
+}
+
+.overview-info {
+  justify-content: space-around;
+  div {
+    margin: 0 auto;
+    align-items: center;
+  }
+  i {
+    padding: 3px;
+    font-size: 50px;
+  }
+}
+
+.host-img-container {
+  padding: 20px;
+  align-items: center;
+  img {
+    width:  80px;
+    height: 80px;
+  }
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
+
+.review-index {
+  background: beige;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.spot-img-container {
+  width: 100%;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.about-listing {
+  padding: 20px 0px;
+  border-bottom: 1px solid lightgray;
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+  }
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  p {
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+  }
+}
+
+.the-space {
+  align-items: flex-start;
+  width: 90%;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  .property-element {
+    width: 33%;
+  }
+}
+
+.amenities {
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  .property-element {
+    width: 33%;
+  }
+  i {
+    font-size: 25px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+.prices {
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 90%;
+  padding: 20px;
+  .property-element {
+    width: 33%;
+  }
+}
+
+.no-display {
+  display: none;
+}
+
+.spot-info {
+  width: 70%;
+}
+
+.booking-form {
+  width: 30%;
+}
+
+.show-body {
+  display: flex;
+  width: 86%;
+  margin: 0 auto;
 }

@@ -5,6 +5,7 @@ export const RECEIVE_BOOKING = "RECEIVE_BOOKING";
 export const RECEIVE_BOOKINGS = "RECEIVE_BOOKINGS";
 export const RECEIVE_BOOKING_ERRORS = "RECEIVE_BOOKING_ERRORS";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
+export const RECEIVE_CURRENT_USER_BOOKING = "RECEIVE_CURRENT_USER_BOOKING";
 
 export const receiveBooking = (booking) => ({
   type: RECEIVE_BOOKING,
@@ -22,6 +23,18 @@ export function receiveBookingErrors(errors) {
     errors
   };
 }
+
+export function receiveCurrentUserBooking(booking) {
+  return {
+    type: RECEIVE_CURRENT_USER_BOOKING,
+    booking
+  };
+}
+
+export const fetchCurrentUserBooking = (spotId) => dispatch => {
+  return APIUtil.fetchCurrentUserBooking(spotId).then(booking =>
+    dispatch(receiveCurrentUserBooking(booking)));
+};
 
 export function receiveReviewErrors(errors) {
   return {

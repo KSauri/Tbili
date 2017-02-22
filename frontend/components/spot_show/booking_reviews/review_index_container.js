@@ -4,8 +4,9 @@ import { createNewReview } from '../../../actions/booking_actions';
 
 
 const mapStateToProps = (state) => {
+  let reviews = state.spot.reviews_info || [];
   return {
-    reviews: state.spot.reviews_info,
+    reviews: reviews
   };
 };
 

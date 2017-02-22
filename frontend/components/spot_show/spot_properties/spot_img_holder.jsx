@@ -9,6 +9,7 @@ class SpotImage extends Component {
   render() {
     return (<div className="spot-img-container">
       <div>
+        <img src={ this.props.img } />
       </div>
     </div>);
   }
@@ -16,4 +17,4 @@ class SpotImage extends Component {
 
 export default SpotImage;
 
-// <img src={ this.props.img } />
+//

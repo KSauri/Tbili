@@ -96,6 +96,7 @@ export const selectSpotProperties = ({spot}) => {
     price: spot.price,
     property_type: spot.property_type,
     weekly_discount: spot.weekly_discount,
-    wireless_internet: spot.wireless_internet
+    wireless_internet: spot.wireless_internet,
+    guest_limit: spot.guest_limit
   });
 };

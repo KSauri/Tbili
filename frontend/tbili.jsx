@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   window.store = store;
-  window.createBooking= booking_actions.createNewBooking;
+  window.currBooking = utils.fetchCurrentUserBooking;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 });

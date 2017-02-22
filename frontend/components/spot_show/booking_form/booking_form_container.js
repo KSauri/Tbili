@@ -4,10 +4,10 @@ import { createNewBooking } from '../../../actions/booking_actions';
 
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     available_days: state.spot.available_days,
     guest_limit: state.spot.guest_limit,
+    price: state.spot.price,
     errors: state.errors.booking
   };
 };

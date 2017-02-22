@@ -17,7 +17,7 @@ class SpotShow extends Component {
   render() {
     return (<div className="spot-show-container">
       <SpotImageContainer />
-      <div>
+      <div className="show-body">
         <SpotInfoHolder />
         <BookingFormContainer />
       </div>

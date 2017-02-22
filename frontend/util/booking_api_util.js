@@ -20,3 +20,11 @@ export function fetchBookings() {
     url: "api/bookings"
   });
 }
+
+export function fetchCurrentUserBooking(spotId) {
+  return $.ajax ({
+    method: "GET",
+    url: "api/bookings/curr_booking",
+    data: { spot_id: spotId }
+  });
+}

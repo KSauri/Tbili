@@ -62,6 +62,11 @@ class Spot < ActiveRecord::Base
     unbooked_days
   end
 
+  def most_recent_booking(user)
+    return false if user.nil?
+    self.bookings.where("guest_id = ?", user.id).order(:end_date).last || false
+  end
+
   def self.find_by_filters(bounds, start_date, end_date)
     if bounds
       southern_lat = bounds['southWest']['lat']

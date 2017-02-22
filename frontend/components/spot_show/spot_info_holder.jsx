@@ -7,7 +7,7 @@ class BookingReviewContainer extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="spot-info">
         <SpotPropertiesContainer />
         <BookingReviewHolder />
       </div>
