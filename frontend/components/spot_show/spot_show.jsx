@@ -14,6 +14,12 @@ class SpotShow extends Component {
     this.props.fetchSpot(this.props.router.params.spotId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.params.spotId !== nextProps.params.spotId) {
+      this.props.fetchSpot(nextProps.params.spotId);
+    }
+  }
+
   render() {
     return (<div className="spot-show-container">
       <SpotImageContainer />

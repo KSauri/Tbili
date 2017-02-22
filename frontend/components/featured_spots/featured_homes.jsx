@@ -36,7 +36,7 @@ export default class FeaturedHomes extends React.Component {
 
   moveRight() {
     return (e) => {
-      if (this.state.spotViewIdx < 7) {
+      if (this.state.spotViewIdx < 6) {
         this.setState({ spotViewIdx: (this.state.spotViewIdx + 1) });
       }
     };

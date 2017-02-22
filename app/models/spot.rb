@@ -13,7 +13,9 @@ class Spot < ActiveRecord::Base
   has_many :bookings
 
 
-  has_attached_file :image, default_url: "missing_image_house.png"
+  has_attached_file :image, default_url: "missing_image_house.png", styles: {
+    thumb: "351x235#"
+  }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 

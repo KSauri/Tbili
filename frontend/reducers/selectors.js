@@ -13,7 +13,7 @@ export const selectFeaturedHomes = (state) => {
   const ids = Object.keys(state.spots.spots);
   const spotsArray = [];
   ids.forEach((id) => {
-    if (state.spots.spots[id].property_type === "full home" && state.spots.spots[id].price < 150) {
+    if (state.spots.spots[id].property_type === "full home" && state.spots.spots[id].price < 215) {
       spotsArray.push(state.spots.spots[id]);
     }
   });
@@ -24,7 +24,7 @@ export const selectFeaturedFancyHomes = (state) => {
   const ids = Object.keys(state.spots.spots);
   const spotsArray = [];
   ids.forEach((id) => {
-    if (state.spots.spots[id].property_type === "full home" && state.spots.spots[id].price > 151) {
+    if (state.spots.spots[id].property_type === "full home" && state.spots.spots[id].price >= 215) {
       spotsArray.push(state.spots.spots[id]);
     }
   });

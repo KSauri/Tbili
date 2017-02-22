@@ -6,6 +6,8 @@ export const RECEIVE_SPOT_ERRORS = "RECEIVE_SPOT_ERRORS";
 export const CLEAR_SPOT_ERRORS = "CLEAR_SPOT_ERRORS";
 export const RECEIVE_SPOT = "RECEIVE_SPOT";
 export const RECEIVE_SPOT_SHOW_ERRORS = "RECEIVE_SPOT_SHOW_ERRORS";
+export const RECEIVE_SPOT_CREATE_ERRORS = "RECEIVE_SPOT_CREATE_ERRORS";
+export const CLEAR_SPOT_FORM_ERRORS = "CLEAR_SPOT_FORM_ERRORS";
 
 export function receiveSpots(spots) {
   return {
@@ -70,3 +72,45 @@ export const receiveBoundaries = (boundaries) => ({
     type: RECEIVE_BOUNDARIES,
     boundaries
   });
+
+
+export const createSpot = (spot) => dispatch => (
+  APIUtil.createSpot(spot).then(spot => dispatch(
+    receiveSpot(spot)),
+    err => dispatch(receiveSpotCreateErrors(err.responseJSON))
+  )
+);
+
+
+
+
+  // export const UPDATE_FORM = "UPDATE_FORM";
+
+export function receiveSpotCreateErrors(errors) {
+  return {
+    type: RECEIVE_SPOTS_CREATE_ERRORS,
+    errors
+  };
+}
+
+  // export const clearSpotFormErrors = () => ({
+  //   type: CLEAR_SPOT_FORM_ERRORS
+  // });
+
+// export const createSpot = (spot) => dispatch => (
+//   APIUtil.createSpot(spot).then(spot => dispatch(
+//     SpotActions.receiveSpot(spot)),
+//     err => dispatch(receiveSpotCreateErrors(err.responseJSON))
+//   )
+// );
+
+  // export const updateForm = (formParams) => ({
+  //   type: UPDATE_FORM,
+  //   formParams
+  // });
+  //
+  //
+  // export const receiveBookings = (bookings) => ({
+  //   type: RECEIVE_BOOKINGS,
+  //   bookings
+  // });

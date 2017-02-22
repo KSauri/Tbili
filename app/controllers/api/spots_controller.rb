@@ -30,10 +30,12 @@ class Api::SpotsController < ApplicationController
         Date.strptime(params[:filters][:end_date])
         )
     end
+
   end
 
-
-
+  def create
+    debugger
+  end
 
   private
 

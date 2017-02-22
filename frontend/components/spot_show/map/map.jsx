@@ -13,7 +13,7 @@ class SpotMap extends Component {
     let _mapOptions = {
       center: {lat: this.props.spot.lat || 41.9028,
         lng: this.props.spot.lng || 12.4964},
-      zoom: 13,
+      zoom: 17,
     };
     this.map = new google.maps.Map(this.mapNode, _mapOptions);
 
@@ -23,9 +23,37 @@ class SpotMap extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.spot !== nextProps.spot) {
-      let center = new google.maps.LatLng(nextProps.spot.lat, nextProps.spot.lng);
-      this.map.panTo(center);
+    // if (this.props.params.spotId !== nextProps.params.spotId) {
+    // }
+    if (this.props.spot.lat === undefined && nextProps.spot.lat !== undefined) {
+      this.spotCircle = new google.maps.Circle({
+        strokeColor: '#2EF4C1',
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: '#2EF4C1',
+        fillOpacity: 0.35,
+        map: this.map,
+        center: {lat: nextProps.spot.lat,
+          lng: nextProps.spot.lng},
+        radius: 10000
+      });
+    }
+    if (this.props.spot.lat !== nextProps.spot.lat || this.props.spot.lng !== nextProps.spot.lng) {
+        this.spotCircle.setMap(null);
+        this.spotCircle = new google.maps.Circle({
+          strokeColor: '#2EF4C1',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#2EF4C1',
+          fillOpacity: 0.35,
+          map: this.map,
+          center: {lat: nextProps.spot.lat,
+            lng: nextProps.spot.lng},
+          radius: 50
+        });
+        let center = new google.maps.LatLng(nextProps.spot.lat, nextProps.spot.lng);
+        this.map.setZoom(17);
+        this.map.panTo(center);
     }
   }
 
