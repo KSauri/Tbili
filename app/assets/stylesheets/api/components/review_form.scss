@@ -1,0 +1,53 @@
+.review-form {
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+  }
+  label {
+    margin: 0 auto;
+    margin: 5px;
+    color: rgb(69, 69, 69);
+  }
+  input[type='submit'] {
+    padding: 14px 4px;
+    width: 33%;
+    height: 28px;
+    border: 0px;
+    font-size: 18px;
+    padding-bottom: 34px;
+    margin: 15px;
+    background-color: rgba(46, 244, 193, 0.54)
+  }
+}
+
+input[type='submit']:hover {
+  box-shadow: 2px 1px 1px lightgray;
+}
+
+.star {
+  color: gold;
+  font-size: 27px;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.star-unselected {
+  color: lightgray;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.review-text {
+  height: 150px;
+  margin: 0 auto;
+  padding: 10px;
+  width: 90%;
+  border-radius: 3px;
+  border: 1px solid gray;
+}
+
+.review-body {
+  align-items: center;
+}

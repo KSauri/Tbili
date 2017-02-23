@@ -1,5 +1,5 @@
 import React from 'react';
-
+import moment from 'moment';
 
 export default class UpdateDates extends React.Component {
   constructor(props) {
@@ -25,12 +25,33 @@ export default class UpdateDates extends React.Component {
       return this.setState({ [field]: e.currentTarget.value });};
   }
 
+  today(){
+    Date.prototype.yyyymmdd = function() {
+      var mm = this.getMonth() + 1; // getMonth() is zero-based
+      var dd = this.getDate();
+
+    return [this.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+        ].join('-');
+    };
+
+    var date = new Date();
+    return date.yyyymmdd();
+    }
+
+  nextDay(date) {
+    let day = moment(date);
+    let next = day.add(1, 'days');
+    return next.format("YYYY-MM-DD");
+  }
+
   render() {
     return (
       <form className="date-form" onSubmit={ this.updateDates }>
         <label className="date-label">Dates
-          <input className="date-input" type="date" min={ new Date() } onChange={this.changeDate("start_date")}/>
-          <input className="date-input" type="date"  onChange={this.changeDate("end_date")}/>
+          <input className="date-input" type="date" min={ this.today() } onChange={this.changeDate("start_date")}/>
+          <input className="date-input" type="date"  min={ this.nextDay(this.state.start_date) } onChange={this.changeDate("end_date")}/>
           <input className="date-btn"  type="submit" value="Change Dates" />
         </label>
       </form>

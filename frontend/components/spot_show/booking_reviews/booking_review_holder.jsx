@@ -27,18 +27,21 @@ class BookingReviewContainer extends React.Component {
     return(
       <div>
         <ReviewIndexContainer />
-        { this.state.showForm ? <BookingReviewFormContainer /> : null }
+        <BookingReviewFormContainer />
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
+  debugger
   return {
     current_user: state.session.currentUser,
     booking: state.spot.current_user_last_booking
   };
 };
+
+const mapDispatchToProps
 
 export default withRouter(connect(mapStateToProps)(BookingReviewContainer));
 //

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import BookingForm from './booking_form';
 import { createNewBooking } from '../../../actions/booking_actions';
+import { showFormModal } from '../../../actions/session_actions';
 
 
 const mapStateToProps = (state) => {
@@ -10,12 +11,14 @@ const mapStateToProps = (state) => {
     available_days: state.spot.available_days,
     guest_limit: state.spot.guest_limit,
     price: state.spot.price,
-    errors: state.errors.booking || []
+    errors: state.errors.booking || [],
+    currentUser: state.session.currentUser
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  return { createNewBooking: booking => dispatch(createNewBooking(booking)) };
+  return { createNewBooking: booking => dispatch(createNewBooking(booking)),
+   showFormModal: (formType) => dispatch(showFormModal(formType))};
 };
 
 export default connect(

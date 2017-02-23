@@ -29,8 +29,11 @@ class BookingForm extends Component {
 
   submitBooking(e) {
     e.preventDefault();
-
-    this.props.createNewBooking(this.state);
+    if (this.props.currentUser === null) {
+      this.props.showFormModal("logIn");
+    } else {
+      this.props.createNewBooking(this.state);
+    }
   }
 
 

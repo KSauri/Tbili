@@ -5,6 +5,7 @@ import { createNewReview } from '../../../actions/booking_actions';
 
 const mapStateToProps = (state) => {
   return {
+    host: state.spot.host_f_name,
     errors: state.errors.reviews,
     booking: state.spot.current_user_last_booking
   };

@@ -327,7 +327,7 @@ Booking.destroy_all
     start_date: Date.new(2017,month+1,rand(1..3)),
     end_date: Date.new(2017,month+1,rand(4..6)),
     availability_id: availability.id,
-    spot_review: reviews[rand(0..reviews.length-1)])
+    spot_review: reviews[rand(0..(reviews.length-1))])
   end
 end
 

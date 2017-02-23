@@ -18,14 +18,19 @@ class NavBar extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      // debugger
+    }
     if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname === "/")
     {
+      debugger
       this.setState({ homePage: true }); }
     else if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname !== "/")
     {
       this.setState({ homePage: false }); }
     if (nextProps.currentUser) {
-      this.setState({ showForm: false });
+      this.props.closeFormModal();
+      // this.setState({ showForm: false }); NB change here
     }
 
   }
@@ -56,28 +61,32 @@ class NavBar extends Component {
   }
 
   switchForm(formType) {
-    return (e) => this.setState({
-      showForm: true,
-      formType
-    });
+    // return (e) => this.setState({
+    //   showForm: true,
+    //   formType
+    // }); NB changed here
+    return (e) => this.props.showFormModal(formType);
   }
   showLogIn() {
-    return (e) => this.setState({
-      showForm: true,
-      formType: "logIn"
-    });
+    // return (e) => this.setState({
+    //   showForm: true,
+    //   formType: "logIn"
+    // });
+    return (e) => this.props.showFormModal("logIn");
   }
   showSignUp() {
-    return (e) => this.setState({
-      showForm: true,
-      formType: "signUp"
-    });
+    // return (e) => this.setState({
+    //   showForm: true,
+    //   formType: "signUp"
+    // });
+    return (e) => this.props.showFormModal("signUp");
   }
   turnFormOff(e) {
       { if (e.target.className === "modal-screen") {
-        this.setState({
-          showForm: false
-        });
+        // this.setState({
+        //   showForm: false
+        // });
+        this.props.closeFormModal();
       }
     }
   }
@@ -96,7 +105,7 @@ class NavBar extends Component {
 
   loggedOut() {
     return(
-      <section className={ this.state.searchVisible ? "stuck" : "unstuck" }>
+      <section className={ this.state.homePage ? (this.state.searchVisible ? "stuck" : "unstuck") : "unstuck" }>
         <nav className="nav-logged-out" >
           <Link to="/">
             <img id="tbili-logo" className="not-home" src={window.fireplace} />
@@ -107,9 +116,9 @@ class NavBar extends Component {
           <button className="nav-btn" onClick={ this.showLogIn() }>Log In</button>
           <button className="nav-btn" onClick={ this.showSignUp() }>Sign Up</button>
         </nav>
-        { this.state.showForm ?
+        { this.props.showForm ?
           <div className="modal-screen" onClick={ this.turnFormOff }>
-            <FormModal onClick={ null } switchForm={ this.switchForm } formType={ this.state.formType } />
+            <FormModal onClick={ null } switchForm={ this.switchForm } formType={ this.props.formType } />
           </div>
           : null }
       </section>
@@ -118,7 +127,7 @@ class NavBar extends Component {
 
   userInfo(currentUser, logout) {
     return(
-      <div className={ this.state.searchVisible ? "stuck" : "unstuck" }>
+      <div className={ this.state.homePage ? (this.state.searchVisible ? "stuck" : "unstuck") : "unstuck" }>
         <hgroup className="nav-logged-in">
           <Link to="/">
             <img id="tbili-logo" className="not-home" src={window.fireplace} />
@@ -146,11 +155,3 @@ export default withRouter(NavBar);
 
 
 //
-
-
-//
-// if (nextProps.router.location.pathname !== "/"){
-//   window.removeEventListener("scroll", this.checkScroll);
-// } else if (nextProps.router.location.pathname === "/") {
-//   window.addEventListener("scroll", this.checkScroll);
-// }

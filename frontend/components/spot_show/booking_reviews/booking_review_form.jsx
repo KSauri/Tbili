@@ -6,11 +6,7 @@ class BookingReviewForm extends Component {
     super(props);
     this.state = {
       review: "",
-      star1: false,
-      star2: false,
-      star3: false,
-      star4: false,
-      star5: false
+      stars: 1
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateReview = this.updateReview.bind(this);
@@ -28,9 +24,9 @@ class BookingReviewForm extends Component {
 
 
 
-  update(field) {
+  updateStar(rating) {
     return e => {
-      return this.setState({ [field]: !this.state[field] });
+      return this.setState({ stars: rating });
     };
   }
 
@@ -40,33 +36,32 @@ class BookingReviewForm extends Component {
 
   render() {
     return (<div className="review-form">
-      <section className="flex-row">
+      <section className="flex-column">
         <h3>Leave a Review of your stay</h3>
-        <form onSubmit={ this.handleSubmit } className="flex-row">
-          <div className="flex-row">
-            <input type="radio"
-              checked={ this.state.star1 }
-              value={ this.state.star1 }
-              onChange={ this.update("star1") }/>
-            <input type="radio"
-              checked={ this.state.star2 }
-              value={ this.state.star2 }
-              onChange={ this.update("star2") }/>
-            <input type="radio"
-              checked={ this.state.star3 }
-              value={ this.state.star3 }
-              onChange={ this.update("star3") }/>
-            <input type="radio"
-              checked={ this.state.star4 }
-              value={ this.state.star4 }
-              onChange={ this.update("star4") }/>
-            <input type="radio"
-              checked={ this.state.star5 }
-              value={ this.state.star5 }
-              onChange={ this.update("star5") }/>
-          </div>
+        <form onSubmit={ this.handleSubmit } className="flex-column">
           <div className="flex-column">
-            <textarea value={ this.state.review } onChange={ this.updateReview }></textarea>
+            <input type="hidden" value={ this.state.stars } />
+            <div className="flex-row">
+              <i className={this.state.stars > 0 ? "fa fa-star star" : "fa fa-star star-unselected" }
+                onClick={this.updateStar(1) }
+                aria-hidden="true"></i>
+              <i className={this.state.stars > 1 ? "fa fa-star star" : "fa fa-star star-unselected" }
+                onClick={this.updateStar(2) }
+                aria-hidden="true"></i>
+              <i className={this.state.stars > 2 ? "fa fa-star star" : "fa fa-star star-unselected" }
+                onClick={this.updateStar(3) }
+                aria-hidden="true"></i>
+              <i className={this.state.stars > 3 ? "fa fa-star star" : "fa fa-star star-unselected" }
+                onClick={this.updateStar(4) }
+                aria-hidden="true"></i>
+              <i className={this.state.stars > 4 ? "fa fa-star star" : "fa fa-star star-unselected" }
+                onClick={this.updateStar(5) }
+                aria-hidden="true"></i>
+            </div>
+          </div>
+          <div className="flex-column review-body">
+            <label>Tell us about your time with { this.props.host }</label>
+            <textarea className="review-text" value={ this.state.review } onChange={ this.updateReview }></textarea>
             <input type="submit" value="Leave your review" />
           </div>
         </form>
@@ -76,3 +71,9 @@ class BookingReviewForm extends Component {
 }
 
 export default withRouter(BookingReviewForm);
+
+
+// <input type="radio"
+//   checked={ this.state.stars - 2 }
+//   value={ this.state.star3 }
+//   onChange={ this.updateRadio("star3") }/>

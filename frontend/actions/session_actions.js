@@ -3,6 +3,8 @@ import * as APIUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const SHOW_FORM = "SHOW_FORM";
+export const CLOSE_FORM = "CLOSE_FORM";
 
 export const signup = user => dispatch => (
   APIUtil.signup(user)
@@ -33,3 +35,16 @@ export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
 });
+
+export function showFormModal(formType) {
+  return {
+    type: SHOW_FORM,
+    formType
+  };
+}
+
+export function closeFormModal() {
+  return {
+    type: CLOSE_FORM
+  };
+}
