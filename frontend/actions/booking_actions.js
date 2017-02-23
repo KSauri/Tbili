@@ -6,6 +6,7 @@ export const RECEIVE_BOOKINGS = "RECEIVE_BOOKINGS";
 export const RECEIVE_BOOKING_ERRORS = "RECEIVE_BOOKING_ERRORS";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
 export const RECEIVE_CURRENT_USER_BOOKING = "RECEIVE_CURRENT_USER_BOOKING";
+export const SHOW_FORM = "SHOW_FORM";
 
 export const receiveBooking = (booking) => ({
   type: RECEIVE_BOOKING,
@@ -71,3 +72,10 @@ export const createNewReview = (review) => dispatch => {
 
 
 // dispatch(receiveSearchFilters(filters));
+
+export function showFormModal(formType) {
+  return {
+    type: SHOW_FORM,
+    formType
+  };
+}

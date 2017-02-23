@@ -34,7 +34,6 @@ class Api::SpotsController < ApplicationController
   end
 
   def create
-    debugger
     @spot = Spot.new
     @spot.owner_id = current_user.id
     @spot.location = spot_params[:location]

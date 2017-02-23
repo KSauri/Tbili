@@ -1,5 +1,5 @@
 .booking-form {
-  height: 450px;
+  height: 470px;
   max-width: 400px;
   border: 1px solid gray;
 }
@@ -36,6 +36,7 @@
 .two-dates {
   justify-content: space-around;
   width: 90%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 10px;
   .date-col-form {
@@ -74,4 +75,12 @@
   color: white;
   border: 1px solid rgba(46, 244, 193, 0.77);
   background-color: rgba(46, 244, 193, 0.64);
+}
+
+.booking-errors {
+  margin: 0 auto;
+  padding: 10px 0px;
+  li {
+    font-weight: 700;
+  }
 }

@@ -1,4 +1,5 @@
 json.extract! @spot,
+  :id,
   :name,
   :location,
   :lng,

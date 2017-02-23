@@ -13,14 +13,24 @@ class Api::BookingsController < ApplicationController
   def create
     booking = Booking.new(booking_params)
     booking.guest_id = current_user.id
-    if booking.spot.owner_id = current_user.id
+    if booking.spot.owner_id == current_user.id
       render json: { booking: ["You can't book your own place, nice try tho!"]}, status: 420
-    elsif booking.save
-      @spot = Spot.find(booking.spot_id)
-      render "api/spots/show"
-      #TODO change to upcoming trips
     else
-      render json: booking.errors, status: 422
+      if booking.spot_available?
+        booking.availability_id = booking.get_availability_id
+        if booking.save
+          @spot = Spot.find(booking.spot_id)
+          render "api/spots/show"
+          #TODO change to upcoming trips
+        else
+          render json: booking.errors, status: 422
+        end
+      else
+        render(
+        json: { booking: ["Spot unavailable for those dates"] },
+        status: 420
+        )
+      end
     end
   end
 

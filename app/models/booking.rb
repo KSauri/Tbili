@@ -1,6 +1,6 @@
 class Booking < ActiveRecord::Base
   validates :guest, :spot, :start_date, :end_date, presence: true
-  validate :spot_available
+
   # , :valid_start_and_end
 
   belongs_to :guest,
@@ -13,14 +13,25 @@ class Booking < ActiveRecord::Base
   #   spot = Spot.find(self.spot_id)
   # end
 
-  def spot_available
-    return unless self.start_date && self.end_date
+  def spot_available?
     spot_availability = self.spot.get_availability
-    unless ((start_date..end_date).to_a - spot_availability).empty?
-      errors[:spot] << "unavailable at selected dates"
-    end
+    ((self.start_date..self.end_date).to_a - spot_availability).empty?
   end
 
+  def get_availability_id
+    self
+      .spot
+      .availabilities
+      .where("start_date <= ? AND end_date >= ?",
+        self.start_date,
+        self.end_date).first.id
+  end
+
+  # return unless self.start_date && self.end_date
+  # spot_availability = self.spot.get_availability
+  # unless ((start_date..end_date).to_a - spot_availability).empty?
+  #   errors[:spot] << "unavailable at selected dates"
+  # end
   # def valid_start_and_end
   #   return unless self.start_date && self.end_date
   #   return if self.start_date < self.end_date

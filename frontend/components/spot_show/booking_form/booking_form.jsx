@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import moment from 'moment';
+import ErrorList from '../../auth_forms/error_list';
 
 class BookingForm extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       start_date: "",
       end_date: "",
       guest_number: 1
     };
+    this.submitBooking = this.submitBooking.bind(this);
   }
 
   update(field) {
@@ -16,6 +20,19 @@ class BookingForm extends Component {
       return this.setState({ [field]: e.currentTarget.value });
     };
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.spot_id === undefined && nextProps.spot_id !== undefined) {
+      this.setState({ spot_id: nextProps.spot_id })
+    }
+  }
+
+  submitBooking(e) {
+    e.preventDefault();
+
+    this.props.createNewBooking(this.state);
+  }
+
 
   getDays() {
     if (this.state.start_date === "" || this.state.end_date === "") {
@@ -29,6 +46,27 @@ class BookingForm extends Component {
     }
   }
 
+  today(){
+    Date.prototype.yyyymmdd = function() {
+      var mm = this.getMonth() + 1; // getMonth() is zero-based
+      var dd = this.getDate();
+
+    return [this.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+        ].join('-');
+    };
+
+    var date = new Date();
+    return date.yyyymmdd();
+    }
+
+  nextDay(date) {
+    let day = moment(date);
+    let next = day.add(1, 'days');
+    return next.format("YYYY-MM-DD");
+  }
+
   render() {
     return (<div className="booking-form flex-column">
       <section className="price-header flex-row">
@@ -36,17 +74,19 @@ class BookingForm extends Component {
         <h4>Per Night</h4>
       </section>
       <section className="flex-column">
-        <form className="booking-form-form">
+        <form onSubmit={this.submitBooking} className="booking-form-form">
           <div className="two-dates flex-row">
             <div className="date-col-form flex-column">
               <h4>Check In</h4>
               <input className="date-input-show" type="date"
                 value={this.state.start_date}
+                min={ this.today() }
                 onChange={ this.update("start_date") } />
             </div>
             <div className="flex-column">
               <h4>Check Out</h4>
               <input className="date-input-show" type="date"
+                min={ this.nextDay(this.state.start_date) }
                 value={this.state.end_date}
                 onChange={ this.update("end_date") } />
             </div>
@@ -54,6 +94,7 @@ class BookingForm extends Component {
           <div className="guest-number-form flex-column">
             <h4>Guests</h4>
             <input className="date-input-show" type="number"
+              min="1"
               value={this.state.guest_number}
               onChange={ this.update("guest_number") } />
           </div>
@@ -65,6 +106,9 @@ class BookingForm extends Component {
           </section>
           <input className="booking-submit" type="submit" value="Request to Book" />
         </form>
+        <div className="booking-errors">
+          <ErrorList  errors={this.props.errors.booking} />
+        </div>
       </section>
     </div>);
   }

@@ -230,7 +230,7 @@ images = [
 ]
 spots = []
 property_types = ["full home", "shared room", "private room"]
-30.times do |spot|
+40.times do |spot|
   address = Faker::Address.street_name
   bed_number = rand(2..7)
   spot = Spot.create!(owner_id: user_ids[rand(0..5)], name: address + names[rand(0..2)],
@@ -327,7 +327,7 @@ Booking.destroy_all
     start_date: Date.new(2017,month+1,rand(1..3)),
     end_date: Date.new(2017,month+1,rand(4..6)),
     availability_id: availability.id,
-    spot_review: reviews[rand(0..reviews.length)])
+    spot_review: reviews[rand(0..reviews.length-1)])
   end
 end
 
