@@ -39,7 +39,9 @@ class SpotMap extends Component {
       });
     }
     if (this.props.spot.lat !== nextProps.spot.lat || this.props.spot.lng !== nextProps.spot.lng) {
-        this.spotCircle.setMap(null);
+        if (this.spotCircle) {
+          this.spotCircle.setMap(null);
+        }
         this.spotCircle = new google.maps.Circle({
           strokeColor: '#2EF4C1',
           strokeOpacity: 0.8,

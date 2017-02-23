@@ -2,8 +2,6 @@ import { createSpot } from '../../actions/spot_actions';
 import { connect } from 'react-redux';
 import ParentForm from './parent_form';
 
-
-
 const mapStateToProps = (state) => {
   return {
     errors: state.errors.spot_create

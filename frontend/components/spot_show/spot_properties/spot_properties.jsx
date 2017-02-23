@@ -38,7 +38,7 @@ class SpotProperties extends Component {
       </div>
       <div className="about-listing">
         <h2>About this listing</h2>
-        <p>{ properties.description }</p>
+        <p className="spot-description-text">{ properties.description }</p>
         <div className="the-space flex-row">
           <h3 className="property-element">The space</h3>
           <div className="property-element flex-column">

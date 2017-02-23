@@ -1,5 +1,74 @@
+.step-three-unprogress {
+  height: 14px;
+  width: 2%;
+  background-color: rgb(236, 236, 236);
+}
+
+.step-three-progress {
+  height: 14px;
+  width: 98%;
+  background-color: rgba(46, 244, 193, 0.54);
+}
+
+
+
 .address-map {
   width: 60%;
   height: 850px;
   margin: 0 auto;
+}
+
+.address-form-container {
+  margin: 0 auto;
+  margin: 30px 0px;
+  display: flex;
+
+  button {
+    height: 50px;
+    width: 200px;
+    padding: 7px 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: rgba(46, 244, 193, 0.64);
+    color: white;
+    border: 0px;
+    margin-left: 30px;
+  }
+}
+
+.address-container {
+  width: 100%;
+  align-items: center;
+}
+
+.form-parent {
+  width: 100%;
+}
+
+.address-form {
+  height: 150px;
+  margin-right: 30px;
+  label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  input {
+    width: 250px;
+    height: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+  }
+  input[type='submit'] {
+    height: 40px;
+    width: 200px;
+    margin-top: 15px;
+    padding: 7px 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: rgba(46, 244, 193, 0.64);
+    color: white;
+    border: 0px;
+  }
 }

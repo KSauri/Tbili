@@ -19,9 +19,11 @@ class NavBar extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname === "/")
-    { this.setState({ homePage: true }); }
+    {
+      this.setState({ homePage: true }); }
     else if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname !== "/")
-    { this.setState({ homePage: false }); }
+    {
+      this.setState({ homePage: false }); }
     if (nextProps.currentUser) {
       this.setState({ showForm: false });
     }

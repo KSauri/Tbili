@@ -1,5 +1,5 @@
-import PhotoUploadContainer from './step_three/photo_upload_container';
-import Address from './step_two/address';
+import PhotoUploadContainer from './step_two/photo_upload_container';
+import Address from './step_three/address';
 import StepOne from './step_one/form_step_one';
 import React from 'react';
 import merge from 'lodash/merge';

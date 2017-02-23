@@ -37,15 +37,24 @@ class Address extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={ this.submitAddress }>
-          <label>Address: </label>
-          <input type="text" value={this.state.address}
-            onChange={ this.update() }/>
-        </form>
-        <button onClick={ this.updateBounds }>Check your address</button>
+    <div>      
+      <div className="flex-row progress-holder">
+        <div className="step-three-progress"></div>
+        <div className="step-three-unprogress"></div>
+      </div>
+      <div className= "address-container flex-column">
+        <div className="address-form-container">
+          <form className="address-form flex-column" onSubmit={ this.submitAddress }>
+            <label>Address: </label>
+            <input type="text" value={this.state.address}
+              onChange={ this.update() }/>
+            { this.state.currBounds.hasOwnProperty("lat") ? <input type="submit" value="Add your spot!"/>  : null }
+          </form>
+          <button onClick={ this.updateBounds }>Check your address</button>
+        </div>
         <AddressMap currBounds={ this.state.currBounds }/>
       </div>
+    </div>
     );
   }
 }

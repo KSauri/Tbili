@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory, withRouter } from 'react-router';
+
 
 const FeaturedSpotDetail = (props) => {
 
@@ -10,10 +11,12 @@ const FeaturedSpotDetail = (props) => {
       return "no-display";
     }
   };
-
+  
   return (
     <ul className={ shouldDisplay(props.currIdx, props.ownIdx) }>
-      <img className="spot-img" src={props.spot.image}/>
+      <Link to={`/spots/${props.spot.id}`}>
+        <img className="spot-img" src={props.spot.image}/>
+      </Link>
       <li>
         <h4 className="spot-price">${props.spot.price} </h4>
         <h4 className="spot-property">

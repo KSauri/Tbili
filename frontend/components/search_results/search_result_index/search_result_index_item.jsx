@@ -5,7 +5,9 @@ const SearchResultIndexItem = ({ spot }) => {
   return (
     <ul className="search-result-index-item">
       <div className="search-spot-img" >
-        <img  src={spot.image}/>
+        <Link to={`/spots/${spot.id}`}>
+          <img  src={spot.image}/>
+        </Link>
       </div>
       <li>
         <h4 className="spot-price">${spot.price} </h4>
