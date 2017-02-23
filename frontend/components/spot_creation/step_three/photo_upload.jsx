@@ -35,11 +35,22 @@ class PhotoUpload extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input type="file" onChange={this.updateFile} />
-        <img src={this.state.imageUrl} />
-        <input type="submit" value="Add your spot's pic!"/>
-      </form>
+      <div>
+        <div className="flex-row progress-holder">
+          <div className="step-two-progress"></div>
+          <div className="step-two-unprogress"></div>
+        </div>
+        <div className="photo-upload-container">
+          <label>Show travelers what your space looks like</label>
+          <form className="flex-row photo-upload-form" onSubmit={this.handleSubmit}>
+            <input type="file" onChange={this.updateFile} />
+            <input type="submit" value="Add your spot's pic!"/>
+          </form>
+        </div>
+        <div className="upload-img-container">
+          <img className="upload-img" src={this.state.imageUrl} />
+        </div>
+      </div>
     );
   }
 }
