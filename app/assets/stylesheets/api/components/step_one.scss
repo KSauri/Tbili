@@ -1,0 +1,118 @@
+.step-one-form-img-holder {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+.step-one-progress {
+  height: 14px;
+  width: 33.3%;
+  background-color: rgba(46, 244, 193, 0.54);
+}
+
+.step-one-unprogress {
+  height: 14px;
+  width: 66.6%;
+  background-color: rgb(236, 236, 236);
+}
+
+.progress-holder {
+  height: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.tbilisi-img {
+  opacity: 0.6;
+  margin-top: 30px;
+}
+
+.step-one-img {
+  width: 45%;
+  overflow: hidden;
+}
+
+.step-one-form {
+  width: 55%;
+  input {
+    width: 150px;
+    height: 30px;
+    padding: 5px 0px;
+  }
+  .new-spot-text {
+    width: 60%;
+  }
+  input[type='number'] {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+  }
+  label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    padding: 10px 0px;
+  }
+  select {
+    width: 150px;
+    height: 30px;
+  }
+
+  h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 40px;
+  }
+
+  input[type='submit'] {
+    width: 50%;
+    background-color: rgba(46, 244, 193, 0.54);
+    color: white;
+    margin: 0 auto;
+    border: 0px;
+  }
+
+      input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d0d2d0;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #80ff00;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+  }
+  textarea {
+    height: 100px;
+    width: 80%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
+
+.step-one-radio {
+  label {
+    width: 60%;
+  }
+  input {
+    width: 30%;
+
+  }
+}

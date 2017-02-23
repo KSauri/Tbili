@@ -35,7 +35,26 @@ class Api::SpotsController < ApplicationController
 
   def create
     debugger
-    @spot = current_user.spots.new(spot_params)
+    @spot = Spot.new
+    @spot.owner_id = current_user.id
+    @spot.location = spot_params[:location]
+    @spot.name = spot_params[:name]
+    @spot.lat = spot_params[:lat]
+    @spot.lng = spot_params[:lng]
+    @spot.price = spot_params[:price]
+    @spot.description = spot_params[:description]
+    @spot.guest_limit = spot_params[:guest_limit]
+    @spot.bed_number = spot_params[:bed_number]
+    @spot.bathroom_number = spot_params[:bathroom_number]
+    @spot.property_type = spot_params[:property_type]
+    @spot.pets_allowed = spot_params[:pets_allowed]
+    @spot.wireless_internet = spot_params[:wireless_internet]
+    @spot.kitchen = spot_params[:kitchen]
+    @spot.family_friendly = spot_params[:family_friendly]
+    @spot.monthly_discount = spot_params[:monthly_discount]
+    @spot.weekly_discount = spot_params[:weekly_discount]
+    @spot.minimum_stay = spot_params[:minimum_stay]
+    @spot.image = spot_params[:image]
     if @spot.save!
       render :show
     else

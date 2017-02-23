@@ -44,105 +44,126 @@ class FormStepOne extends Component {
 
   render() {
     return (
-    <div className="">
-      <h3>Tell us about your space</h3>
-      <form className="flex-column" onSubmit={ this.handleSubmit }>
-        <div className="flex-row">
-          <label>Name </label>
-          <input type="text"
-            value={ this.state.name }
-            onChange={ this.update("name") }/>
+    <div className="step-one">
+      <div className="flex-row progress-holder">
+        <div className="step-one-progress"></div>
+        <div className="step-one-unprogress"></div>
+      </div>
+      <div className="step-one-form-img-holder flex-row">
+        <div className="step-one-form">
+          <h3>Tell us about your space</h3>
+          <form className="flex-column" onSubmit={ this.handleSubmit }>
+            <div className="flex-column">
+              <label>Name </label>
+              <input className="new-spot-text" type="text"
+                value={ this.state.name }
+                onChange={ this.update("name") }/>
+            </div>
+            <div className="flex-column">
+              <label>Neighborhood </label>
+              <input className="new-spot-text" type="text"
+                value={ this.state.location }
+                onChange={ this.update("location") }/>
+            </div>
+            <div className="flex-column">
+              <label>Price  $</label>
+              <input type="number"
+                min="0"
+                value={ this.state.price }
+                onChange={ this.update("price") }/>
+            </div>
+            <div className="flex-column">
+              <label>Guest limit </label>
+              <input type="number"
+                min="0"
+                value={ this.state.guest_limit }
+                onChange={ this.update("guest_limit") }/>
+            </div>
+            <div className="flex-column">
+              <label>Number of beds </label>
+              <input type="number"
+                min="0"
+                value={ this.state.bed_number }
+                onChange={ this.update("bed_number") }/>
+            </div>
+            <div className="flex-column">
+              <label>Number of bathrooms </label>
+              <input type="number"
+                min="0"
+                value={ this.state.bathroom_number }
+                onChange={ this.update("bathroom_number") }/>
+            </div>
+            <div className="flex-column">
+              <label>Property type </label>
+              <select value={this.state.property_type} onChange={this.update("property_type")}>
+                <option value="full home">Full home</option>
+                <option value="private room">Private Room</option>
+                <option value="shared room">Shared room</option>
+              </select>
+            </div>
+            <div className="step-one-radio flex-row">
+              <label>Allow pets </label>
+              <input type="radio"
+                checked={ this.state.pets_allowed }
+                value={ this.state.pets_allowed }
+                onChange={ this.updateRadio("pets_allowed") }/>
+            </div>
+            <div className="step-one-radio flex-row">
+              <label>Wireless internet </label>
+              <input type="radio"
+                checked={ this.state.wireless_internet }
+                value={ this.state.wireless_internet }
+                onChange={ this.updateRadio("wireless_internet") }/>
+            </div>
+            <div className="step-one-radio flex-row">
+              <label>Kitchen access </label>
+              <input type="radio"
+                checked={ this.state.kitchen }
+                value={ this.state.kitchen }
+                onChange={ this.updateRadio("kitchen") }/>
+            </div>
+            <div className="step-one-radio flex-row">
+              <label>Family friendly </label>
+              <input type="radio"
+                checked={ this.state.family_friendly }
+                value={ this.state.family_friendly }
+                onChange={ this.updateRadio("family_friendly") }/>
+            </div>
+            <div className="flex-column">
+              <label>Monthly discount </label>
+              <input type="number"
+                min="0"
+                max="100"
+                value={ this.state.monthly_discount }
+                onChange={ this.update("monthly_discount") }/>
+            </div>
+            <div className="flex-column">
+              <label>Weekly discount </label>
+              <input type="number"
+                min="0"
+                max="100"
+                value={ this.state.weekly_discount }
+                onChange={ this.update("weekly_discount") }/>
+            </div>
+            <div className="flex-column">
+              <label>Minimum stay (number of nights) </label>
+              <input type="number"
+                min="0"
+                max="30"
+                value={ this.state.minimum_stay }
+                onChange={ this.update("minimum_stay") }/>
+            </div>
+            <div className="flex-column">
+              <label>Description of your place </label>
+              <textarea value={ this.state.description } onChange={ this.update("description") }></textarea>
+            </div>
+            <input type="submit" value="Submit Details!" />
+          </form>
         </div>
-        <div className="flex-row">
-          <label>Neighborhood </label>
-          <input type="text"
-            value={ this.state.location }
-            onChange={ this.update("location") }/>
+        <div className="step-one-img">
+          <img src={window.tbilisi} className="tbilisi-img" />
         </div>
-        <div className="flex-row">
-          <label>Price  $</label>
-          <input type="number"
-            value={ this.state.price }
-            onChange={ this.update("price") }/>
-        </div>
-        <div className="flex-row">
-          <label>Guest limit </label>
-          <input type="number"
-            value={ this.state.guest_limit }
-            onChange={ this.update("guest_limit") }/>
-        </div>
-        <div className="flex-row">
-          <label>Number of beds </label>
-          <input type="number"
-            value={ this.state.bed_number }
-            onChange={ this.update("bed_number") }/>
-        </div>
-        <div className="flex-row">
-          <label>Number of bathrooms </label>
-          <input type="number"
-            value={ this.state.bathroom_number }
-            onChange={ this.update("bathroom_number") }/>
-        </div>
-        <div className="flex-row">
-          <label>Property type </label>
-          <select value={this.state.property_type} onChange={this.update("property_type")}>
-            <option value="full home">Full home</option>
-            <option value="private room">Private Room</option>
-            <option value="shared room">Shared room</option>
-          </select>
-        </div>
-        <div className="flex-row">
-          <label>Allow pets </label>
-          <input type="radio"
-            checked={ this.state.pets_allowed }
-            value={ this.state.pets_allowed }
-            onChange={ this.updateRadio("pets_allowed") }/>
-        </div>
-        <div className="flex-row">
-          <label>Wireless internet </label>
-          <input type="radio"
-            checked={ this.state.wireless_internet }
-            value={ this.state.wireless_internet }
-            onChange={ this.updateRadio("wireless_internet") }/>
-        </div>
-        <div className="flex-row">
-          <label>Kitchen access </label>
-          <input type="radio"
-            checked={ this.state.kitchen }
-            value={ this.state.kitchen }
-            onChange={ this.updateRadio("kitchen") }/>
-        </div>
-        <div className="flex-row">
-          <label>Family friendly </label>
-          <input type="radio"
-            checked={ this.state.family_friendly }
-            value={ this.state.family_friendly }
-            onChange={ this.updateRadio("family_friendly") }/>
-        </div>
-        <div className="flex-row">
-          <label>Monthly discount </label>
-          <input type="number"
-            value={ this.state.monthly_discount }
-            onChange={ this.update("monthly_discount") }/>
-        </div>
-        <div className="flex-row">
-          <label>Weekly discount </label>
-          <input type="number"
-            value={ this.state.weekly_discount }
-            onChange={ this.update("weekly_discount") }/>
-        </div>
-        <div className="flex-row">
-          <label>Minimum stay </label>
-          <input type="number"
-            value={ this.state.minimum_stay }
-            onChange={ this.update("minimum_stay") }/>
-        </div>
-        <div className="flex-row">
-          <label>Description of your place </label>
-          <textarea value={ this.state.description } onChange={ this.update("description") }></textarea>
-        </div>
-        <input type="submit" value="Update Details!" />
-      </form>
+      </div>
     </div>);
   }
 }
