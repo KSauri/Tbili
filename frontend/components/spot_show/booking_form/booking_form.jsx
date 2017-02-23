@@ -86,7 +86,7 @@ class BookingForm extends Component {
                 min={ this.today() }
                 onChange={ this.update("start_date") } />
             </div>
-            <div className="flex-column">
+            <div className="date-col-form flex-column">
               <h4>Check Out</h4>
               <input className="date-input-show" type="date"
                 min={ this.nextDay(this.state.start_date) }

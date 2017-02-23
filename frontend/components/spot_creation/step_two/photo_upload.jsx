@@ -12,6 +12,18 @@ class PhotoUpload extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // preventSubmit(e) {
+  //   if (e.defaultPrevented
+  // }
+
+  componentDidMount() {
+    window.addEventListener("keydown", this.preventSubmit);
+  }
+
+  componentWillUnmount() {
+
+  }
+
   handleSubmit (e) {
     e.preventDefault();
     this.props.submitStepTwo(this.state.imageFile);

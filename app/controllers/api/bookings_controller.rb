@@ -1,8 +1,9 @@
 class Api::BookingsController < ApplicationController
-  before_action :require_logged_in
+  before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def curr_booking
-    spot = Spot.find(params[:spot_id]);
+
+    spot = Spot.find(params[:spot_id])
     @booking = spot.most_recent_booking(current_user)
   end
 
@@ -13,6 +14,7 @@ class Api::BookingsController < ApplicationController
   def create
     booking = Booking.new(booking_params)
     booking.guest_id = current_user.id
+
     if booking.spot.owner_id == current_user.id
       render json: { booking: ["You can't book your own place, nice try tho!"]}, status: 420
     else
@@ -35,8 +37,10 @@ class Api::BookingsController < ApplicationController
   end
 
   def update
-    booking = Booking.find(params[:id])
-    if booking.update(booking_params)
+    booking = Booking.find(booking_params[:booking_id])
+    if booking.update(spot_review: booking_params[:spot_review],
+      spot_review_star_count: booking_params[:spot_review_star_count])
+      
       @spot = Spot.find(booking.spot_id)
       render "api/spots/show"
     else
@@ -54,6 +58,7 @@ class Api::BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:start_date,
+      :booking_id,
       :end_date,
       :spot_id,
       :guest_number,

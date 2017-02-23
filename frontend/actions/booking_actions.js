@@ -34,7 +34,8 @@ export function receiveCurrentUserBooking(booking) {
 
 export const fetchCurrentUserBooking = (spotId) => dispatch => {
   return APIUtil.fetchCurrentUserBooking(spotId).then(booking =>
-    dispatch(receiveCurrentUserBooking(booking)));
+    dispatch(receiveCurrentUserBooking(booking))
+  );
 };
 
 export function receiveReviewErrors(errors) {

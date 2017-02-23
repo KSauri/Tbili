@@ -8,6 +8,7 @@ import BookingsReducer from './bookings_reducer';
 import BookingReducer from './booking_reducer';
 import SessionFormReducer from './session_form_reducer';
 
+
 const RootReducer = combineReducers({
   session: SessionReducer,
   spots: SpotReducer,
@@ -15,6 +16,7 @@ const RootReducer = combineReducers({
   spot: SpotShowReducer,
   errors: ErrorsReducer,
   bookings: BookingsReducer,
+  booking: BookingReducer,
   session_form: SessionFormReducer
 });
 

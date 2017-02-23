@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
   return {
     host: state.spot.host_f_name,
     errors: state.errors.reviews,
-    booking: state.spot.current_user_last_booking
+    booking: state.booking.current_user_last_booking
   };
 };
 

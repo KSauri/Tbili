@@ -23,7 +23,7 @@ class NavBar extends Component {
     }
     if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname === "/")
     {
-      debugger
+      
       this.setState({ homePage: true }); }
     else if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname !== "/")
     {

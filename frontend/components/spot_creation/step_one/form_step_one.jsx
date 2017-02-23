@@ -56,12 +56,14 @@ class FormStepOne extends Component {
             <div className="flex-column">
               <label>Name </label>
               <input className="new-spot-text" type="text"
+                required
                 value={ this.state.name }
                 onChange={ this.update("name") }/>
             </div>
             <div className="flex-column">
               <label>Neighborhood </label>
               <input className="new-spot-text" type="text"
+                required
                 value={ this.state.location }
                 onChange={ this.update("location") }/>
             </div>
@@ -69,6 +71,7 @@ class FormStepOne extends Component {
               <label>Price  $</label>
               <input type="number"
                 min="0"
+                max="800"
                 value={ this.state.price }
                 onChange={ this.update("price") }/>
             </div>
@@ -76,6 +79,7 @@ class FormStepOne extends Component {
               <label>Guest limit </label>
               <input type="number"
                 min="0"
+                max="16"
                 value={ this.state.guest_limit }
                 onChange={ this.update("guest_limit") }/>
             </div>
@@ -83,12 +87,14 @@ class FormStepOne extends Component {
               <label>Number of beds </label>
               <input type="number"
                 min="0"
+                max="20"
                 value={ this.state.bed_number }
                 onChange={ this.update("bed_number") }/>
             </div>
             <div className="flex-column">
               <label>Number of bathrooms </label>
               <input type="number"
+                max="30"
                 min="0"
                 value={ this.state.bathroom_number }
                 onChange={ this.update("bathroom_number") }/>
@@ -155,7 +161,7 @@ class FormStepOne extends Component {
             </div>
             <div className="flex-column">
               <label>Description of your place </label>
-              <textarea value={ this.state.description } onChange={ this.update("description") }></textarea>
+              <textarea required value={ this.state.description } onChange={ this.update("description") }></textarea>
             </div>
             <input type="submit" value="Submit Details!" />
           </form>

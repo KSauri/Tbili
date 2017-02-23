@@ -1,0 +1,1 @@
+json.current_user_last_booking @booking

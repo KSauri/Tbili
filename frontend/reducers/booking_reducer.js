@@ -4,7 +4,7 @@ const BookingReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER_BOOKING:
-      return action.bookings;
+      return action.booking;
     default:
       return state;
   }

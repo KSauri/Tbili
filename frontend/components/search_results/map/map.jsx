@@ -21,6 +21,11 @@ class SearchMap extends Component {
       zoom: 13,
     };
     this.map = new google.maps.Map(this.mapNode, _mapOptions);
+    if (this.props.bounds.southWest) {
+      let latLngBounds = new google.maps.LatLngBounds(new google.maps.LatLng({lat: this.props.bounds.southWest.lat, lng: this.props.bounds.southWest.lng }),
+      new google.maps.LatLng({lat: this.props.bounds.northEast.lat, lng: this.props.bounds.northEast.lng }));
+      this.map.fitBounds(latLngBounds);
+    }
     this.map.mapTypes.set('styled_map', styledMapType);
     this.map.setMapTypeId('styled_map');
     this.MarkerManager = new MarkerManager(this.map);
@@ -48,8 +53,11 @@ class SearchMap extends Component {
     if (this.props.bounds === "") {
       return;
     } else if (nextProps.bounds.address && this.props.bounds.address !== nextProps.bounds.address) {
-      let center = new google.maps.LatLng(nextProps.bounds.center_lat, nextProps.bounds.center_lng);
-      this.map.panTo(center);
+      // let center = new google.maps.LatLng(nextProps.bounds.center_lat, nextProps.bounds.center_lng);
+      // this.map.panTo(center);
+      let latLngBounds = new google.maps.LatLngBounds(new google.maps.LatLng({lat: nextProps.bounds.southWest.lat, lng: nextProps.bounds.southWest.lng }),
+        new google.maps.LatLng({lat: nextProps.bounds.northEast.lat, lng: nextProps.bounds.northEast.lng }));
+      this.map.fitBounds(latLngBounds);
     }
   }
 

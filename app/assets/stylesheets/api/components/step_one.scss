@@ -43,13 +43,16 @@
   input[type="text"]{
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    text-indent: 7px;
   }
   .new-spot-text {
     width: 60%;
   }
   input[type='number'] {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
   }
   label {
     font-family: 'Roboto', sans-serif;
@@ -59,6 +62,8 @@
   select {
     width: 150px;
     height: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
   }
 
   h3 {
@@ -70,7 +75,7 @@
 
   input[type='submit'] {
     width: 50%;
-    background-color: rgba(46, 244, 193, 0.54);
+    background-color: rgba(46, 244, 193, 0.80);
     color: white;
     margin: 0 auto;
     border: 0px;

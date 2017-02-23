@@ -78,7 +78,11 @@ class HomeSearchBar extends Component {
             <label className="home-search-input">
               <div className="flex-column">
                 Number of Guests
-                <input  value={this.state.guest_no}
+                <input
+                  type="number"
+                  min="1"
+                  max="20"
+                  value={this.state.guest_no}
                   placeholder="Number of guests"
                   onChange={this.changeInput("guest_no")}/>
               </div>

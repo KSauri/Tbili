@@ -1,5 +1,6 @@
 import BookingReviewFormContainer from './booking_review_container';
 import ReviewIndexContainer from './review_index_container';
+import { fetchCurrentUserBooking } from '../../../actions/booking_actions';
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
@@ -12,37 +13,45 @@ class BookingReviewContainer extends React.Component {
     };
   }
 
+
+  componentDidMount() {
+    this.props.fetchCurrentUserBooking(this.props.params.spotId);
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.current_user === null && this.props.current_user !== null) {
-      console.log("did this first thing");
-      console.log(nextProps.booking);
-      this.setState({ showForm: !!nextProps.booking });
+      this.props.fetchCurrentUserBooking();
     } else if (nextProps.current_user !== null && this.props.current_user === null)
-    { console.log("did the second thing");
-      console.log(nextProps.booking);
-      this.setState({ showForm: !!nextProps.booking }); }
+    {
+      this.props.fetchCurrentUserBooking(); }
   }
 
   render() {
+
     return(
       <div>
         <ReviewIndexContainer />
-        <BookingReviewFormContainer />
+        { this.props.booking.current_user_last_booking ? <BookingReviewFormContainer /> : null }
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     current_user: state.session.currentUser,
-    booking: state.spot.current_user_last_booking
+    booking: state.booking,
+    spotId: state.spot.id
   };
 };
 
-const mapDispatchToProps
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchCurrentUserBooking: (spotId) => dispatch(fetchCurrentUserBooking(spotId))
+  };
+};
 
-export default withRouter(connect(mapStateToProps)(BookingReviewContainer));
+export default withRouter(connect(mapStateToProps,
+  mapDispatchToProps)(BookingReviewContainer));
 //
 // <BookingReviewFormContainer />
