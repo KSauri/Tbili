@@ -19,7 +19,7 @@ const TripsShowDetail = (props) => {
     guestWord = null;
   }
   if (props.delete) {
-    deleteButton = <button onClick={ deleteThisBooking } >Cancel Booking</button>;
+    deleteButton = <button className="cancel-trip" onClick={ deleteThisBooking } >Cancel Booking</button>;
   } else {
     deleteButton = null;
   }

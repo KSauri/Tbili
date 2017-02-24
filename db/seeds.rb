@@ -533,8 +533,8 @@ Booking.destroy_all
   spots.each do |spot|
     availability = Availability.create!(spot_id: spot.id, start_date: Date.new(2017,month+1,1), end_date: Date.new(2017,month+1,28))
     Booking.create!(guest_id: user_ids.sample, spot_id: spot.id,
-    start_date: Date.new(2017,month+1,rand(1..3)),
-    end_date: Date.new(2017,month+1,rand(4..6)),
+    start_date: Date.new(2017, month+1,rand(1..3)),
+    end_date: Date.new(2017, month+1,rand(4..6)),
     availability_id: availability.id,
     spot_review: reviews.sample)
   end
