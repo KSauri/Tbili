@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/booking_api_util';
-import { createBooking, createReview } from './spot_actions';
+import { createBooking, createReview, receiveSpot } from './spot_actions';
 
 export const RECEIVE_BOOKING = "RECEIVE_BOOKING";
 export const RECEIVE_BOOKINGS = "RECEIVE_BOOKINGS";
@@ -53,8 +53,8 @@ export const fetchBookings = () => dispatch => {
 };
 
 export const createNewBooking = (booking) => dispatch => {
-  return APIUtil.createBooking(booking).then(booking => dispatch(
-    receiveBooking(booking)
+  return APIUtil.createBooking(booking).then(spot => dispatch(
+    receiveSpot(spot)
   ), err => dispatch(receiveBookingErrors(err.responseJSON)));
 };
 

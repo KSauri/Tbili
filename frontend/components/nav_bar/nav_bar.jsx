@@ -23,7 +23,7 @@ class NavBar extends Component {
     }
     if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname === "/")
     {
-      
+
       this.setState({ homePage: true }); }
     else if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname !== "/")
     {
@@ -113,6 +113,7 @@ class NavBar extends Component {
           <div className="search-bar">
             { (this.state.homePage) ? this.homeSearchBar() : this.searchBar() }
           </div>
+
           <button className="nav-btn" onClick={ this.showLogIn() }>Log In</button>
           <button className="nav-btn" onClick={ this.showSignUp() }>Sign Up</button>
         </nav>
@@ -135,6 +136,7 @@ class NavBar extends Component {
           <div className="search-bar">
             { (this.state.homePage) ? this.homeSearchBar() : this.searchBar() }
           </div>
+          <Link className="nav-btn" to="/create">List your spot!</Link>
           <button className="nav-btn" onClick={this.props.logout}>Log Out</button>
           <img className="user-img" src={currentUser.avatar_url} />
         </hgroup>

@@ -3,6 +3,7 @@ import Address from './step_three/address';
 import StepOne from './step_one/form_step_one';
 import React from 'react';
 import merge from 'lodash/merge';
+import { withRouter, hashHistory } from "react-router";
 
 class ParentForm extends React.Component {
   constructor(props) {
@@ -50,7 +51,9 @@ class ParentForm extends React.Component {
 
   submitForm(spot) {
     // TODO formate the submission
-    this.props.createSpot(spot);
+    this.props.createSpot(spot)
+      .then(spot => {
+        return this.props.router.push(`/spots/${spot.spot.id}`);});
   }
 
   render() {
@@ -84,7 +87,7 @@ class ParentForm extends React.Component {
   }
 }
 
-export default ParentForm;
+export default withRouter(ParentForm);
 
 //
 

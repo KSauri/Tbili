@@ -31,6 +31,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-decoration: none;
 }
 
 #tbili-logo {
@@ -41,6 +42,7 @@
   height: 40px;
   width: 40px;
   padding-left: 6%;
+  margin-right: 7px;
 }
 
 .home {
@@ -80,18 +82,24 @@
   height: 68px;
   background-color: white;
   border-bottom: 1px solid rgb(107, 107, 107);
+  a {
+    text-decoration: none;
+  }
 }
 
 .unstuck {
   width: 100%;
   height: 68px;
-
+  a {
+    text-decoration: none;
+  }
 }
 
 
 .nav-search-bar-container {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 .nav-search-bar {
@@ -99,4 +107,5 @@
   font-size: 18px;
   width: 250px;
   font-family: 'Roboto', sans-serif;
+  text-decoration: none;
 }

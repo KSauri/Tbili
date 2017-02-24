@@ -56,11 +56,11 @@ class PhotoUpload extends Component {
           <label>Show travelers what your space looks like</label>
           <form className="flex-row photo-upload-form" onSubmit={this.handleSubmit}>
             <input type="file" onChange={this.updateFile} />
-            <input type="submit" value="Add your spot's pic!"/>
+            { this.state.imageUrl ? <input type="submit" className="photo-upload-btn" value="Add your spot's pic!"/> : null }
           </form>
         </div>
         <div className="upload-img-container">
-          <img className="upload-img" src={this.state.imageUrl} />
+          { this.state.imageUrl ? <img className="upload-img" src={this.state.imageUrl} /> : null }
         </div>
       </div>
     );

@@ -7,9 +7,6 @@ class ReviewIndex extends Component {
     super(props);
   }
 
-  componentWillReceiveProps(nextProps) {
-    debugger
-  }
 
   render() {
     let reviews = this.props.reviews.map((review, idx) => {

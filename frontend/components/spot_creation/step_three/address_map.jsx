@@ -23,21 +23,7 @@ class AddressMap extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // if (this.props.params.spotId !== nextProps.params.spotId) {
-    // }
-    // if (this.props.spot.lat === undefined && nextProps.spot.lat !== undefined) {
-    //   this.spotCircle = new google.maps.Circle({
-    //     strokeColor: '#2EF4C1',
-    //     strokeOpacity: 0.8,
-    //     strokeWeight: 2,
-    //     fillColor: '#2EF4C1',
-    //     fillOpacity: 0.35,
-    //     map: this.map,
-    //     center: {lat: nextProps.spot.lat,
-    //       lng: nextProps.spot.lng},
-    //     radius: 10000
-    //   });
-    // }
+
     if (this.props.currBounds.lat !== nextProps.currBounds.lat || this.props.currBounds.lng !== nextProps.currBounds.lng) {
         if (this.spotCircle) {
           this.spotCircle.setMap(null);

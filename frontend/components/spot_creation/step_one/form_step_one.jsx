@@ -7,7 +7,7 @@ class FormStepOne extends Component {
     this.state = {
       name: "",
       location: "",
-      price: 0,
+      price: 1,
       description: "",
       guest_limit: 16,
       bed_number: 1,
@@ -70,7 +70,7 @@ class FormStepOne extends Component {
             <div className="flex-column">
               <label>Price  $</label>
               <input type="number"
-                min="0"
+                min="1"
                 max="800"
                 value={ this.state.price }
                 onChange={ this.update("price") }/>

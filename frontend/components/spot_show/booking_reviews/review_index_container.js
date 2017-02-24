@@ -5,7 +5,7 @@ import { createNewReview } from '../../../actions/booking_actions';
 
 const mapStateToProps = (state) => {
   let reviews = state.spot.reviews_info || [];
-  debugger
+  
   return {
     reviews: reviews
   };
