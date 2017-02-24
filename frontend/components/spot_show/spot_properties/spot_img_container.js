@@ -3,7 +3,9 @@ import SpotImage from './spot_img_holder';
 
 
 const mapStateToProps = (state) => {
-  return { img: state.spot.image };
+  debugger
+  return { img: state.spot.image,
+  loading: state.loading };
 };
 
 const mapDispatchToProps = dispatch => {

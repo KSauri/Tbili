@@ -246,6 +246,38 @@ property_types = ["full home", "shared room", "private room"]
   cancellation_policy: ["strict","moderate"].sample)
   spots.push(spot)
 end
+40.times do |spot|
+  address = Faker::Address.street_name
+  bed_number = rand(2..7)
+  spot = Spot.create!(owner_id: user_ids[rand(0..5)], name: address + names[rand(0..2)],
+  location: address,
+  lat: range(40.4773991, 40.9175771), lng: range(-74.25908989999, -73.70027209999), price: rand(80..400), description: descriptions[rand(0..8)],
+  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[spot]),
+  bed_number: bed_number,
+  bathroom_number: (bed_number - 1),
+  pets_allowed: [true, false].sample,
+  featured: true,
+  family_friendly: [true, false].sample,
+  kitchen: [true, false].sample,
+  cancellation_policy: ["strict","moderate"].sample)
+  spots.push(spot)
+end
+40.times do |spot|
+  address = Faker::Address.street_name
+  bed_number = rand(2..7)
+  spot = Spot.create!(owner_id: user_ids[rand(0..5)], name: address + names[rand(0..2)],
+  location: address,
+  lat: range(3.0336329, 3.2433789), lng: range(101.61545, 101.758529), price: rand(80..350), description: descriptions[rand(0..8)],
+  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[spot]),
+  bed_number: bed_number,
+  bathroom_number: (bed_number - 1),
+  pets_allowed: [true, false].sample,
+  featured: true,
+  family_friendly: [true, false].sample,
+  kitchen: [true, false].sample,
+  cancellation_policy: ["strict","moderate"].sample)
+  spots.push(spot)
+end
 
 
 
