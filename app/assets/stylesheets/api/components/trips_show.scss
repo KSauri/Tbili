@@ -1,6 +1,12 @@
 .trips-show-index {
   width: 85%;
   margin: 0 auto;
+
+  h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    margin: 18px;
+  }
 }
 
 .past-trips {
@@ -13,6 +19,27 @@
 
 .trips-show-detail {
   margin: 20px;
+  margin-bottom: 25px;
   height: 465px;
   border: 1px solid lightgray;
+
+  li {
+    margin: 0 auto;
+  }
+
+  h3 {
+    margin: 8px 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+  }
+
+  h4 {
+    margin: 5px 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+  }
+}
+
+.trip-show-date-divider {
+  height: 10px;
 }

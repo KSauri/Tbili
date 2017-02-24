@@ -14,6 +14,13 @@ export function createReview(booking) {
   });
 }
 
+export function deleteBooking(booking) {
+  return $.ajax ({
+    method: "DELETE",
+    url: `api/bookings/${booking.id}`
+  });
+}
+
 export function fetchBookings() {
   return $.ajax ({
     method: "GET",

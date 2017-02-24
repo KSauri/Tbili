@@ -41,7 +41,7 @@ class BookingReviewForm extends Component {
   render() {
     return (<div className="review-form">
       <section className="flex-column">
-        <h3>Leave a Review of your stay</h3>
+        <h3>Leave a review of your stay</h3>
         <form onSubmit={ this.handleSubmit } className="flex-column">
           <div className="flex-column">
             <input type="hidden" value={ this.state.spot_review_star_count } />

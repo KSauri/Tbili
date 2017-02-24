@@ -65,6 +65,13 @@ export const createNewReview = (review) => dispatch => {
 };
 
 
+export const deleteBooking = (booking) => dispatch => {
+  return APIUtil.deleteBooking(booking).then(bookings => dispatch(
+    receiveBookings(bookings)
+  ), err => dispatch(receiveBookingErrors(err.responseJSON)));
+};
+
+
 // export const fetchBoundaries = (address) => dispatch => {
 //   SearchUtil.fetchBoundaries(address).then(boundaries =>
 //     dispatch(receiveBoundaries(boundaries)));

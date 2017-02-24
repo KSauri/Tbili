@@ -8,7 +8,8 @@ class Api::BookingsController < ApplicationController
   end
 
   def index
-    @bookings = current_user.bookings
+
+    @bookings = current_user.bookings.includes(:spot, :host)
   end
 
   def create
@@ -40,7 +41,7 @@ class Api::BookingsController < ApplicationController
     booking = Booking.find(booking_params[:booking_id])
     if booking.update(spot_review: booking_params[:spot_review],
       spot_review_star_count: booking_params[:spot_review_star_count])
-      
+
       @spot = Spot.find(booking.spot_id)
       render "api/spots/show"
     else
@@ -50,7 +51,7 @@ class Api::BookingsController < ApplicationController
 
   def destroy
     Booking.find(params[:id]).destroy
-    @bookings = Booking.all
+    @bookings = current_user.bookings.includes(:spot, :host)
     render :index
   end
 

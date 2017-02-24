@@ -32,7 +32,8 @@ class BookingForm extends Component {
     if (this.props.currentUser === null) {
       this.props.showFormModal("logIn");
     } else {
-      this.props.createNewBooking(this.state);
+      this.props.createNewBooking(this.state)
+        .then(() => this.props.router.push("/trips"));
     }
   }
 

@@ -18,7 +18,8 @@ class TripsShow extends Component {
     });
     let upcomingBookings = this.props.upcomingBookings
       .map((booking, idx) => {
-        return (<TripsShowDetail key={ idx } booking={ booking }/>);
+        return (<TripsShowDetail key={ idx } booking={ booking }
+          delete={ this.props.deleteBooking }/>);
       });
 
     return (

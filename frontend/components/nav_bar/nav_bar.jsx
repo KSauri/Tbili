@@ -137,6 +137,7 @@ class NavBar extends Component {
             { (this.state.homePage) ? this.homeSearchBar() : this.searchBar() }
           </div>
           <Link className="nav-btn" to="/create">List your spot!</Link>
+          <Link className="nav-btn" to="/trips">Your trips</Link>
           <button className="nav-btn" onClick={this.props.logout}>Log Out</button>
           <img className="user-img" src={currentUser.avatar_url} />
         </hgroup>

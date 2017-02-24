@@ -8,6 +8,9 @@ class Booking < ActiveRecord::Base
     foreign_key: :guest_id
   belongs_to :spot
   belongs_to :availability
+  has_one :host,
+    through: :spot,
+    source: :owner
 
   # def spot_must_be_available()
   #   spot = Spot.find(self.spot_id)
