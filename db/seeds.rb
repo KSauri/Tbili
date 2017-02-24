@@ -6,6 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+user_avatars = [
+  "https://www.dropbox.com/s/ksgt6wavbji0qhs/ajax-728x410.jpg?dl=1",
+  "https://www.dropbox.com/s/8r76zb5nlnozh51/Cyrus.jpg?dl=1",
+  "https://www.dropbox.com/s/zrhp9tmuu72c5ad/luther.jpg?dl=1",
+  "https://www.dropbox.com/s/rpnh7q8mhyu7eze/mercy.PNG?dl=1",
+  "https://www.dropbox.com/s/rqe7eswm73ahjcf/rembrandt.jpg?dl=1",
+  "https://www.dropbox.com/s/oea9visi0gvsvqu/swan.jpg?dl=1"
+]
+
 User.destroy_all
 #
 guest = User.create!(email: "guest@fakemail.com", f_name: "Guest", password: "password",
@@ -13,26 +23,31 @@ guest = User.create!(email: "guest@fakemail.com", f_name: "Guest", password: "pa
   join_date: Date.today, location: "New York",
   description: "")
 
-owner1 = User.create!(email: "owner1@owner.com", f_name: "Malcolm", password: "password",
-  l_name: "Jamal Warner",
+owner1 = User.create!(email: "owner1@owner.com", f_name: "Ajax", password: "password",
+  l_name: "Winston",
   join_date: Date.today, location: "New York",
-  description: "")
-owner2 = User.create!(email: "owner2@owner.com", f_name: "Richard", password: "password",
+  description: "",
+  avatar: open(user_avatars[0]))
+owner2 = User.create!(email: "owner2@owner.com", f_name: "Cyrus", password: "password",
   l_name: "Holmes",
   join_date: Date.today, location: "Prague",
-  description: "")
-owner3 = User.create!(email: "owner3@owner.com", f_name: "Daniel", password: "password",
+  description: "",
+  avatar: open(user_avatars[1]))
+owner3 = User.create!(email: "owner3@owner.com", f_name: "Luther", password: "password",
   l_name: "Day Lewis",
   join_date: Date.today, location: "Sofia",
-  description: "")
-owner4 = User.create!(email: "owner4@owner.com", f_name: "Bryn", password: "password",
+  description: "",
+  avatar: open(user_avatars[2]))
+owner4 = User.create!(email: "owner4@owner.com", f_name: "Mercy", password: "password",
   l_name: "Mawr",
   join_date: Date.today, location: "Minsk",
-  description: "")
-owner5 = User.create!(email: "owner5@owner.com", f_name: "Sarah", password: "password",
+  description: "",
+  avatar: open(user_avatars[3]))
+owner5 = User.create!(email: "owner5@owner.com", f_name: "Swan", password: "password",
   l_name: "Lawrence",
   join_date: Date.today, location: "Austin",
-  description: "")
+  description: "",
+  avatar: open(user_avatars[5]))
 
 user_ids = [guest.id, owner1.id, owner2.id, owner3.id, owner4.id, owner5.id]
 
@@ -108,7 +123,26 @@ descriptions = ["Stephen, an elbow rested on the jagged granite, leaned his palm
 "A gruff squire on horseback with shiny topboots. Soft day, sir John! Soft day, your honour!... Day!... Day!... Two topboots jog dangling on to Dublin. Lal the ral the ra. Lal the ral the raddy.",
 "He went out by the open porch and down the gravel path under the trees, hearing the cries of voices and crack of sticks from the playfield. The lions couchant on the pillars as he passed out through the gate: toothless terrors. Still I will help him in his fight. Mulligan will dub me a new name: the bullockbefriending bard.",
 "He listened to her licking lap. Ham and eggs, no. No good eggs with this drouth. Want pure fresh water. Thursday: not a good day either for a mutton kidney at Buckley's. Fried with butter, a shake of pepper. Better a pork kidney at Dlugacz's. While the kettle is boiling. She lapped slower, then licking the saucer clean. ",
-"On the boil sure enough: a plume of steam from the spout. He scalded and rinsed out the teapot and put in four full spoons of tea, tilting the kettle then to let the water flow in. Having set it to draw he took off the kettle, crushed the pan flat on the live coals and watched the lump of butter slide and melt. While he unwrapped the kidney the cat mewed hungrily against him. Give her too much meat she won't mouse. Say they won't eat pork. Kosher. "]
+"On the boil sure enough: a plume of steam from the spout. He scalded and rinsed out the teapot and put in four full spoons of tea, tilting the kettle then to let the water flow in. Having set it to draw he took off the kettle, crushed the pan flat on the live coals and watched the lump of butter slide and melt. While he unwrapped the kidney the cat mewed hungrily against him. Give her too much meat she won't mouse. Say they won't eat pork. Kosher. ",
+"Seriously, Dedalus. I’m stony. Hurry out to your school kip and bring us back some money. Today the bards must drink and junket. Ireland expects that every man this day will do his duty.",
+"On the steps of the Paris stock exchange the goldskinned men quoting
+prices on their gemmed fingers. Gabble of geese. They swarmed loud,
+uncouth about the temple, their heads thickplotting under maladroit silk
+hats. Not theirs: these clothes, this speech, these gestures. Their full
+slow eyes belied the words, the gestures eager and unoffending, but
+knew the rancours massed about them and knew their zeal was vain.",
+"Wombed in sin darkness I was too, made not begotten. By them, the man
+with my voice and my eyes and a ghostwoman with ashes on her breath.
+They clasped and sundered, did the coupler’s will. From before the ages
+He willed me and now may not will me away or ever. A lex eterna stays
+about Him. Is that then the divine substance wherein Father and Son are
+consubstantial? Where is poor dear Arius to try conclusions? Warring
+his life long upon the contransmagnificandjewbangtantiality.",
+"Spurned lover. I was a strapping young gossoon at that time, I tell you.
+I’ll show you my likeness one day. I was, faith. Lover, for her love he
+prowled with colonel Richard Burke, tanist of his sept, under the walls
+of Clerkenwell and, crouching, saw a flame of vengeance hurl them upward
+in the fog. Shattered glass and toppling masonry."]
 
 names = [" Home", " Apartment", " Spot"]
 def range (min, max)
@@ -226,17 +260,64 @@ images = [
   "https://www.dropbox.com/s/q0d5e4prv8zz63j/tim-trad-196418.jpg?dl=1",
   "https://www.dropbox.com/s/3zo93mmjtki50fh/valor-kopeny-31409.jpg?dl=1",
   "https://www.dropbox.com/s/x7qbsz9r999jslp/vita-vilcina-3217.jpg?dl=1",
-  "https://www.dropbox.com/s/d7qsb8dsoq0xfag/worthy-of-elegance-13577.jpg?dl=1"
+  "https://www.dropbox.com/s/d7qsb8dsoq0xfag/worthy-of-elegance-13577.jpg?dl=1",
+  "https://www.dropbox.com/s/z1l6hr6hhsa7ff8/alisa-anton-182057%20%282%29.jpg?dl=1",
+  "https://www.dropbox.com/s/6j04xua8bw1jtk8/andrew-neel-141710.jpg?dl=1",
+  "https://www.dropbox.com/s/f0s1qkkam8z21ha/andrey-yachmenov-28847.jpg?dl=1",
+  "https://www.dropbox.com/s/ehedk2lbyhchqdv/annie-spratt-102808.jpg?dl=1",
+  "https://www.dropbox.com/s/vsgu0tj6kku69d7/anthony-delanoix-21053.jpg?dl=1",
+  "https://www.dropbox.com/s/ae9u1x1nqowi139/anthony-delanoix-34353.jpg?dl=1",
+  "https://www.dropbox.com/s/rnx5gmv380fx2oz/anthony-delanoix-43715.jpg?dl=1",
+  "https://www.dropbox.com/s/kqn04uvhpbrmi5e/anton-sulsky-111.jpg?dl=1",
+  "https://www.dropbox.com/s/mkmzwt5xxcqsm7h/breather-7171.jpg?dl=1",
+  "https://www.dropbox.com/s/cstft7pg0mmkzo5/breather-7177.jpg?dl=1",
+  "https://www.dropbox.com/s/63gh2wyr8vl6cdg/breather-7188.jpg?dl=1",
+  "https://www.dropbox.com/s/obk3d4n0vguskrz/breather-187924.jpg?dl=1",
+  "https://www.dropbox.com/s/tk2c48qibnre4w6/breather-187925.jpg?dl=1",
+  "https://www.dropbox.com/s/frdszub1z5pify0/breather-196126.jpg?dl=1",
+  "https://www.dropbox.com/s/iywh6il21rd8gkd/breather-196135.jpg?dl=1",
+  "https://www.dropbox.com/s/cityuvavk3frjb4/chris-lawton-33951.jpg?dl=1",
+  "https://www.dropbox.com/s/9uagtehy2kwil8p/christos-barbalis-86853.jpg?dl=1",
+  "https://www.dropbox.com/s/ur7nqrmij3emaqg/colin-maynard-138246.jpg?dl=1",
+  "https://www.dropbox.com/s/012djf963lzkcdn/daria-nepriakhina-107318.jpg?dl=1",
+  "https://www.dropbox.com/s/78b3g0e4l16tbsf/drew-coffman-100869.jpg?dl=1",
+  "https://www.dropbox.com/s/frgiqx25gs59nii/eduard-militaru-133851.jpg?dl=1",
+  "https://www.dropbox.com/s/bkhzl0m0vc2d630/ehud-neuhaus-108369.jpg.crdownload?dl=1",
+  "https://www.dropbox.com/s/hwww8n6yj69qqhf/epicurrence-64516.jpg?dl=1",
+  "https://www.dropbox.com/s/3d1c5o00kh8f2p1/gina-zee-97522.jpg?dl=1",
+  "https://www.dropbox.com/s/203o3zbuq09qgmd/henry-mcintosh-41462.jpg?dl=1",
+  "https://www.dropbox.com/s/qehmexa8j29gj26/jasper-boer-20743.jpg?dl=1",
+  "https://www.dropbox.com/s/tlnr9tdj0zksd8i/jens-kreuter-85328.jpg?dl=1",
+  "https://www.dropbox.com/s/hypqwmdtm4rypju/jim-digritz-2454.jpg?dl=1",
+  "https://www.dropbox.com/s/sqzdzt70ahcuoh2/jorgen-haland-130138.jpg?dl=1",
+  "https://www.dropbox.com/s/mpninr1ntxj2z8i/kris-atomic-39750.jpg?dl=1",
+  "https://www.dropbox.com/s/hv1pe29ovnhrx7r/liliane-limpens-66333.jpg?dl=1",
+  "https://www.dropbox.com/s/lz6cjtgkboesibj/luca-bravo-211360.jpg?dl=1",
+  "https://www.dropbox.com/s/urjvo3xjgl1ea18/margaret-barley-42.jpg?dl=1",
+  "https://www.dropbox.com/s/vmsvgfizwp4gmmo/maxime-amoudruz-99191.jpg?dl=1",
+  "https://www.dropbox.com/s/7156s43r0mml13i/peter-oswald-128886.jpg?dl=1",
+  "https://www.dropbox.com/s/gne29dil3082ivn/raining-huang-31298.jpg?dl=1",
+  "https://www.dropbox.com/s/136z2wog9awmhnk/rik-van-der-kroon-95384.jpg?dl=1",
+  "https://www.dropbox.com/s/lvpj1ou5tdoni2x/rob-bye-66755.jpg?dl=1",
+  "https://www.dropbox.com/s/xxjum7fm09e9c68/roman-mager-59779.jpg?dl=1",
+  "https://www.dropbox.com/s/hm5yac4ywpsxsm3/sabri-tuzcu-187162.jpg?dl=1",
+  "https://www.dropbox.com/s/8i5w7jcpuy5rvb6/samuel-sosina-3081.jpg?dl=1",
+  "https://www.dropbox.com/s/2x2l6ay5pfxhe0j/sophie-sollmann-140960.jpg?dl=1",
+  "https://www.dropbox.com/s/3zbod8oa8e1frv8/todd-diemer-113294.jpg?dl=1",
+  "https://www.dropbox.com/s/s6lvc61ri89pm00/tomasz-rynkiewicz-91040.jpg?dl=1",
+  "https://www.dropbox.com/s/na4anh1mxobn355/valentina-locatelli-130318.jpg?dl=1",
+  "https://www.dropbox.com/s/8w61ogu6j71bmmp/yoosun-won-23758.jpg?dl=1"
 ]
 spots = []
 property_types = ["full home", "shared room", "private room"]
-40.times do |spot|
+imagecount = 0
+25.times do |spot|
   address = Faker::Address.street_name
   bed_number = rand(2..7)
   spot = Spot.create!(owner_id: user_ids[rand(0..5)], name: address + names[rand(0..2)],
   location: address,
   lat: range(48.815573, 48.9021449), lng: range(2.224199, 2.4699208), price: rand(80..350), description: descriptions[rand(0..8)],
-  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[spot]),
+  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[imagecount]),
   bed_number: bed_number,
   bathroom_number: (bed_number - 1),
   pets_allowed: [true, false].sample,
@@ -245,14 +326,15 @@ property_types = ["full home", "shared room", "private room"]
   kitchen: [true, false].sample,
   cancellation_policy: ["strict","moderate"].sample)
   spots.push(spot)
+  imagecount += 1
 end
-40.times do |spot|
+25.times do |spot|
   address = Faker::Address.street_name
   bed_number = rand(2..7)
   spot = Spot.create!(owner_id: user_ids[rand(0..5)], name: address + names[rand(0..2)],
   location: address,
   lat: range(40.4773991, 40.9175771), lng: range(-74.25908989999, -73.70027209999), price: rand(80..400), description: descriptions[rand(0..8)],
-  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[spot]),
+  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[imagecount]),
   bed_number: bed_number,
   bathroom_number: (bed_number - 1),
   pets_allowed: [true, false].sample,
@@ -261,14 +343,15 @@ end
   kitchen: [true, false].sample,
   cancellation_policy: ["strict","moderate"].sample)
   spots.push(spot)
+  imagecount += 1
 end
-40.times do |spot|
+25.times do |spot|
   address = Faker::Address.street_name
   bed_number = rand(2..7)
   spot = Spot.create!(owner_id: user_ids[rand(0..5)], name: address + names[rand(0..2)],
   location: address,
   lat: range(3.0336329, 3.2433789), lng: range(101.61545, 101.758529), price: rand(80..350), description: descriptions[rand(0..8)],
-  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[spot]),
+  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[imagecount]),
   bed_number: bed_number,
   bathroom_number: (bed_number - 1),
   pets_allowed: [true, false].sample,
@@ -277,6 +360,58 @@ end
   kitchen: [true, false].sample,
   cancellation_policy: ["strict","moderate"].sample)
   spots.push(spot)
+  imagecount += 1
+end
+25.times do |spot|
+  address = Faker::Address.street_name
+  bed_number = rand(2..7)
+  spot = Spot.create!(owner_id: user_ids[rand(0..5)], name: address + names[rand(0..2)],
+  location: address,
+  lat: range(49.94193629999999, 50.177403), lng: range(14.7067945, 14.2244533), price: rand(80..350), description: descriptions[rand(0..8)],
+  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[imagecount]),
+  bed_number: bed_number,
+  bathroom_number: (bed_number - 1),
+  pets_allowed: [true, false].sample,
+  featured: true,
+  family_friendly: [true, false].sample,
+  kitchen: [true, false].sample,
+  cancellation_policy: ["strict","moderate"].sample)
+  spots.push(spot)
+  imagecount += 1
+end
+25.times do |spot|
+  address = Faker::Address.street_name
+  bed_number = rand(2..7)
+  spot = Spot.create!(owner_id: user_ids[rand(0..5)], name: address + names[rand(0..2)],
+  location: address,
+  lat: range(-34.3598061, -33.47127), lng: range(18.3074488, 19.00467), price: rand(80..350), description: descriptions[rand(0..8)],
+  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[imagecount]),
+  bed_number: bed_number,
+  bathroom_number: (bed_number - 1),
+  pets_allowed: [true, false].sample,
+  featured: true,
+  family_friendly: [true, false].sample,
+  kitchen: [true, false].sample,
+  cancellation_policy: ["strict","moderate"].sample)
+  spots.push(spot)
+  imagecount += 1
+end
+25.times do |spot|
+  address = Faker::Address.street_name
+  bed_number = rand(2..7)
+  spot = Spot.create!(owner_id: user_ids[rand(0..5)], name: address + names[rand(0..2)],
+  location: address,
+  lat: range(-24.0082209, -23.3566039), lng: range(-46.825514, -46.3650844), price: rand(80..350), description: descriptions[rand(0..8)],
+  guest_limit: (bed_number + 2), property_type: property_types[rand(0..2)], image: open(images[imagecount]),
+  bed_number: bed_number,
+  bathroom_number: (bed_number - 1),
+  pets_allowed: [true, false].sample,
+  featured: true,
+  family_friendly: [true, false].sample,
+  kitchen: [true, false].sample,
+  cancellation_policy: ["strict","moderate"].sample)
+  spots.push(spot)
+  imagecount += 1
 end
 
 
@@ -342,7 +477,49 @@ something in the picture's midst.", "The opposite wall of this entry was hung al
 array of monstrous clubs and spears. Some were thickly set with
 glittering teeth resembling ivory saws; others were tufted with knots of
 human hair; and one was sickle-shaped, with a vast handle sweeping round
-like the segment made in the new-mown grass by a long-armed mower."]
+like the segment made in the new-mown grass by a long-armed mower.",
+"He pays reg'lar,' was the rejoinder. 'But come, it's getting dreadful
+late, you had better be turning flukes--it's a nice bed; Sal and me
+slept in that ere bed the night we were spliced. There's plenty of room
+for two to kick about in that bed; it's an almighty big bed that. Why,
+afore we give it up, Sal used to put our Sam and little Johnny in the
+foot of it. ", "I sat down on the side of the bed, and commenced thinking about this
+head-peddling harpooneer, and his door mat. After thinking some time on
+the bed-side, I got up and took off my monkey jacket, and then stood in
+the middle of the room thinking. I then took off my coat, and thought
+a little more in my shirt sleeves. ", "Yes, it's just as I thought, he's a terrible
+bedfellow; he's been in a fight, got dreadfully cut, and here he is,
+just from the surgeon. But at that moment he chanced to turn his face
+so towards the light, that I plainly saw they could not be
+sticking-plasters at all, those black squares on his cheeks. They were
+stains of some sort or other. ", "But the interval I spent in deliberating what to say, was a fatal one.
+Taking up his tomahawk from the table, he examined the head of it for an
+instant, and then holding it to the light, with his mouth at the handle,
+he puffed out great clouds of tobacco smoke.", "I lay there dismally calculating that sixteen entire hours must elapse
+before I could hope for a resurrection. Sixteen hours in bed! the
+small of my back ached to think of it. And it was so light too; the
+sun shining in at the window, and a great rattling of coaches in the
+streets, and the sound of gay voices all over the house. I felt worse
+and worse--at last I got up, dressed, and softly going down in my
+stockinged feet, sought out my stepmother, and suddenly threw myself
+at her feet, beseeching her as a particular favour to give me a good
+slippering for my misbehaviour", "However, a good laugh is a mighty good thing, and rather too scarce a
+good thing; the more's the pity. So, if any one man, in his own
+proper person, afford stuff for a good joke to anybody, let him not be
+backward, but let him cheerfully allow himself to spend and be spent in
+that way.", "But think not that this famous town has only harpooneers, cannibals, and
+bumpkins to show her visitors. Not at all. Still New Bedford is a queer
+place. Had it not been for us whalemen, that tract of land would this
+day perhaps have been in as howling condition as the coast of Labrador.
+As it is, parts of her back country are enough to frighten one, they
+look so bony. ", "In what census of living creatures, the dead of mankind are included;
+why it is that a universal proverb says of them, that they tell no
+tales, though containing more secrets than the Goodwin Sands; how it is
+that to his name who yesterday departed for the other world, we prefix
+so significant and infidel a word, and yet do not thus entitle him, if
+he but embarks for the remotest Indies of this living earth; why the
+Life Insurance Companies pay death-forfeitures upon immortals"
+]
 
 
 
@@ -355,11 +532,11 @@ Booking.destroy_all
 11.times do |month|
   spots.each do |spot|
     availability = Availability.create!(spot_id: spot.id, start_date: Date.new(2017,month+1,1), end_date: Date.new(2017,month+1,28))
-    Booking.create!(guest_id: guest.id, spot_id: spot.id,
+    Booking.create!(guest_id: user_ids.sample, spot_id: spot.id,
     start_date: Date.new(2017,month+1,rand(1..3)),
     end_date: Date.new(2017,month+1,rand(4..6)),
     availability_id: availability.id,
-    spot_review: reviews[rand(0..(reviews.length-1))])
+    spot_review: reviews.sample)
   end
 end
 

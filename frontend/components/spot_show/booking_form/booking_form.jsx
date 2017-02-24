@@ -23,7 +23,7 @@ class BookingForm extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.spot_id === undefined && nextProps.spot_id !== undefined) {
-      this.setState({ spot_id: nextProps.spot_id })
+      this.setState({ spot_id: nextProps.spot_id });
     }
   }
 

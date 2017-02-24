@@ -7,22 +7,35 @@ class TripsShow extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchBookings();
+  }
+
   render() {
-    let reviews = this.props.bookings.map((booking, idx) => {
+    let pastBookings = this.props.pastBookings
+      .map((booking, idx) => {
       return (<TripsShowDetail key={ idx } booking={ booking }/>);
     });
+    let upcomingBookings = this.props.upcomingBookings
+      .map((booking, idx) => {
+        return (<TripsShowDetail key={ idx } booking={ booking }/>);
+      });
 
-    return (<div className="review-index flex-column">
-      <div className="review-index-header flex-row">
-        <h1 className="">{this.props.reviews.length} Reviews</h1>
-        <img className="average-stars" />
-      </div>
-      <section>
-        <ul className="flex-column">
-          { reviews }
-        </ul>
-      </section>
-    </div>);
+    return (
+      <div className="trips-show-index">
+        <div className="flex-column">
+          <h2>Upcoming Trips</h2>
+          <ul className="flex-row upcoming">
+            { upcomingBookings }
+          </ul>
+        </div>
+        <div className="flex-column">
+          <h2>Past Trips</h2>
+          <ul className="flex-row past-trips">
+            { pastBookings }
+          </ul>
+        </div>
+      </div>);
   }
 }
 

@@ -1,3 +1,4 @@
+import moment from 'moment';
 export const selectFeaturedNonHomes = (state) => {
   const ids = Object.keys(state.spots.spots);
   const spotsArray = [];
@@ -71,10 +72,37 @@ export const getAvailability = ({spot}) => {
   return ({
     available_days: spot.available_days
   });
-}
+};
 
 
+// nextDay(date) {
+//   let day = moment(date);
+//   let next = day.add(1, 'days');
+//   return next.format("YYYY-MM-DD");
+// }
 
+export const pastBookings = (state) => {
+  if (!(Array.isArray(state.bookings))) {
+    return [];
+  }
+  let bookings = state.bookings.filter(booking => {
+    let date = moment(booking.start_date);
+    let today = moment();
+    return date < today;
+  })
+  return bookings;
+};
+export const upcomingBookings = (state) => {
+  if (!(Array.isArray(state.bookings))) {
+    return [];
+  }
+  let bookings = state.bookings.filter(booking => {
+    let date = moment(booking.start_date);
+    let today = moment();
+    return date > today;
+  })
+  return bookings;
+};
 
 
 export const selectSpotProperties = ({spot}) => {
