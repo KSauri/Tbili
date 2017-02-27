@@ -23,7 +23,7 @@ hold a review of the guest and the spot, allowing for easy fetching of spot-rela
 information while adhering to normalized database principles.
 
 ![Image of Homescreen]
-('/Users/allannist/Documents/App_Academy/Tbili/app/assets/images/homepage.png')
+(https://www.dropbox.com/s/7fq3t27zyus41o6/Screen%20Shot%202017-02-27%20at%207.18.48%20AM.png?raw=1)
 
 ### Guarantees of Redux
 
