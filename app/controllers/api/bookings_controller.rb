@@ -15,7 +15,7 @@ class Api::BookingsController < ApplicationController
   def create
     booking = Booking.new(booking_params)
     booking.guest_id = current_user.id
-
+    debugger
     if booking.spot.owner_id == current_user.id
       render json: { booking: ["You can't book your own place, nice try tho!"]}, status: 420
     else

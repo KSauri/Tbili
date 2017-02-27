@@ -25,17 +25,3 @@ const SearchResultIndexItem = ({ spot }) => {
 
 
 export default SearchResultIndexItem;
-
-
-// const stars = [];
-
-// <li className="featured-spot-image">
-//   <Link to={ `/spots/${spot.id}` }><img src={spot.image_url} /></Link>
-// </li>
-
-
-// for (var i = 0; i < parseInt(spot.rating); i++) {
-//   stars.push(
-//     <img key={i} className="stars-featured" src={window.images.star}/>
-//   );
-// }

@@ -88,24 +88,3 @@ class ParentForm extends React.Component {
 }
 
 export default withRouter(ParentForm);
-
-//
-
-// name: "",
-// location: "",
-// price: 0,
-// description: "",
-// guest_limit: 16,
-// bed_number: 1,
-// bathroom_number: 1,
-// property_type: "full home",
-// pets_allowed: true,
-// wireless_internet: true,
-// kitchen: true,
-// family_friendly: true,
-// monthly_discount: 0,
-// weekly_discount: 0,
-// cancellation_policy: "strict",
-// minimum_stay: 1,
-// image: null,
-// bounds: {}

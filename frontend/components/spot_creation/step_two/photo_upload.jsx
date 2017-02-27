@@ -12,9 +12,6 @@ class PhotoUpload extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // preventSubmit(e) {
-  //   if (e.defaultPrevented
-  // }
 
   componentDidMount() {
     window.addEventListener("keydown", this.preventSubmit);

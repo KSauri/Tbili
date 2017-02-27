@@ -89,7 +89,7 @@ export const pastBookings = (state) => {
     let date = moment(booking.start_date);
     let today = moment();
     return date < today;
-  })
+  });
   return bookings;
 };
 export const upcomingBookings = (state) => {
@@ -100,7 +100,7 @@ export const upcomingBookings = (state) => {
     let date = moment(booking.start_date);
     let today = moment();
     return date > today;
-  })
+  });
   return bookings;
 };
 

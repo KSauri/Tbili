@@ -75,9 +75,6 @@ class SpotMap extends Component {
     }
   }
 
-  // componentDidUpdate() {
-  //   this.MarkerManager.updateMarkers(this.props.spots);
-  // }
 
 
   render() {

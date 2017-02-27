@@ -22,6 +22,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(BookingReviewForm);
-
-
-// reviews: state.spot.reviews_info,

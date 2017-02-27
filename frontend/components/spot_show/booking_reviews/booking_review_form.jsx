@@ -75,9 +75,3 @@ class BookingReviewForm extends Component {
 }
 
 export default withRouter(BookingReviewForm);
-
-
-// <input type="radio"
-//   checked={ this.state.spot_review_star_count - 2 }
-//   value={ this.state.star3 }
-//   onChange={ this.updateRadio("star3") }/>

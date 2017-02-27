@@ -33,7 +33,11 @@
     "rheostat": "^2.1.0",
     "webpack": "^2.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-react": "^6.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KSauri/Tbili.git"

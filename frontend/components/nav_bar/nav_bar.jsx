@@ -19,7 +19,6 @@ class NavBar extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
-      // debugger
     }
     if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname === "/")
     {
@@ -43,9 +42,7 @@ class NavBar extends Component {
     }
   }
 
-  componentWillUnmount() {
-    //TODO turn off the listener
-  }
+
 
   checkScroll(cb) {
     if(window.scrollY > 240) {
@@ -61,31 +58,16 @@ class NavBar extends Component {
   }
 
   switchForm(formType) {
-    // return (e) => this.setState({
-    //   showForm: true,
-    //   formType
-    // }); NB changed here
     return (e) => this.props.showFormModal(formType);
   }
   showLogIn() {
-    // return (e) => this.setState({
-    //   showForm: true,
-    //   formType: "logIn"
-    // });
     return (e) => this.props.showFormModal("logIn");
   }
   showSignUp() {
-    // return (e) => this.setState({
-    //   showForm: true,
-    //   formType: "signUp"
-    // });
     return (e) => this.props.showFormModal("signUp");
   }
   turnFormOff(e) {
       { if (e.target.className === "modal-screen") {
-        // this.setState({
-        //   showForm: false
-        // });
         this.props.closeFormModal();
       }
     }
@@ -155,6 +137,3 @@ class NavBar extends Component {
 }
 
 export default withRouter(NavBar);
-
-
-//

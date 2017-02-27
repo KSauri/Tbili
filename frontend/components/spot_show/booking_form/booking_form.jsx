@@ -10,8 +10,10 @@ class BookingForm extends Component {
     this.state = {
       start_date: "",
       end_date: "",
-      guest_number: 1
+      guest_number: 1,
+      spot_id: this.props.params.spotId
     };
+    debugger
     this.submitBooking = this.submitBooking.bind(this);
   }
 
@@ -21,11 +23,11 @@ class BookingForm extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.spot_id === undefined && nextProps.spot_id !== undefined) {
-      this.setState({ spot_id: nextProps.spot_id });
-    }
-  }
+  //componentWillReceiveProps(nextProps) {
+  //  if (this.props.spot_id === undefined && nextProps.spot_id !== undefined) {
+  //    this.setState({ spot_id: nextProps.spot_id });
+  //  }
+  //}
 
   submitBooking(e) {
     e.preventDefault();

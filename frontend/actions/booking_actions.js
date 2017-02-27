@@ -70,13 +70,3 @@ export const deleteBooking = (booking) => dispatch => {
     receiveBookings(bookings)
   ), err => dispatch(receiveBookingErrors(err.responseJSON)));
 };
-
-
-// export const fetchBoundaries = (address) => dispatch => {
-//   SearchUtil.fetchBoundaries(address).then(boundaries =>
-//     dispatch(receiveBoundaries(boundaries)));
-// };
-
-
-
-// dispatch(receiveSearchFilters(filters));

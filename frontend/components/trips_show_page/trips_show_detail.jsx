@@ -60,20 +60,3 @@ const TripsShowDetail = (props) => {
 
 
 export default TripsShowDetail;
-
-
-
-
-
-
-
-
-
-
-// const shouldDisplay = function(currIdx, ownIdx) {
-//   if (Math.abs(ownIdx - currIdx) < 2) {
-//     return "spot-detail";
-//   } else {
-//     return "no-display";
-//   }
-// };

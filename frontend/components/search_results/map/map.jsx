@@ -4,12 +4,6 @@ import { withRouter } from 'react-router';
 import styledMapType from './map_style';
 import MarkerManager from '../../../util/marker_manager';
 
-// const _getCoordsObj = latLng => ({
-//   lat: latLng.lat(),
-//   lng: latLng.lng()
-// });
-
-
 
 
 class SearchMap extends Component {
@@ -53,8 +47,6 @@ class SearchMap extends Component {
     if (this.props.bounds === "") {
       return;
     } else if (nextProps.bounds.address && this.props.bounds.address !== nextProps.bounds.address) {
-      // let center = new google.maps.LatLng(nextProps.bounds.center_lat, nextProps.bounds.center_lng);
-      // this.map.panTo(center);
       let latLngBounds = new google.maps.LatLngBounds(new google.maps.LatLng({lat: nextProps.bounds.southWest.lat, lng: nextProps.bounds.southWest.lng }),
         new google.maps.LatLng({lat: nextProps.bounds.northEast.lat, lng: nextProps.bounds.northEast.lng }));
       this.map.fitBounds(latLngBounds);
@@ -68,8 +60,3 @@ class SearchMap extends Component {
 }
 
 export default withRouter(SearchMap);
-
-//
-// if (this.props.bounds.viewport) {
-//   this.map.fitBounds(this.props.bounds.viewport);
-// }

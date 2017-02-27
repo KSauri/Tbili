@@ -30,14 +30,3 @@ export default class SearchResultIndex extends React.Component {
   }
 
 }
-
-
-
-
-// spots() {
-//   this.props.spots.map((spot) => {
-//     return (
-//       <SearchResultIndexItem key={spot.id} spot={spot}/>
-//     );
-//   });
-// }
