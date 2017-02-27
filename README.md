@@ -18,7 +18,7 @@ Tbili features a simple yet efficient schema design on the back end.
 All customers of Tbili are placed in the “Users” table, as every user can be a host,
 guest, or both.  Users can become hosts by listing their “Spot”, which holds
 information about the size and amenities of a listing.  Bookings is the critical
-link between every guest, host, and listed spot.  Each booking has the ability to
+link between every guest, host, and listed spot.  Each booking has the ability to 
 hold a review of the guest and the spot, allowing for easy fetching of spot-related
 information while adhering to normalized database principles.
 
