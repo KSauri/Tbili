@@ -48,7 +48,7 @@ A hand rolled destination carousel was created in order to emulate Airbnb’s
 ### Search, using Google Geocoder and Google Maps
 
 ![Image of Search Results]
-(https://www.dropbox.com/s/ur8yzw0g5pw8nuo/Screen%20Shot%202017-02-27%20at%207.19.45%20AM.png?dl=0)
+(https://www.dropbox.com/s/ur8yzw0g5pw8nuo/Screen%20Shot%202017-02-27%20at%207.19.45%20AM.png?raw=1)
 
 One of the most important features of Tbili is a search function that incorporates
  Google maps.  This functionality is achieved using “addresses” - streets, cities,
