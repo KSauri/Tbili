@@ -13,7 +13,7 @@ class BookingForm extends Component {
       guest_number: 1,
       spot_id: this.props.params.spotId
     };
-    debugger
+
     this.submitBooking = this.submitBooking.bind(this);
   }
 
@@ -34,9 +34,16 @@ class BookingForm extends Component {
     if (this.props.currentUser === null) {
       this.props.showFormModal("logIn");
     } else {
-      this.props.createNewBooking(this.state)
+      this.props.createNewBooking(this.state).
+        then(() => this.props.clearBookingErrors())
         .then(() => this.props.router.push("/trips"));
     }
+  }
+
+  componentWillUnmount() {
+    debugger
+    this.props.clearBookingErrors();
+    debugger
   }
 
 

@@ -6,7 +6,11 @@ export const RECEIVE_BOOKINGS = "RECEIVE_BOOKINGS";
 export const RECEIVE_BOOKING_ERRORS = "RECEIVE_BOOKING_ERRORS";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
 export const RECEIVE_CURRENT_USER_BOOKING = "RECEIVE_CURRENT_USER_BOOKING";
+export const CLEAR_BOOKING_ERRORS = "CLEAR_BOOKING_ERRORS";
 
+export const clearBookingErrors = () => ({
+  type: CLEAR_BOOKING_ERRORS
+});
 
 export const receiveBooking = (booking) => ({
   type: RECEIVE_BOOKING,

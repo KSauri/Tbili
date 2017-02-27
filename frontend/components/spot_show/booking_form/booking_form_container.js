@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BookingForm from './booking_form';
-import { createNewBooking } from '../../../actions/booking_actions';
+import { createNewBooking, clearBookingErrors } from '../../../actions/booking_actions';
 import { showFormModal } from '../../../actions/session_actions';
 
 
@@ -18,6 +18,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return { createNewBooking: booking => dispatch(createNewBooking(booking)),
+    clearBookingErrors: () => dispatch(clearBookingErrors()),
    showFormModal: (formType) => dispatch(showFormModal(formType))};
 };
 

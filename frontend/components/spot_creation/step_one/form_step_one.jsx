@@ -78,7 +78,7 @@ class FormStepOne extends Component {
             <div className="flex-column">
               <label>Guest limit </label>
               <input type="number"
-                min="0"
+                min="1"
                 max="16"
                 value={ this.state.guest_limit }
                 onChange={ this.update("guest_limit") }/>

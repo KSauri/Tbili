@@ -1,6 +1,7 @@
 import { RECEIVE_BOOKING_ERRORS,
   RECEIVE_REVIEW_ERRORS,
-  RECEIVE_SPOT_CREATE_ERRORS } from '../actions/booking_actions';
+  RECEIVE_SPOT_CREATE_ERRORS,
+  CLEAR_BOOKING_ERRORS } from '../actions/booking_actions';
 
 
 
@@ -9,6 +10,8 @@ const ErrorsReducer = (state = {}, action) => {
   switch(action.type) {
     case RECEIVE_BOOKING_ERRORS:
       return Object.assign({}, { booking: action.errors });
+    case CLEAR_BOOKING_ERRORS:
+      return Object.assign({}, state, {booking: [] });
     case RECEIVE_REVIEW_ERRORS:
       return Object.assign({}, { reviews: action.errors });
     case RECEIVE_SPOT_CREATE_ERRORS:
