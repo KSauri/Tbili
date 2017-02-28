@@ -37,7 +37,6 @@ export default class UpdateNondateFilters extends React.Component {
 
 
   handleCheckboxChange(field) {
-    // debugger
     return (e) => this.setState({ [field]: !this.state[field] });
   }
 

@@ -41,9 +41,7 @@ class BookingForm extends Component {
   }
 
   componentWillUnmount() {
-    debugger
     this.props.clearBookingErrors();
-    debugger
   }
 
 

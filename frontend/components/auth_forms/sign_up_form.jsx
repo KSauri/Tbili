@@ -23,7 +23,6 @@ class SignUpForm extends Component {
     this.props.clearErrors();      // Retrieve most recent errors
   }
   componentWillUnmount() {
-    // debugger
     this.props.clearErrors();
   }
 

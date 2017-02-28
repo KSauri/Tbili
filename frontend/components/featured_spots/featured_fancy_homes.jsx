@@ -37,7 +37,6 @@ export default class FeaturedFancyHomes extends React.Component {
   moveRight() {
     return (e) => {
       if (this.state.spotViewIdx < 4) {
-        console.log(this.state.spotViewIdx);
         this.setState({ spotViewIdx: (this.state.spotViewIdx + 1) });
       }
     };

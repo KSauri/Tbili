@@ -51,7 +51,6 @@ class AddressMap extends Component {
 
 
   render() {
-    // debugger
     return <div className="address-map" ref={ map => this.mapNode = map }>Map</div>;
   }
 }
