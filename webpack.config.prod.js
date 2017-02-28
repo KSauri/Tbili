@@ -1,12 +1,13 @@
 var webpack = require("webpack");
+var path = require("path");
 
 module.exports = {
   context: __dirname,
   entry: "./frontend/tbili.jsx",
   output: {
-    path: "./app/assets/javascripts",
-    filename: "bundle.js"
-  },
+     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+     filename: "bundle.js"
+   },
   plugins:[
     new webpack.DefinePlugin({
       'process.env':{
@@ -33,6 +34,6 @@ module.exports = {
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', ',jsx', '*']
+    extensions: ['.js', '.jsx', '*']
   }
 };
