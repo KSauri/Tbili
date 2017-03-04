@@ -11,12 +11,16 @@ class SpotShow extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchSpot(this.props.router.params.spotId);
+    this.props.fetchSpot(this.props.router.params.spotId)
+      .fail(() => {
+        return this.props.router.push(`/not_found`);});
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.params.spotId !== nextProps.params.spotId) {
-      this.props.fetchSpot(nextProps.params.spotId);
+      this.props.fetchSpot(nextProps.params.spotId)
+        .fail(() => {
+          return this.props.router.push(`/not_found`);});
     }
   }
 

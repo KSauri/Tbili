@@ -7,7 +7,9 @@ import SearchMap from './map';
 
 const mapStateToProps = (state, ownProps) => {
   return ({ bounds: state.filters.bounds,
-  spots: selectFilteredSpotsFromState(state)});
+  spots: selectFilteredSpotsFromState(state),
+  start_date: state.filters.start_date,
+  end_date: state.filters.end_date});
 };
 
 const mapDispatchToProps = dispatch => ({

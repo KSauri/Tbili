@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { withRouter } from 'react-router';
 import { fetchBoundaries, parseBoundaries } from "../../util/search_api_util";
 import { render } from 'react-dom';
+import moment from 'moment';
 import ErrorList from '../auth_forms/error_list';
 
 
@@ -10,8 +11,8 @@ class HomeSearchBar extends Component {
     super(props);
     this.state = {
       address: "",
-      start_date: "",
-      end_date: "",
+      start_date: this.today(),
+      end_date: this.nextDay(this.today()),
       guest_no: 1
     };
     this.submitForm = this.submitForm.bind(this);
@@ -49,6 +50,39 @@ class HomeSearchBar extends Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
+  getDays() {
+    if (this.state.start_date === "" || this.state.end_date === "") {
+      return null;
+    } else {
+      let one_day=1000*60*60*24;
+      let date1_ms = new Date(this.state.start_date).getTime();
+      let date2_ms = new Date(this.state.end_date).getTime();
+      let difference_ms = date2_ms - date1_ms;
+      return Math.round(difference_ms/one_day);
+    }
+  }
+
+  today(){
+    Date.prototype.yyyymmdd = function() {
+      var mm = this.getMonth() + 1; // getMonth() is zero-based
+      var dd = this.getDate();
+
+    return [this.getFullYear(),
+          (mm>9 ? '' : '0') + mm,
+          (dd>9 ? '' : '0') + dd
+        ].join('-');
+    };
+
+    var date = new Date();
+    return date.yyyymmdd();
+    }
+
+  nextDay(date) {
+    let day = moment(date);
+    let next = day.add(1, 'days');
+    return next.format("YYYY-MM-DD");
+  }
+
   render() {
     return (
       <div className="unfinished">
@@ -68,10 +102,14 @@ class HomeSearchBar extends Component {
                 <input
                   placeholder="Check in"
                   type="date"
+                  min={ this.today() }
+                  value={ this.state.start_date }
                   onChange={this.changeInput("start_date")}/>
                 <input
                   placeholder="Check out"
                   type="date"
+                  min={ this.nextDay(this.state.start_date) }
+                  value={ this.state.end_date }
                   onChange={this.changeInput("end_date")} />
               </div>
             </label>

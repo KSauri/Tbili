@@ -50,8 +50,16 @@ export default class UpdateDates extends React.Component {
     return (
       <form className="date-form" onSubmit={ this.updateDates }>
         <label className="date-label">Dates
-          <input className="date-input" type="date" min={ this.today() } onChange={this.changeDate("start_date")}/>
-          <input className="date-input" type="date"  min={ this.nextDay(this.state.start_date) } onChange={this.changeDate("end_date")}/>
+          <input className="date-input"
+            type="date"
+            min={ this.today() }
+            value={ this.state.start_date }
+            onChange={this.changeDate("start_date")}/>
+          <input className="date-input"
+            type="date"
+            value={ this.state.end_date }
+            min={ this.nextDay(this.state.start_date) }
+            onChange={this.changeDate("end_date")}/>
           <input className="date-btn"  type="submit" value="Change Dates" />
         </label>
       </form>

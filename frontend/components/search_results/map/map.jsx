@@ -7,7 +7,9 @@ import MarkerManager from '../../../util/marker_manager';
 
 
 class SearchMap extends Component {
-
+  constructor(props) {
+    super(props);
+  }
   componentDidMount() {
     let _mapOptions = {
       center: {lat: this.props.bounds.center_lat || 41.9028,
@@ -38,8 +40,8 @@ class SearchMap extends Component {
         northEast: { lat:north, lng: east },
         southWest: { lat: south, lng: west } };
       this.props.fetchSearchSpots({bounds: bounds,
-        start_date: "",
-        end_date: ""});
+        start_date: this.props.start_date,
+        end_date: this.props.end_date});
     });
   }
 
