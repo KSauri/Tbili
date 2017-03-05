@@ -26,6 +26,7 @@ class Spinner extends React.Component {
     formData.append("spot[minimum_stay]", this.props.newSpot.minimum_stay);
     formData.append("spot[lat]", this.props.newSpot.lat);
     formData.append("spot[lng]", this.props.newSpot.lng);
+    debugger
     this.props.submit(formData).then(spot => {
       return this.props.router.push(`/spots/${spot.spot.id}`);});
   }

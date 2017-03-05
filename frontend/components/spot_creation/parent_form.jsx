@@ -64,28 +64,28 @@ class ParentForm extends React.Component {
   }
 
   render() {
-    if (this.state.currentForm === 3) {
-      let formData = new FormData();
-      formData.append("spot[image]", this.state.newSpot.imageFile);
-      formData.append("spot[name]", this.state.newSpot.name);
-      formData.append("spot[location]", this.state.newSpot.location);
-      formData.append("spot[price]", this.state.newSpot.price);
-      formData.append("spot[description]", this.state.newSpot.description);
-      formData.append("spot[guest_limit]", this.state.newSpot.guest_limit);
-      formData.append("spot[bed_number]", this.state.newSpot.bed_number);
-      formData.append("spot[bathroom_number]", this.state.newSpot.bathroom_number);
-      formData.append("spot[property_type]", this.state.newSpot.property_type);
-      formData.append("spot[pets_allowed]", this.state.newSpot.pets_allowed);
-      formData.append("spot[wireless_internet]", this.state.newSpot.wireless_internet);
-      formData.append("spot[kitchen]", this.state.newSpot.kitchen);
-      formData.append("spot[family_friendly]", this.state.newSpot.family_friendly);
-      formData.append("spot[monthly_discount]", this.state.newSpot.monthly_discount);
-      formData.append("spot[weekly_discount]", this.state.newSpot.weekly_discount);
-      formData.append("spot[minimum_stay]", this.state.newSpot.minimum_stay);
-      formData.append("spot[lat]", this.state.newSpot.lat);
-      formData.append("spot[lng]", this.state.newSpot.lng);
-      // this.submitForm(formData);
-    }
+    // if (this.state.currentForm === 3) {
+    //   let formData = new FormData();
+    //   formData.append("spot[image]", this.state.newSpot.imageFile);
+    //   formData.append("spot[name]", this.state.newSpot.name);
+    //   formData.append("spot[location]", this.state.newSpot.location);
+    //   formData.append("spot[price]", this.state.newSpot.price);
+    //   formData.append("spot[description]", this.state.newSpot.description);
+    //   formData.append("spot[guest_limit]", this.state.newSpot.guest_limit);
+    //   formData.append("spot[bed_number]", this.state.newSpot.bed_number);
+    //   formData.append("spot[bathroom_number]", this.state.newSpot.bathroom_number);
+    //   formData.append("spot[property_type]", this.state.newSpot.property_type);
+    //   formData.append("spot[pets_allowed]", this.state.newSpot.pets_allowed);
+    //   formData.append("spot[wireless_internet]", this.state.newSpot.wireless_internet);
+    //   formData.append("spot[kitchen]", this.state.newSpot.kitchen);
+    //   formData.append("spot[family_friendly]", this.state.newSpot.family_friendly);
+    //   formData.append("spot[monthly_discount]", this.state.newSpot.monthly_discount);
+    //   formData.append("spot[weekly_discount]", this.state.newSpot.weekly_discount);
+    //   formData.append("spot[minimum_stay]", this.state.newSpot.minimum_stay);
+    //   formData.append("spot[lat]", this.state.newSpot.lat);
+    //   formData.append("spot[lng]", this.state.newSpot.lng);
+    //   // this.submitForm(formData);
+    // }
     return(
       <div className="form-parent">
         { this.formArray(this.state.currentForm) }

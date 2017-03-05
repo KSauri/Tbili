@@ -23,9 +23,6 @@ class Spot < ActiveRecord::Base
     Spot.where('featured = ?', true)
   end
 
-  # def self.find_featured_homes
-  #   Spot.where('featured = ? AND property_type = ?', true, "full home")
-  # end
 
   #TODO is_available?
   def self.get_available_spots(spots, start_date, end_date)
