@@ -1,6 +1,7 @@
 import PhotoUploadContainer from './step_two/photo_upload_container';
 import Address from './step_three/address';
 import StepOne from './step_one/form_step_one';
+import Spinner from './spinner/spinner';
 import React from 'react';
 import merge from 'lodash/merge';
 import { withRouter, hashHistory } from "react-router";
@@ -11,6 +12,7 @@ class ParentForm extends React.Component {
     this.state = {
       newSpot: {},
       formProps: null,
+      submitting: false,
       currentForm: 0
     };
     this.submitForm = this.submitForm.bind(this);
@@ -31,6 +33,7 @@ class ParentForm extends React.Component {
 
   }
 
+
   handleStepOne(form) {
     this.setState({ newSpot: merge(this.state.newSpot, form), currentForm: 1 });
   }
@@ -43,17 +46,21 @@ class ParentForm extends React.Component {
     this.setState({ newSpot: merge(this.state.newSpot, address), currentForm: 3 });
   }
 
+
   formArray(idx) {
     return [<StepOne submitStepOne={ this.handleStepOne } />,
-    <PhotoUploadContainer submitStepTwo={ this.handleStepTwo }/>,
-    <Address submitStepThree={ this.handleStepThree } />][idx];
+      <PhotoUploadContainer submitStepTwo={ this.handleStepTwo }/>,
+      <Address submitStepThree={ this.handleStepThree } />,
+      <Spinner newSpot={ this.state.newSpot }
+        submit={ this.props.createSpot } />][idx];
     }
 
   submitForm(spot) {
-    // TODO formate the submission
+    // TODO format the submission
     this.props.createSpot(spot)
       .then(spot => {
-        return this.props.router.push(`/spots/${spot.spot.id}`);});
+        return this.props.router.push(`/spots/${spot.spot.id}`);
+      });
   }
 
   render() {
@@ -77,7 +84,7 @@ class ParentForm extends React.Component {
       formData.append("spot[minimum_stay]", this.state.newSpot.minimum_stay);
       formData.append("spot[lat]", this.state.newSpot.lat);
       formData.append("spot[lng]", this.state.newSpot.lng);
-      this.submitForm(formData);
+      // this.submitForm(formData);
     }
     return(
       <div className="form-parent">
