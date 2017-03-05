@@ -18,11 +18,12 @@ class Api::SpotsController < ApplicationController
         "",
         ""
         )
-    elsif Date.strptime(params[:filters][:start_date]) < Date.today || Date.strptime(params[:filters][:end_date]) < Date.today
-      render(
-      json: { spot_errors: ["Sorry but we don't have a time machine!"] },
-      status: 401
-      )
+    # elsif Date.strptime(params[:filters][:start_date]) < Date.today || Date.strptime(params[:filters][:end_date]) < Date.today
+    #   debugger
+    #   render(
+    #   json: { spot_errors: ["Sorry but we don't have a time machine!"] },
+    #   status: 401
+    #   )
     else
       @spots = Spot.find_by_filters(
         params[:filters][:bounds],
