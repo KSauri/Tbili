@@ -11,7 +11,8 @@ class Address extends React.Component {
     this.updateBounds = this.updateBounds.bind(this);
   }
 
-  submitAddress() {
+  submitAddress(e) {
+    e.preventDefault();
     fetchBoundaries(this.state.address)
     .then(rawBounds => parseBoundaries(rawBounds))
     .then(parsedBounds => {
@@ -37,7 +38,7 @@ class Address extends React.Component {
 
   render() {
     return (
-    <div>      
+    <div>
       <div className="flex-row progress-holder">
         <div className="step-three-progress"></div>
         <div className="step-three-unprogress"></div>
