@@ -416,110 +416,30 @@ end
 
 
 
-# Spot.last.destroy
-# spot = Spot.create!(owner_id: owner5.id, name: Faker::Address.street_name + " Home", location: "New York",
-#   lat: 40.7128, lng: 74.0059, price: 330, description: Faker::Address.street_name + " home",
-#   guest_limit: 4, property_type: "private room", image: File.open("app/assets/images/coffee.png"), featured: true)
-
-
-reviews = ["Call me Ishmael. Some years ago--never mind how long precisely--having
-little or no money in my purse, and nothing particular to interest me on
-shore, I thought I would sail about a little and see the watery part of
-the world. It is a way I have of driving off the spleen and regulating
-the circulation.","But here is an artist. He desires to paint you the dreamiest, shadiest,
-quietest, most enchanting bit of romantic landscape in all the valley of
-the Saco. What is the chief element he employs? There stand his trees,
-each with a hollow trunk, as if a hermit and a crucifix were within; and
-here sleeps his meadow, and there sleep his cattle; and up from yonder
-cottage goes a sleepy smoke. Deep into distant woodlands winds a
-mazy way, reaching to overlapping spurs of mountains bathed in their
-hill-side blue.", "Now, when I say that I am in the habit of going to sea whenever I begin
-to grow hazy about the eyes, and begin to be over conscious of my lungs,
-I do not mean to have it inferred that I ever go to sea as a passenger.
-For to go as a passenger you must needs have a purse, and a purse is
-but a rag unless you have something in it.", "Do you think the archangel
-Gabriel thinks anything the less of me, because I promptly and
-respectfully obey that old hunks in that particular instance? Who ain't
-a slave? Tell me that.", "As most young candidates for the pains and penalties of whaling stop at
-this same New Bedford, thence to embark on their voyage, it may as well
-be related that I, for one, had no idea of so doing. For my mind was
-made up to sail in no other than a Nantucket craft, because there was a
-fine, boisterous something about everything connected with that famous
-old island, which amazingly pleased me.", "But no more of this blubbering now, we are going a-whaling, and there is
-plenty of that yet to come. Let us scrape the ice from our frosted feet,
-and see what sort of a place this 'Spouter' may be.", "But what most puzzled and confounded you was a long, limber, portentous,
-black mass of something hovering in the centre of the picture over three
-blue, dim, perpendicular lines floating in a nameless yeast. A boggy,
-soggy, squitchy picture truly, enough to drive a nervous man distracted.
-Yet was there a sort of indefinite, half-attained, unimaginable
-sublimity about it that fairly froze you to it, till you involuntarily
-took an oath with yourself to find out what that marvellous painting
-meant.", "In fact, the artist's design seemed this: a final theory of my own,
-partly based upon the aggregated opinions of many aged persons with whom
-I conversed upon the subject.", "Whenever I find myself growing grim about the mouth;
-whenever it is a damp, drizzly November in my soul; whenever I find
-myself involuntarily pausing before coffin warehouses, and bringing up
-the rear of every funeral I meet; and especially whenever my hypos get
-such an upper hand of me, that it requires a strong moral principle to
-prevent me from deliberately stepping into the street, and methodically
-knocking people's hats off--then, I account it high time to get to sea
-as soon as I can. This is my substitute for pistol and ball. With a
-philosophical flourish Cato throws himself upon his sword; I quietly
-take to the ship.", "Besides, passengers get
-sea-sick--grow quarrelsome--don't sleep of nights--do not enjoy
-themselves much, as a general thing;--no, I never go as a passenger;
-nor, though I am something of a salt, do I ever go to sea as a
-Commodore, or a Captain, or a Cook.", "What of it, if some old hunks of a sea-captain orders me to get a broom
-and sweep down the decks? What does that indignity amount to, weighed,
-I mean, in the scales of the New Testament?", "It's the breaking-up of the icebound stream
-of Time. But at last all these fancies yielded to that one portentous
-something in the picture's midst.", "The opposite wall of this entry was hung all over with a heathenish
-array of monstrous clubs and spears. Some were thickly set with
-glittering teeth resembling ivory saws; others were tufted with knots of
-human hair; and one was sickle-shaped, with a vast handle sweeping round
-like the segment made in the new-mown grass by a long-armed mower.",
-"He pays reg'lar,' was the rejoinder. 'But come, it's getting dreadful
-late, you had better be turning flukes--it's a nice bed; Sal and me
-slept in that ere bed the night we were spliced. There's plenty of room
-for two to kick about in that bed; it's an almighty big bed that. Why,
-afore we give it up, Sal used to put our Sam and little Johnny in the
-foot of it. ", "I sat down on the side of the bed, and commenced thinking about this
-head-peddling harpooneer, and his door mat. After thinking some time on
-the bed-side, I got up and took off my monkey jacket, and then stood in
-the middle of the room thinking. I then took off my coat, and thought
-a little more in my shirt sleeves. ", "Yes, it's just as I thought, he's a terrible
-bedfellow; he's been in a fight, got dreadfully cut, and here he is,
-just from the surgeon. But at that moment he chanced to turn his face
-so towards the light, that I plainly saw they could not be
-sticking-plasters at all, those black squares on his cheeks. They were
-stains of some sort or other. ", "But the interval I spent in deliberating what to say, was a fatal one.
-Taking up his tomahawk from the table, he examined the head of it for an
-instant, and then holding it to the light, with his mouth at the handle,
-he puffed out great clouds of tobacco smoke.", "I lay there dismally calculating that sixteen entire hours must elapse
-before I could hope for a resurrection. Sixteen hours in bed! the
-small of my back ached to think of it. And it was so light too; the
-sun shining in at the window, and a great rattling of coaches in the
-streets, and the sound of gay voices all over the house. I felt worse
-and worse--at last I got up, dressed, and softly going down in my
-stockinged feet, sought out my stepmother, and suddenly threw myself
-at her feet, beseeching her as a particular favour to give me a good
-slippering for my misbehaviour", "However, a good laugh is a mighty good thing, and rather too scarce a
-good thing; the more's the pity. So, if any one man, in his own
-proper person, afford stuff for a good joke to anybody, let him not be
-backward, but let him cheerfully allow himself to spend and be spent in
-that way.", "But think not that this famous town has only harpooneers, cannibals, and
-bumpkins to show her visitors. Not at all. Still New Bedford is a queer
-place. Had it not been for us whalemen, that tract of land would this
-day perhaps have been in as howling condition as the coast of Labrador.
-As it is, parts of her back country are enough to frighten one, they
-look so bony. ", "In what census of living creatures, the dead of mankind are included;
-why it is that a universal proverb says of them, that they tell no
-tales, though containing more secrets than the Goodwin Sands; how it is
-that to his name who yesterday departed for the other world, we prefix
-so significant and infidel a word, and yet do not thus entitle him, if
-he but embarks for the remotest Indies of this living earth; why the
-Life Insurance Companies pay death-forfeitures upon immortals"
-]
+reviews = ["Such a lovely place!  The balcony view was fantastic and our
+  host was so helpful!  A+ would definitely stay here again",
+  "Host did not respond to my calls, arrived at the airport late and
+  was overall very rude.  The apartment itself was as described and clean,
+  and the kitchen was well stocked.  The city itself is not very far, we
+  were able to find taxis usually and the cab drivers were helpful.",
+  "Love love love! This place was just what me and my family was looking for!
+  We arrived late at night but our host came to meet us at the bus terminal.
+  She even brought muffins! The place was very family-friendly, with easy
+  access to local amenities and a fun den for the kids.  Definitely recommend",
+  "Very nice.  Would stay again", "It ok.", "The place was somewhat small,
+  the pictures make it look bigger than it actually is.  It is a 30 minute
+  commute to the city center, which is fine I suppose.  The host needs to
+  keep the kitchen a bit cleaner, and stuff was kind of cluttered throughout
+  the apartment.  There are also some dogs nearby who make it hard to sleep.",
+  "DON'T STAY HERE! The host was 4 hours late and did not have a key for us!
+  It practically ruined my stay! The place also does not look the same as the picture -
+  the place in the picture is much nicer!", "The host was so nice and she
+  has a dog! It should probably mention it in the description but the dog is
+  super cute!","A casa foi muito legal! Tudo fico perfeito. A minha familia fico muito feliz neste lugar. Que linda!",
+  "saxli iqo dzan didi da supta. Samzareulo konda bevri sakvebi. Tu
+  tkven shegidzliat waikitxot es, ki, chemi kartuli es tsudi.",
+  "너무나도 깨끗해서 마음에 들었어요. 서비스도 너무 좋았습니다. 와이파이가 가끔 잘 안 잡히는건 있었어요. 전체적으로 너무 좋았고, 다시 꼭 오고 싶습니다",
+  ]
 
 
 
