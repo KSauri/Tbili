@@ -33,6 +33,12 @@
     color: white;
     border: 0px;
     margin-left: 30px;
+    margin-top: 35px;
+
+  }
+
+  button:hover {
+    box-shadow: 2px 1px 1px lightgrey;
   }
 }
 
@@ -71,4 +77,13 @@
     color: white;
     border: 0px;
   }
+}
+
+
+.spot-create-map-error {
+  height: 20px;
+}
+
+.address-check-btn {
+
 }

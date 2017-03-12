@@ -6,7 +6,8 @@ class Address extends React.Component {
   constructor(props) {
     super(props);
     this.state = { address: "",
-      currBounds: {} };
+      currBounds: {},
+      errors: "" };
     this.submitAddress = this.submitAddress.bind(this);
     this.updateBounds = this.updateBounds.bind(this);
   }
@@ -23,10 +24,24 @@ class Address extends React.Component {
 
   updateBounds() {
     fetchBoundaries(this.state.address)
-    .then(rawBounds => parseBoundaries(rawBounds))
+    .then(rawBounds =>
+      {
+        if (rawBounds.status !== "ZERO_RESULTS" &&
+          !!rawBounds.results[0].geometry.bounds) {
+            this.setState({ errors: "" });
+          return parseBoundaries(rawBounds); }
+          else {
+            this.setState({ errors: "Sorry, we could not find that address." });
+            return "FAIL";
+          }
+      })
     .then(parsedBounds => {
-      this.setState({ currBounds: { lat: parsedBounds.center_lat,
-        lng: parsedBounds.center_lng}});
+      if (parsedBounds === "FAIL") {
+        console.log("Google couldn't find that place.  What were you thinking?");
+      } else {
+        this.setState({ currBounds: { lat: parsedBounds.center_lat,
+          lng: parsedBounds.center_lng}});
+      }
     });
   }
 
@@ -51,8 +66,9 @@ class Address extends React.Component {
               onChange={ this.update() }/>
             { this.state.currBounds.hasOwnProperty("lat") ? <input type="submit" value="Add your spot!"/>  : null }
           </form>
-          <button onClick={ this.updateBounds }>Check your address</button>
+          <button className="address-check-btn" onClick={ this.updateBounds }>Check your address</button>
         </div>
+        <span className="spot-create-map-error">{ this.state.errors !== "" ? this.state.errors: null }</span>
         <AddressMap currBounds={ this.state.currBounds }/>
       </div>
     </div>
