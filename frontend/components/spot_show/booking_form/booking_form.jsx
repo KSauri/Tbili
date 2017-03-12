@@ -35,12 +35,13 @@ class BookingForm extends Component {
 
   checkHeight(cb) {
     if(window.scrollY > 770 && window.scrollY < (document.getElementById("spot-show").scrollHeight - 1260)) {
-      !this.state.formVisible && this.setState({ formVisible: true });
+      this.setState({ formVisible: true });
     } else if (window.scrollY > (document.getElementById("spot-show").scrollHeight - 1260)) {
-      this.state.formVisible && this.setState({ formVisible: false });
+      this.state.formVisible && this.setState({ formVisible: "atMap" });
     } else {
       this.state.formVisible && this.setState({ formVisible: false });
     }
+    console.log(window.scrollY);
   }
 
 
@@ -98,7 +99,8 @@ class BookingForm extends Component {
 
   render() {
 
-    return (<div className={ `booking-form flex-column ${this.state.formVisible ? "following" : ""}`} >
+    return (<div className={ `booking-form flex-column ${this.state.formVisible ? "following" : ""}`}
+        style={ this.state.formVisible === "atMap" ? { top: `${((document.getElementById("spot-show").scrollHeight) - 1260) - window.scrollY}px` } : {}} >
       <section className="price-header flex-row">
         <h3>${this.props.price}</h3>
         <h4>Per Night</h4>

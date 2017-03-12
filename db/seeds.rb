@@ -428,7 +428,8 @@ reviews = ["Such a lovely place!  The balcony view was fantastic and our
   "আমি এই পর্যন্ত ভ্রমন  এর কারণে বিভীন্ন বাসা ভাড়া করেছি, কিন্তু আতিথেয়তার দিক থেকে এটি ছিল আমার সব চাইতে সেরা অভিজ্ঞতা। সম্পূর্ণ বাসা পরিপূর্ণ ভাবে পরিষ্কার এবং গুছানো। বাসার মালিক সব সময় খেয়াল রাখছিলো আমাদের কোনো অসুবিধা হচ্ছে নাকি না। বাসার লোকেশন ও চমৎকার। সব মিলিয়ে ভ্রমণের জন্য এ শহরে এটিই  আমার মতে সেরা বাসা !",
   "这里的主人非常热情，房间非常干净，地理位置很方便，我极力推荐这个地方。",
   "GREAT place to stay! My business partners and I came into town for business and it couldn't have been easier. We were right next to the financial district. The highway was right there as well so we were able to shoot right over to the convention center.  I highly recommend!",
-  "The wall of this entry was hung all over with a heathenish array of monstrous clubs and spears.  Some were thickly set with glittering teeth resembling ivory saws; others were tufted with knots of human hair; and one was sickle-shaped, with a vast handle sweeping round like the segment made in the new-mown grass by a long-armed mower."
+  "The wall of this entry was hung all over with a heathenish array of monstrous clubs and spears.  Some were thickly set with glittering teeth resembling ivory saws; others were tufted with knots of human hair; and one was sickle-shaped, with a vast handle sweeping round like the segment made in the new-mown grass by a long-armed mower.",
+  "ห้องนอนสะอาดมากครับ โรงอยู่ใกล้กันกลางเหมืองและร้านอาหารอร่อยมากครับ"
   ]
 
 
