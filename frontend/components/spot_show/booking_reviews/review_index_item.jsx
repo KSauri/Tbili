@@ -9,11 +9,11 @@ const ReviewIndexItem = (props) => {
   let monthName = monthNames[month];
   return(
     <section className="review-index-item flex-row">
-      <div className="flex-column">
+      <div className="flex-column review-user">
         <i className="review-index-icon fa fa-user" aria-hidden="true"></i>
         <h4>{ props.review.guest_f_name }</h4>
       </div>
-      <div className="flex-column">
+      <div className="flex-column review-text-body">
         <p>{ props.review.spot_review }</p>
         <h5>{ monthName }</h5>
       </div>

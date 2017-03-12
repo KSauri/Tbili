@@ -11,7 +11,8 @@ const FeaturedSpotDetail = (props) => {
       return "no-display";
     }
   };
-  
+
+
   return (
     <ul className={ shouldDisplay(props.currIdx, props.ownIdx) }>
       <Link to={`/spots/${props.spot.id}`}>

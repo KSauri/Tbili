@@ -10,7 +10,9 @@ class ReviewIndex extends Component {
 
   render() {
     let reviews = this.props.reviews.map((review, idx) => {
-      return (<ReviewIndexItem key={ idx } review={ review }/>);
+      if (review.spot_review !== null) {
+        return (<ReviewIndexItem key={ idx } review={ review }/>);
+      }
     });
 
     return (<div className="review-index flex-column">

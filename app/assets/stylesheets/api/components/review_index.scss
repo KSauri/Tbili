@@ -15,7 +15,16 @@
   align-items: flex-start;
   width: 90%;
   padding: 20px;
+  border-bottom: 1px solid lightgray;
   div {
     padding: 10px;
   }
+}
+
+.review-user {
+  width: 11%;
+}
+
+.review-text-body {
+  width: 83%;
 }

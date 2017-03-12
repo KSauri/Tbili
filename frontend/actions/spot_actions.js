@@ -1,6 +1,6 @@
 import * as APIUtil from '../util/spot_api_util';
 import * as SearchUtil from '../util/search_api_util';
-import { loadSpot } from './spinner_actions';
+import { loadSpot, loadSpots } from './spinner_actions';
 export const RECEIVE_SPOTS = "RECEIVE_SPOTS";
 export const RECEIVE_BOUNDARIES = "RECEIVE_BOUNDARIES";
 export const RECEIVE_SPOT_ERRORS = "RECEIVE_SPOT_ERRORS";
@@ -42,12 +42,12 @@ export const clearSpotErrors = () => ({
   type: CLEAR_SPOT_ERRORS
 });
 
-export const fetchFeaturedSpots = () => dispatch => (
-  APIUtil.fetchFeaturedSpots().then(spots => dispatch(
+export const fetchFeaturedSpots = () => dispatch => {
+  dispatch(loadSpots());
+  return APIUtil.fetchFeaturedSpots().then(spots => dispatch(
     receiveSpots(spots)),
-    err => dispatch(receiveSpotErrors(err.responseJSON))
-  )
-);
+    err => dispatch(receiveSpotErrors(err.responseJSON)));
+  };
 
 
 export const fetchSpots = (filters) => dispatch => {

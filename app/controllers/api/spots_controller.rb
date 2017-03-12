@@ -6,7 +6,7 @@ class Api::SpotsController < ApplicationController
 
   def index
     if params[:featured]
-      @spots = Spot.find_by_featured
+      @spots = Spot.find_by_featured.take(50)
     elsif params[:filters][:start_date] == "" && params[:filters][:end_date] != ""
       render(
       json: { spot_errors: ["You need a start date!"] },

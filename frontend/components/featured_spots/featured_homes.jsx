@@ -21,7 +21,8 @@ export default class FeaturedHomes extends React.Component {
       <FeaturedSpotDetail key={spot.id}
         ownIdx={ idx }
         currIdx={ this.state.spotViewIdx }
-        spot={spot} />
+        spot={spot}
+        loading={this.props.loading}/>
       )
     );
   }

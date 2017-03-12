@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
   return({
   non_home_spots: selector.selectFeaturedNonHomes(state),
   home_spots: selector.selectFeaturedHomes(state),
-  fancy_home_spots: selector.selectFeaturedFancyHomes(state)
+  fancy_home_spots: selector.selectFeaturedFancyHomes(state),
+  loading: state.loading
   });
 };
 
