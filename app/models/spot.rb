@@ -14,7 +14,7 @@ class Spot < ActiveRecord::Base
 
 
   has_attached_file :image, default_url: "missing_image_house.png", styles: {
-    thumb: "351x235#"
+    thumb: "350x235#"
   }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 

@@ -41,7 +41,6 @@ class BookingForm extends Component {
     } else {
       this.state.formVisible && this.setState({ formVisible: false });
     }
-    console.log(window.scrollY);
   }
 
 
@@ -61,6 +60,7 @@ class BookingForm extends Component {
 
   componentWillUnmount() {
     this.props.clearBookingErrors();
+    window.removeEventListener("scroll", this.checkHeight);
   }
 
 
