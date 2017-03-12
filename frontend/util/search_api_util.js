@@ -30,19 +30,14 @@ export const parseBoundaries = (boundsObj) => {
 };
 
 //
-// $.ajax({
-//   method: "GET",
-//   url: `https://maps.googleapis.com/maps/api/geocode/json?address=seattle&key=AIzaSyChWynjm5jgi46S1tGogTe9oQh6GfN-KgY`
-// })
-
-//
-// submitForm() {
-//   fetchBoundaries(address).then(parseBoundaries).then(parsedBoundaries => this.props.submitForm(parsedBoundaries, this.state.guest_no, this.state.start_date))
-// }
-
-//
-// function sleep(ms) {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(resolve, 1000);
-//   })
+// address: "North America",
+// viewport: { northEast: { lat: 70, lng: -50 }, southWest: { lat: 5, lng: -170 }},
+// center_lat: 54.5259614,
+// center_lng: -105.2551187,
+// northEast:
+// { lat: 83.97025599999999,
+//   lng: -8.2617197 },
+// southWest:
+//   { lat: 5.496099999999999,
+//     lng: 170.5957}
 // }

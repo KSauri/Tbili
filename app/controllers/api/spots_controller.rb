@@ -18,7 +18,6 @@ class Api::SpotsController < ApplicationController
         "",
         ""
         )
-
     else
       @spots = Spot.find_by_filters(
         params[:filters][:bounds],
@@ -30,7 +29,7 @@ class Api::SpotsController < ApplicationController
   end
 
   def create
-    
+
     @spot = Spot.new
     @spot.owner_id = current_user.id
     @spot.location = spot_params[:location]
@@ -51,7 +50,7 @@ class Api::SpotsController < ApplicationController
     @spot.weekly_discount = spot_params[:weekly_discount]
     @spot.minimum_stay = spot_params[:minimum_stay]
     @spot.image = spot_params[:image]
-    
+
     if @spot.save!
       render :show
     else

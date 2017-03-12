@@ -11,9 +11,10 @@ class BookingForm extends Component {
       start_date: "",
       end_date: "",
       guest_number: 1,
-      spot_id: this.props.params.spotId
+      spot_id: this.props.params.spotId,
+      formVisible: false
     };
-
+    this.checkHeight = this.checkHeight.bind(this);
     this.submitBooking = this.submitBooking.bind(this);
   }
 
@@ -23,18 +24,35 @@ class BookingForm extends Component {
     };
   }
 
-  //componentWillReceiveProps(nextProps) {
-  //  if (this.props.spot_id === undefined && nextProps.spot_id !== undefined) {
-  //    this.setState({ spot_id: nextProps.spot_id });
-  //  }
-  //}
+  scrollListener() {
+    window.addEventListener("scroll", this.checkHeight);
+  }
+
+  componentDidMount() {
+    this.scrollListener();
+  }
+
+
+  checkHeight(cb) {
+    if(window.scrollY > 770 && window.scrollY < (document.getElementById("spot-show").scrollHeight - 1260)) {
+      !this.state.formVisible && this.setState({ formVisible: true });
+    } else if (window.scrollY > (document.getElementById("spot-show").scrollHeight - 1260)) {
+      this.state.formVisible && this.setState({ formVisible: false });
+    } else {
+      this.state.formVisible && this.setState({ formVisible: false });
+    }
+  }
+
 
   submitBooking(e) {
     e.preventDefault();
     if (this.props.currentUser === null) {
       this.props.showFormModal("logIn");
     } else {
-      this.props.createNewBooking(this.state).
+      this.props.createNewBooking({ start_date: this.state.start_date,
+        end_date: this.state.end_date,
+        guest_number: this.state.guest_number,
+        spot_id: this.state.spot_id}).
         then(() => this.props.clearBookingErrors())
         .then(() => this.props.router.push("/trips"));
     }
@@ -79,7 +97,8 @@ class BookingForm extends Component {
   }
 
   render() {
-    return (<div className="booking-form flex-column">
+
+    return (<div className={ `booking-form flex-column ${this.state.formVisible ? "following" : ""}`} >
       <section className="price-header flex-row">
         <h3>${this.props.price}</h3>
         <h4>Per Night</h4>

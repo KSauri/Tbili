@@ -29,7 +29,22 @@ class HomeSearchBar extends Component {
       ).then(() => this.props.router.push("/search"));
     } else {
       fetchBoundaries(this.state.address)
-      .then(rawBounds => parseBoundaries(rawBounds))
+      .then(rawBounds => {
+        if (rawBounds.status !== "ZERO_RESULTS" &&
+          !!rawBounds.results[0].geometry.bounds) {
+          return parseBoundaries(rawBounds);
+        } else {
+          return ({ address: "North America",
+          viewport: { northEast: { lat: 70, lng: -50 }, southWest: { lat: 5, lng: -170 }},
+          center_lat: 54.5259614,
+          center_lng: -105.2551187,
+          northEast:
+          { lat: 83.97025599999999,
+            lng: -8.2617197 },
+          southWest:
+            { lat: 5.496099999999999,
+              lng: 170.5957} }
+          );}})
       .then(parsedBounds => this.props.fetchSearchSpots(
         {bounds: parsedBounds,
           start_date: this.state.start_date,
@@ -39,6 +54,7 @@ class HomeSearchBar extends Component {
       ).then(() => this.props.router.push("/search"));
     }
   }
+
 
 
 

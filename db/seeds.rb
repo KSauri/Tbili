@@ -115,34 +115,20 @@ Spot.destroy_all
 #   guest_limit: 4, property_type: "private room", image: open("https://www.dropbox.com/s/h86o6t8gzwtojv3/ales-krivec-18049.jpg?dl=1"), featured: true)
 # ]
 
-descriptions = ["Stephen, an elbow rested on the jagged granite, leaned his palm against his brow and gazed at the fraying edge of his shiny black coat-sleeve. Pain, that was not yet the pain of love, fretted his heart. Silently, in a dream she had come to him after her death, her wasted body within its loose brown graveclothes giving off an odour of wax and rosewood, her breath, that had bent upon him, mute, reproachful, a faint odour of wetted ashes.",
-"And what is death, he asked, your mother's or yours or my own? You saw only your mother die. I see them pop off every day in the Mater and Richmond and cut up into tripes in the dissectingroom. It's a beastly thing and nothing else. It simply doesn't matter. You wouldn't kneel down to pray for your mother on her deathbed when she asked you. Why? Because you have the cursed jesuit strain in you, only it's injected the wrong way. ",
-"The key scraped round harshly twice and, when the heavy door had been set ajar, welcome light and bright air entered. Haines stood at the doorway, looking out. Stephen haled his upended valise to the table and sat down to wait. Buck Mulligan tossed the fry on to the dish beside him. Then he carried the dish and a large teapot over to the table, set them down heavily and sighed with relief.",
-"The proud potent titles clanged over Stephen's memory the triumph of their brazen bells: et unam sanctam catholicam et apostolicam ecclesiam: the slow growth and change of rite and dogma like his own rare thoughts, a chemistry of stars. Symbol of the apostles in the mass for pope Marcellus, the voices blended, singing alone loud in affirmation: and behind their chant the vigilant angel of the church militant disarmed and menaced her heresiarchs. A horde of heresies fleeing with mitres awry: Photius and the brood of mockers of whom Mulligan was one",
-"Ugly and futile: lean neck and tangled hair and a stain of ink, a snail's bed. Yet someone had loved him, borne him in her arms and in her heart. But for her the race of the world would have trampled him underfoot, a squashed boneless snail. She had loved his weak watery blood drained from her own. Was that then real? The only true thing in life? His mother's prostrate body the fiery Columbanus in holy zeal bestrode. She was no more: the trembling skeleton of a twig burnt in the fire, an odour of rosewood and wetted ashes. She had saved him from being trampled underfoot and had gone, scarcely having been. ",
-"A gruff squire on horseback with shiny topboots. Soft day, sir John! Soft day, your honour!... Day!... Day!... Two topboots jog dangling on to Dublin. Lal the ral the ra. Lal the ral the raddy.",
-"He went out by the open porch and down the gravel path under the trees, hearing the cries of voices and crack of sticks from the playfield. The lions couchant on the pillars as he passed out through the gate: toothless terrors. Still I will help him in his fight. Mulligan will dub me a new name: the bullockbefriending bard.",
-"He listened to her licking lap. Ham and eggs, no. No good eggs with this drouth. Want pure fresh water. Thursday: not a good day either for a mutton kidney at Buckley's. Fried with butter, a shake of pepper. Better a pork kidney at Dlugacz's. While the kettle is boiling. She lapped slower, then licking the saucer clean. ",
-"On the boil sure enough: a plume of steam from the spout. He scalded and rinsed out the teapot and put in four full spoons of tea, tilting the kettle then to let the water flow in. Having set it to draw he took off the kettle, crushed the pan flat on the live coals and watched the lump of butter slide and melt. While he unwrapped the kidney the cat mewed hungrily against him. Give her too much meat she won't mouse. Say they won't eat pork. Kosher. ",
-"Seriously, Dedalus. I’m stony. Hurry out to your school kip and bring us back some money. Today the bards must drink and junket. Ireland expects that every man this day will do his duty.",
-"On the steps of the Paris stock exchange the goldskinned men quoting
-prices on their gemmed fingers. Gabble of geese. They swarmed loud,
-uncouth about the temple, their heads thickplotting under maladroit silk
-hats. Not theirs: these clothes, this speech, these gestures. Their full
-slow eyes belied the words, the gestures eager and unoffending, but
-knew the rancours massed about them and knew their zeal was vain.",
-"Wombed in sin darkness I was too, made not begotten. By them, the man
-with my voice and my eyes and a ghostwoman with ashes on her breath.
-They clasped and sundered, did the coupler’s will. From before the ages
-He willed me and now may not will me away or ever. A lex eterna stays
-about Him. Is that then the divine substance wherein Father and Son are
-consubstantial? Where is poor dear Arius to try conclusions? Warring
-his life long upon the contransmagnificandjewbangtantiality.",
-"Spurned lover. I was a strapping young gossoon at that time, I tell you.
-I’ll show you my likeness one day. I was, faith. Lover, for her love he
-prowled with colonel Richard Burke, tanist of his sept, under the walls
-of Clerkenwell and, crouching, saw a flame of vengeance hurl them upward
-in the fog. Shattered glass and toppling masonry."]
+descriptions = ["Nestled in the hills, this cozy spot is perfect for any getaway.  Bring your kids, we have very family friendly accomodations! Located close to the city center, restaurants, and the lovely night life.",
+  "Expansive and recently redecorated modern home.  Features king sized bed, fully stocked kitchen, and cappuccino maker.  The neighborhood is very friendly and authentic.  You'll not want to leave!!",
+  "Modern and cozy, this place is close to museums and fabulous restaurants.  Features a spacious terrace with magnificent views of the city's beautiful attractions",
+  "Come stay in this amazing home!  Features a cozy sitting room and a bedroom located on the top floor, with roof access!  Spiral staircase and breakfast nook also included.  The town features excellent pubs and lovely little shops",
+  "Spectacular villa sits in elevated position in one of the last remanining untouched parts of the city.",
+  "Discover daily local life in city center, friendly neighborhood, clandestine casino, karaoke, old-style artisans, art gallery and artist studio downstairs, few steps from river, local arts area and subways. Arty and modern loft, 1000ft2 or 90m2, bay windows, balcony, decorated with antics, art collections, vintage objects, designer furnitures.",
+  "NEW apartment for several guests.  You will appreciate your holidays in my flat.  You will have all the commodities.  The area is perfect for discovering the city.  Close to many tourist sites and local hangouts...  And bakeries, shopping center, supermarket and restaurants at your doorstep.  Welcome home!",
+  "Very calm independent apartment with panoramic views.  Very bright and large bedroom with a wide glass wall, balcony/terrace.  Equipped kitchenette, bathroom with shower and indepdendent toilets.  Metro at the foot of the building!",
+  "Studio at corner of main street, our place is a few blocks from main art museum.  It is an ideal place for combining and visits and shopping in the exciting city!  An feel like being really from city in the family like 15th district.",
+  "Fashionable flat.  Located 100 meters from metro.  Very close to restaurant hub.  Very quiet and luminous.  Big bathroom with shower, and normally everythign you could need!  Perfect for couples or for one person.",
+  "This single family home ft a completely remodeled private master bed/bath rm and has its own private entrace thru my beautiful backyard.  A comfortable queen mattress makes it great for 1-2 guests.  The bathroom ft double sinks, stand in shower, and a jacuzzi tub.  plenty of built in closet space and also a mini fridge, toaster oven, coffee maker, computer, desk all at your convenience.  Or take some time to relax in my backyard.",
+  "This is a BEAUTIFUL and NEWLY FURNISHED apartment home located only 5 minutes away from the famous convention center.  Great location, downtown close to everything!  The apartment is very spacious and comfortable.  This complex offers top level features and amenities to enjoy while you stay indoors. Gym, pool, tennis court, hot tub and more! You get one free parking space included in your stay. Great Deal!!",
+  "Prime Location! 2blks to metro.  Close to Movie Theater, Metro Station. near airport.  Ideal private room for a solo traveler, or a couple. Shared living spaces (Dining room, kitchen, living room, backyard) with a female and a small dog. (a sweet loving Maltipoo) Private room is spacious with a comfortable queen bed. Private full guest bathroom/shower. Beautiful quiet Backyard and Street. Lots of easy parking, Free Coffee !",
+  "A double bedroom on the 4th floor of the building at famous train station. It has its own en suite bathroom. You are welcome to use the main kitchen, unless there are events being held there which I will tell you about."]
 
 names = [" Home", " Apartment", " Spot"]
 def range (min, max)
@@ -440,7 +426,9 @@ reviews = ["Such a lovely place!  The balcony view was fantastic and our
   tkven shegidzliat waikitxot es, ki, chemi kartuli es tsudi.",
   "너무나도 깨끗해서 마음에 들었어요. 서비스도 너무 좋았습니다. 와이파이가 가끔 잘 안 잡히는건 있었어요. 전체적으로 너무 좋았고, 다시 꼭 오고 싶습니다",
   "আমি এই পর্যন্ত ভ্রমন  এর কারণে বিভীন্ন বাসা ভাড়া করেছি, কিন্তু আতিথেয়তার দিক থেকে এটি ছিল আমার সব চাইতে সেরা অভিজ্ঞতা। সম্পূর্ণ বাসা পরিপূর্ণ ভাবে পরিষ্কার এবং গুছানো। বাসার মালিক সব সময় খেয়াল রাখছিলো আমাদের কোনো অসুবিধা হচ্ছে নাকি না। বাসার লোকেশন ও চমৎকার। সব মিলিয়ে ভ্রমণের জন্য এ শহরে এটিই  আমার মতে সেরা বাসা !",
-  "这里的主人非常热情，房间非常干净，地理位置很方便，我极力推荐这个地方。"
+  "这里的主人非常热情，房间非常干净，地理位置很方便，我极力推荐这个地方。",
+  "GREAT place to stay! My business partners and I came into town for business and it couldn't have been easier. We were right next to the financial district. The highway was right there as well so we were able to shoot right over to the convention center.  I highly recommend!",
+  "The wall of this entry was hung all over with a heathenish array of monstrous clubs and spears.  Some were thickly set with glittering teeth resembling ivory saws; others were tufted with knots of human hair; and one was sickle-shaped, with a vast handle sweeping round like the segment made in the new-mown grass by a long-armed mower."
   ]
 
 

@@ -25,7 +25,7 @@ class SpotShow extends Component {
   }
 
   render() {
-    return (<div className="spot-show-container">
+    return (<div id="spot-show" className="spot-show-container">
       <SpotImageContainer />
       <div className="show-body">
         <SpotInfoHolder />
