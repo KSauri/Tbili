@@ -37,7 +37,7 @@ export default class FeaturedHomes extends React.Component {
 
   moveRight() {
     return (e) => {
-      if (this.state.spotViewIdx < 6) {
+      if (this.state.spotViewIdx < 5) {
         this.setState({ spotViewIdx: (this.state.spotViewIdx + 1) });
       }
     };
@@ -48,7 +48,7 @@ export default class FeaturedHomes extends React.Component {
       <div className="featured-holder">
         { this.state.spotViewIdx > 1 ? <button onClick={ this.moveLeft() } className="chevron-holder"><img className="chevron" src={window.chevronl} /></button> : <div className="faux-chevron"></div> }
         <ul className="featured-non-homes">{this.spots()}</ul>
-        { this.state.spotViewIdx < 6 ? <button onClick={ this.moveRight() } className="chevron-holder"><img className="chevron" src={window.chevronr} /></button> : <div className="faux-chevron"></div> }
+        { this.state.spotViewIdx < 5 ? <button onClick={ this.moveRight() } className="chevron-holder"><img className="chevron" src={window.chevronr} /></button> : <div className="faux-chevron"></div> }
       </div>
     );
   }
