@@ -20,7 +20,19 @@ class Spot < ActiveRecord::Base
 
 
   def self.find_by_featured
-    Spot.where('featured = ?', true)
+    featured = []
+    featured_all = [Spot.where('featured = ? AND price > 215 AND property_type = ?', true, "full home")
+      .limit(7)]
+    featured_all << Spot.where('featured = ? AND price < 215 AND property_type = ?', true, "full home")
+      .limit(7)
+    featured_all << Spot.where('featured = ? AND property_type <> ?', 'true', 'full home')
+      .limit(7)
+    featured_all.each do |featured_block|
+      featured_block.each do |spot|
+        featured << spot
+      end
+    end
+    featured
   end
 
 

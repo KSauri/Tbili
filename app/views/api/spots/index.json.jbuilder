@@ -1,5 +1,5 @@
 
-json.array! @spots do |spot|
+json.array! @spots.each do |spot|
   json.id spot.id
   json.name spot.name
   json.price spot.price
