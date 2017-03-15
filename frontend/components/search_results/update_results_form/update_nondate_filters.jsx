@@ -49,27 +49,34 @@ export default class UpdateNondateFilters extends React.Component {
           </label>
         </div>
         <div className="room-type">
-          <label className="property-type-label">Property Type
-            <label className="room-label">Full Home
-              <input type="checkbox"
-                className="room-checkbox"
-                checked={ this.state.full_home }
+          <label className="property-type-label">
+            <div className="property-type-label-text">Property Type</div>
+            <label className="room-label">
+              <input type="hidden"
                 value={ this.state.full_home }
-                onClick={this.handleCheckboxChange("full_home")}/>
+                />
+              <div
+                className={ this.state.full_home ? "room-type-btn" : "room-type-btn-unselected" }
+                onClick={this.handleCheckboxChange("full_home")}>
+                Full Home
+              </div>
             </label>
-            <label className="room-label">Private Room
-              <input type="checkbox"
-                className="room-checkbox"
-                checked={ this.state.private_room }
-                value={ this.state.private_room }
-                onClick={this.handleCheckboxChange("private_room")}/>
+            <label className="room-label">
+              <input type="hidden"
+                value={ this.state.private_room }/>
+              <div className={ this.state.private_room ? "room-type-btn" : "room-type-btn-unselected" }
+                onClick={this.handleCheckboxChange("private_room")}>
+                Private Room
+              </div>
             </label>
-            <label className="room-label">Shared Room
-              <input type="checkbox"
-                className="room-checkbox"
-                checked={ this.state.shared_room }
+            <label className="room-label">
+              <input type="hidden"
                 value={ this.state.shared_room }
-                onClick={this.handleCheckboxChange("shared_room")}/>
+                />
+              <div className={ this.state.shared_room ? "room-type-btn" : "room-type-btn-unselected" }
+                onClick={this.handleCheckboxChange("shared_room")}>
+                Shared Room
+              </div>
             </label>
           </label>
         </div>
@@ -90,3 +97,4 @@ export default class UpdateNondateFilters extends React.Component {
   }
 
 }
+// className="room-checkbox"

@@ -83,18 +83,35 @@
 }
 
 .room-type {
-  display: flex;
-
   border-bottom: 1px solid lightgray;
   border-top: 1px solid lightgray;
 }
 
-.room-label {
-  min-width: 35px;
-  width: 3%;
-  display: flex;
-  margin: 0px 20%;
+// .room-label {
+//   // min-width: 35px;
+//   // width: 3%;
+//   // display: flex;
+//   // margin: 0px 20%;
+//   white-space: nowrap;
+// }
+
+.room-type-btn {
+  padding: 4px 25px;
+  width: 94px;
+  background-color: rgba(46, 244, 193, 0.64);
   white-space: nowrap;
+  margin: 14px;
+  text-align: center;
+}
+
+.room-type-btn-unselected {
+  padding: 4px 25px;
+  width: 94px;
+  background-color: gray;
+  white-space: nowrap;
+  margin: 14px;
+  text-align: center;
+  color: white;
 }
 
 .room-checkbox {
@@ -143,6 +160,7 @@
 
 .date-btn {
   width: 20%;
+  min-width: 120px;
   margin: 0px 3%;
   padding: 7px 18px;
   font-family: 'Roboto', sans-serif;
@@ -209,6 +227,7 @@
 
 .filter-btn {
   width: 20%;
+  min-width: 120px;
   margin: 0px 0%;
   padding: 7px 18px;
   font-family: 'Roboto', sans-serif;
@@ -237,6 +256,11 @@
   padding: 28px 0px;
   padding-left: 1%;
   white-space: nowrap;
+  align-items: center;
+}
+
+.property-type-label-text {
+  margin-right: 10%;
 }
 
 .curr-price {
@@ -252,4 +276,14 @@
   width: 87%;
 
   justify-content: space-between;
+}
+
+@media (max-width: 1240px) {
+  .property-type-label {
+    flex-direction: column;
+  }
+  .date-label {
+    flex-direction: column;
+  }
+
 }

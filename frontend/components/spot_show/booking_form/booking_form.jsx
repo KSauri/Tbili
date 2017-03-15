@@ -6,10 +6,9 @@ import ErrorList from '../../auth_forms/error_list';
 class BookingForm extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      start_date: "",
-      end_date: "",
+      start_date: this.props.start_date || this.today(),
+      end_date: this.establishEndDate(this.props.start_date, this.props.end_date),
       guest_number: 1,
       spot_id: this.props.params.spotId,
       formVisible: false
@@ -55,6 +54,17 @@ class BookingForm extends Component {
         spot_id: this.state.spot_id}).
         then(() => this.props.clearBookingErrors())
         .then(() => this.props.router.push("/trips"));
+    }
+  }
+
+
+  establishEndDate(start,end) {
+    if (start && end === "") {
+      return this.nextDay(start);
+    } else if (end) {
+      return end;
+    } else {
+      return this.nextDay(this.today());
     }
   }
 

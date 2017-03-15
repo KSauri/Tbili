@@ -5,8 +5,8 @@ export default class UpdateDates extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      start_date: this.props.dates.start_date,
-      end_date: this.props.dates.end_date
+      start_date: this.props.dates.start_date || this.today(),
+      end_date: this.establishEndDate(this.props.dates.start_date, this.props.dates.end_date)
     };
     this.updateDates = this.updateDates.bind(this);
   }
@@ -24,6 +24,18 @@ export default class UpdateDates extends React.Component {
     return (e) => {
       return this.setState({ [field]: e.currentTarget.value });};
   }
+
+  establishEndDate(start,end) {
+    if (start && end === "") {
+      return this.nextDay(start);
+    } else if (end) {
+      return end;
+    } else {
+      return this.nextDay(this.today());
+    }
+  }
+
+
 
   today(){
     Date.prototype.yyyymmdd = function() {

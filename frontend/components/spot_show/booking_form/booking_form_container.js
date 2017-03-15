@@ -5,8 +5,9 @@ import { showFormModal } from '../../../actions/session_actions';
 
 
 const mapStateToProps = (state) => {
-
   return {
+    start_date: state.filters.start_date,
+    end_date: state.filters.end_date,
     spot_id: state.spot.id,
     available_days: state.spot.available_days,
     guest_limit: state.spot.guest_limit,
