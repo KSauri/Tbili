@@ -18,6 +18,12 @@ class Api::SpotsController < ApplicationController
         "",
         ""
         )
+    elsif params[:filters][:start_date] != "" && params[:filters][:end_date] == ""
+      @spots = Spot.find_by_filters(
+        params[:filters][:bounds],
+        Date.strptime(params[:filters][:start_date]),
+        ""
+        )
     else
       @spots = Spot.find_by_filters(
         params[:filters][:bounds],
@@ -25,7 +31,6 @@ class Api::SpotsController < ApplicationController
         Date.strptime(params[:filters][:end_date])
         )
     end
-
   end
 
   def create

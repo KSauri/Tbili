@@ -105,10 +105,10 @@ class HomeSearchBar extends Component {
         <div className="search home-search">
           <img src={window.search} className="search-icon" />
           <form className="home-search-bar" onSubmit={ this.submitForm }>
-            <ErrorList errors={ this.props.errors.spot_errors } />
             <label className="">
               Where
-              <input  value={this.state.address}
+              <ErrorList errors={ this.props.errors.spot_errors } />
+              <input value={this.state.address}
                 placeholder="Destination, city, place"
                 onChange={this.changeInput("address")}/>
             </label>
