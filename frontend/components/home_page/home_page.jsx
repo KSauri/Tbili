@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeSearchBarContainer from './home_search_bar_container';
 import FeaturedAll from '../featured_spots/featured_all';
+import Footer from '../footer/footer';
 
 const Home = (props) => {
   return (
@@ -15,6 +16,7 @@ const Home = (props) => {
       <section>
         <HomeSearchBarContainer/>
         <FeaturedAll />
+        <Footer />
       </section>
     </main>
 
