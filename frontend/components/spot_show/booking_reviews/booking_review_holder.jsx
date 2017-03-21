@@ -20,10 +20,10 @@ class BookingReviewContainer extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.current_user === null && this.props.current_user !== null) {
-      this.props.fetchCurrentUserBooking();
+      this.props.fetchCurrentUserBooking(this.props.params.spotId);
     } else if (nextProps.current_user !== null && this.props.current_user === null)
     {
-      this.props.fetchCurrentUserBooking(); }
+      this.props.fetchCurrentUserBooking(this.props.params.spotId); }
   }
 
   render() {

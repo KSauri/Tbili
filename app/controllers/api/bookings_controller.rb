@@ -2,7 +2,6 @@ class Api::BookingsController < ApplicationController
   before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def curr_booking
-
     spot = Spot.find(params[:spot_id])
     @booking = spot.most_recent_booking(current_user)
   end
@@ -16,7 +15,7 @@ class Api::BookingsController < ApplicationController
     booking = Booking.new(booking_params)
     booking.guest_id = current_user.id
     if booking.spot.owner_id == current_user.id
-      render json: { booking: ["You can't book your own place, nice try tho!"]}, status: 420
+      render json: { booking: ["You can't book your own place, nice try tho!"]}, status: 422
     else
       if booking.spot_available?
         booking.availability_id = booking.get_availability_id
