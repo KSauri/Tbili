@@ -95,7 +95,7 @@ class NavBar extends Component {
             { (this.state.homePage) ? this.homeSearchBar() : this.searchBar() }
           </div>
 
-          <button className="nav-btn" onClick={ this.showLogIn() }>Log In</button>
+          <button className="nav-btn" onClick={ this.showLogIn() }>Log In/Demo</button>
           <button className="nav-btn" onClick={ this.showSignUp() }>Sign Up</button>
         </nav>
         { this.props.showForm ?
