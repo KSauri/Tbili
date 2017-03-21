@@ -22,8 +22,7 @@ link between every guest, host, and listed spot.  Each booking has the ability t
 hold a review of the guest and the spot, allowing for easy fetching of spot-related
 information while adhering to normalized database principles.
 
-![Image of Homescreen]
-(https://www.dropbox.com/s/7fq3t27zyus41o6/Screen%20Shot%202017-02-27%20at%207.18.48%20AM.png?raw=1)
+<img src="./app/assets/images/githubhomepage.png" alt="Homescreen" style="width: 500px;"/>
 
 ### Guarantees of Redux
 
@@ -49,8 +48,8 @@ grabbing the spots.
 
 ### Search, using Google Geocoder and Google Maps
 
-![Image of Search Results]
-(https://www.dropbox.com/s/ur8yzw0g5pw8nuo/Screen%20Shot%202017-02-27%20at%207.19.45%20AM.png?raw=1)
+
+<img src="./app/assets/images/searchresults.png" alt="search results" style="width: 500px;"/>
 
 One of the most important features of Tbili is a search function that incorporates
 Google maps.  This functionality is achieved using “addresses” - streets, cities,
