@@ -75,12 +75,6 @@ export const getAvailability = ({spot}) => {
 };
 
 
-// nextDay(date) {
-//   let day = moment(date);
-//   let next = day.add(1, 'days');
-//   return next.format("YYYY-MM-DD");
-// }
-
 export const pastBookings = (state) => {
   if (!(Array.isArray(state.bookings))) {
     return [];

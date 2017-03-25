@@ -10,7 +10,7 @@ class HomeSearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      address: "",
+      address: this.props.address,
       start_date: this.today(),
       end_date: this.nextDay(this.today()),
       guest_no: 1
@@ -34,7 +34,7 @@ class HomeSearchBar extends Component {
           !!rawBounds.results[0].geometry.bounds) {
           return parseBoundaries(rawBounds);
         } else {
-          return ({ address: "North America",
+          return ({ address: "Earth?",
           viewport: { northEast: { lat: 70, lng: -50 }, southWest: { lat: 5, lng: -170 }},
           center_lat: 54.5259614,
           center_lng: -105.2551187,

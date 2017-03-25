@@ -4,7 +4,9 @@ import { clearSpotErrors } from '../../actions/spot_actions';
 import { fetchSearchSpots } from '../../actions/search_actions';
 
 const mapStateToProps = (state) => {
-  return { errors: state.spots.errors };
+  let address = state.filters.bounds.address ? state.filters.bounds.address : "";
+  return { errors: state.spots.errors,
+  address };
 };
 
 const mapDispatchToProps = dispatch => {

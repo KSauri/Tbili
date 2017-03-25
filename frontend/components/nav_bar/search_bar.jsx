@@ -7,7 +7,7 @@ class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      address: ""
+      address: this.props.address
     };
     this.submitForm = this.submitForm.bind(this);
   }
@@ -20,7 +20,7 @@ class SearchBar extends Component {
         !!rawBounds.results[0].geometry.bounds) {
         return parseBoundaries(rawBounds);
       } else {
-        return ({ address: "North America",
+        return ({ address: "Earth?",
         viewport: { northEast: { lat: 70, lng: -50 }, southWest: { lat: 5, lng: -170 }},
         center_lat: 54.5259614,
         center_lng: -105.2551187,
@@ -39,6 +39,11 @@ class SearchBar extends Component {
     ).then(() => this.props.router.push("/search"));
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.address !== this.props.address) {
+      this.setState({ address: nextProps.address });
+    }
+  }
 
 
   componentWillUnmount() {

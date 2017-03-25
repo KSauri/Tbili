@@ -34,10 +34,13 @@ class SearchMap extends Component {
   }
 
   _registerListeners() {
+    let address_function = () => this.props.bounds.address || "";
     google.maps.event.addListener(this.map, 'idle', () => {
       const { north, south, east, west } = this.map.getBounds().toJSON();
+      const address = address_function();
       const bounds = {
-        northEast: { lat:north, lng: east },
+        address,
+        northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west } };
       this.props.fetchSearchSpots({bounds: bounds,
         start_date: this.props.start_date,
