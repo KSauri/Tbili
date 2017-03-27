@@ -39,6 +39,8 @@ export function receiveSpot(spot) {
   };
 }
 
+
+
 export const clearSpotErrors = () => ({
   type: CLEAR_SPOT_ERRORS
 });
@@ -87,6 +89,12 @@ export const createSpot = (spot) => dispatch => (
     err => dispatch(receiveSpotCreateErrors(err.responseJSON))
   )
 );
+
+export const deleteSpot = (spot) => dispatch => {
+  return APIUtil.deleteSpot(spot).then(spots => dispatch(
+    receiveSpots(spots)
+  ), err => dispatch(receiveSpotErrors(err.responseJSON)));
+};
 
 export function receiveSpotCreateErrors(errors) {
   return {

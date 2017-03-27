@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import { fetchHostedSpots } from '../../actions/spot_actions';
+import { fetchHostedSpots, deleteSpot } from '../../actions/spot_actions';
 import HostedSpotsIndex from './hosted_spots_index';
 
 const mapStateToProps = (state, ownProps) => {
@@ -11,8 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchHostedSpots: () => dispatch(fetchHostedSpots())
-  // deleteBooking: (booking) => dispatch(deleteBooking(booking))
+  fetchHostedSpots: () => dispatch(fetchHostedSpots()),
+  deleteSpot: (spot) => dispatch(deleteSpot(spot))
 });
 
 export default connect(

@@ -14,7 +14,7 @@ class HostedSpotsIndex extends Component {
   render() {
     let hostedSpots = this.props.spots
       .map((spot, idx) => {
-        return (<HostedSpotsDetail key={ idx } spot={ spot } />);
+        return (<HostedSpotsDetail key={ idx } deleteSpot={ this.props.deleteSpot } spot={ spot } />);
       });
 
     return (

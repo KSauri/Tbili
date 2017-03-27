@@ -7,7 +7,6 @@ class Api::BookingsController < ApplicationController
   end
 
   def index
-
     @bookings = current_user.bookings.includes(:spot, :host)
   end
 

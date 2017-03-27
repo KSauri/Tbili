@@ -40,3 +40,11 @@ export const createSpot = (spot) => {
     data: spot
   });
 };
+
+export function deleteSpot(spot) {
+  debugger
+  return $.ajax ({
+    method: "DELETE",
+    url: `api/spots/${spot.id}`
+  });
+}

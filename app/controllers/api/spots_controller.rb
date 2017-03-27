@@ -65,6 +65,12 @@ class Api::SpotsController < ApplicationController
     end
   end
 
+  def destroy
+    Spot.find(params[:id]).destroy
+    @spots = Spot.find_hosted(current_user)
+    render :index
+  end
+
   private
 
   def spot_params
