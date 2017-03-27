@@ -4,8 +4,18 @@
   padding: 15px;
   width: 1086px;
   margin: 15px 0px;
-  h2, h3, h4 {
+  h3, h4 {
     padding: 5px 0px;
+  }
+  h2 {
+    padding-bottom: 15px;
+    padding-top: 5px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .hosted-spot-detail {
+    flex-direction: column !important;
   }
 }
 
@@ -20,10 +30,24 @@
 }
 
 .hosted-spot-detail-1 {
-  width: 40%;
+  width: 65%;
+  div {
+    align-items: center;
+  }
+  button {
+    padding: 4px 25px;
+    width: 140px;
+    background-color: rgba(46, 244, 193, 0.64);
+    white-space: nowrap;
+    margin: 14px;
+    text-align: center;
+    border: 0px;
+    color: black;
+  }
 }
 .hosted-spot-detail-2 {
-  
+  width: 20%;
+
 }
 .hosted-spot-detail-3 {
   width: 40%;

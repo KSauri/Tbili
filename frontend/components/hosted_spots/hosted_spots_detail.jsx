@@ -12,10 +12,8 @@ const HostedSpotsDetail = (props) => {
           <h3> Type: { props.spot.property_type } </h3>
           <h3> $ { props.spot.price } </h3>
           <h4> Bed Number: { props.spot.bed_number } </h4>
+          <button>Unlist Property</button>
         </div>
-      </li>
-      <li className="hosted-spot-detail-2">
-        <button>Unlist Property</button>
       </li>
       <li className="hosted-spot-detail-3">
         <Link to={`/spots/${props.spot.id}`}>
@@ -27,3 +25,5 @@ const HostedSpotsDetail = (props) => {
 };
 
 export default HostedSpotsDetail;
+
+    //  {/* <li className="hosted-spot-detail-2"> */}
