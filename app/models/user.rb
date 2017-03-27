@@ -14,9 +14,8 @@ class User < ActiveRecord::Base
   validates :password,
     length: { minimum: 7, allow_nil: true }
 
-  # TODO include associations
   has_many :spots,
-    class_name: "User",
+    class_name: "Spot",
     primary_key: :id,
     foreign_key: :owner_id
 

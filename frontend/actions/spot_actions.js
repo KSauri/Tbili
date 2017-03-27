@@ -9,6 +9,7 @@ export const RECEIVE_SPOT = "RECEIVE_SPOT";
 export const RECEIVE_SPOT_SHOW_ERRORS = "RECEIVE_SPOT_SHOW_ERRORS";
 export const RECEIVE_SPOT_CREATE_ERRORS = "RECEIVE_SPOT_CREATE_ERRORS";
 export const CLEAR_SPOT_FORM_ERRORS = "CLEAR_SPOT_FORM_ERRORS";
+export const RECEIVE_HOSTED_SPOTS = "RECEIVE_HOSTED_SPOTS";
 
 export function receiveSpots(spots) {
   return {
@@ -56,14 +57,18 @@ export const fetchSpots = (filters) => dispatch => {
   ), err => dispatch(receiveSpotErrors(err.responseJSON)));
 };
 
+export const fetchHostedSpots = () => dispatch => {
+  return APIUtil.fetchHostedSpots().then(spots => dispatch(
+    receiveSpots(spots)
+  ), err => dispatch(receiveSpotErrors(err.responseJSON)));
+};
+
 export const fetchSpot = (spotId) => dispatch => {
   dispatch(loadSpot());
   return APIUtil.fetchSpot(spotId).then(spot => dispatch(
     receiveSpot(spot)),
     err => dispatch(receiveSpotShowErrors(err.responseJSON)));
 };
-
-
 
 export const fetchBoundaries = (address) => dispatch => {
   SearchUtil.fetchBoundaries(address).then(boundaries =>
@@ -82,7 +87,6 @@ export const createSpot = (spot) => dispatch => (
     err => dispatch(receiveSpotCreateErrors(err.responseJSON))
   )
 );
-
 
 export function receiveSpotCreateErrors(errors) {
   return {

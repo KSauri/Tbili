@@ -15,6 +15,14 @@ export const fetchSpots = (filters) => (
   })
 );
 
+export const fetchHostedSpots = () => (
+  $.ajax({
+    method: "GET",
+    url: "api/spots",
+    data: { hosted: true }
+  })
+);
+
 export const fetchSpot = (spotId) => (
   $.ajax({
     method: "GET",
