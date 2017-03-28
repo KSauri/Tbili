@@ -130,10 +130,9 @@ Availability in the Tbili database is stored in ‘blocks,’ allowing hosts
  to find the days for a spot which exist in the availability block but
  do not have a booking.
 
-This solution solves a number of other problems, such as keeping each
-available day as a row in a database (given database size constraints)
-and dealing with date ranges without one table holding the other's
-primary key:
+This solution solves a number of other problems, such as not having to
+keep each available day as a row in the database (given database size constraints)
+and dealing with date ranges:
 
 ```Ruby
 def get_availability
