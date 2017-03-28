@@ -59,6 +59,9 @@ class Api::SpotsController < ApplicationController
     @spot.image = spot_params[:image]
 
     if @spot.save!
+      # debugger
+      # availability = Availability.new(@spot.id, Date.today, Date.today.next_year) # Update on creation of availability form
+      # availability.save!
       render :show
     else
       render json: @spot.errors, status: 420
