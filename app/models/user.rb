@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
   has_many :spots,
     class_name: "Spot",
     primary_key: :id,
-    foreign_key: :owner_id
+    foreign_key: :owner_id,
+    dependent: :destroy
 
   has_many :bookings,
     class_name: "Booking",

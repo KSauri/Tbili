@@ -10,7 +10,8 @@ class Spot < ActiveRecord::Base
 
   has_many :availabilities
 
-  has_many :bookings
+  has_many :bookings,
+    dependent: :destroy
 
 
   has_attached_file :image, default_url: "missing_image_house.png", styles: {
