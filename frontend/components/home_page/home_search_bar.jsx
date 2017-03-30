@@ -109,7 +109,7 @@ class HomeSearchBar extends Component {
               Where
               <ErrorList errors={ this.props.errors.spot_errors } />
               <input value={this.state.address}
-                placeholder="Destination, city, place"
+                placeholder="City"
                 onChange={this.changeInput("address")}/>
             </label>
             <label >
