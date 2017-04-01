@@ -114,7 +114,7 @@ class NavBar extends Component {
         <div className="nav-logged-in">
           { this.logoAndSearch() }
           <Link className="nav-btn" to="/create">List your spot!</Link>
-          <Link className="nav-btn" to="/listings">Your Listings</Link>
+          <Link className="nav-btn" to="/listings">Your listings</Link>
           <Link className="nav-btn" to="/trips">Your trips</Link>
           <button className="nav-btn" onClick={this.props.logout}>Log Out</button>
           <img className="user-img" src={currentUser.avatar_url} />
