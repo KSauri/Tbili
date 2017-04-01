@@ -52,17 +52,18 @@ class NavBar extends Component {
     }
   }
 
-
+  showForm() {
+    return (e) => {
+      if (e.target.innerHTML == "Log In/Demo") {
+        return this.props.showFormModal("logIn");
+      } else { return this.props.showFormModal("signUp"); }
+    };
+  }
 
   switchForm(formType) {
     return (e) => this.props.showFormModal(formType);
   }
-  showLogIn() {
-    return (e) => this.props.showFormModal("logIn");
-  }
-  showSignUp() {
-    return (e) => this.props.showFormModal("signUp");
-  }
+
   turnFormOff(e) {
       { if (e.target.className === "modal-screen") {
         this.props.closeFormModal();
@@ -99,8 +100,8 @@ class NavBar extends Component {
       <section className={ this.state.homePage ? (this.state.searchVisible ? "stuck" : "unstuck") : "unstuck" }>
         <nav className="nav-logged-out" >
           { this.logoAndSearch() }
-          <button className="nav-btn" onClick={ this.showLogIn() }>Log In/Demo</button>
-          <button className="nav-btn" onClick={ this.showSignUp() }>Sign Up</button>
+          <button className="nav-btn" onClick={ this.showForm() }>Log In/Demo</button>
+          <button className="nav-btn" onClick={ this.showForm() }>Sign Up</button>
         </nav>
         { this.props.showForm ?
           <div className="modal-screen" onClick={ this.turnFormOff }>
@@ -114,14 +115,14 @@ class NavBar extends Component {
   loggedIn(currentUser, logout) {
     return(
       <div className={ this.state.homePage ? (this.state.searchVisible ? "stuck" : "unstuck") : "unstuck" }>
-        <hgroup className="nav-logged-in">
+        <div className="nav-logged-in">
           { this.logoAndSearch() }
           <Link className="nav-btn" to="/create">List your spot!</Link>
           <Link className="nav-btn" to="/listings">Your Listings</Link>
           <Link className="nav-btn" to="/trips">Your trips</Link>
           <button className="nav-btn" onClick={this.props.logout}>Log Out</button>
           <img className="user-img" src={currentUser.avatar_url} />
-        </hgroup>
+        </div>
       </div>
     );
   }

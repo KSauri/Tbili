@@ -19,11 +19,18 @@
   background-color: white;
   border-color: white;
   border: 0px;
-  padding-left: 7%;
+  margin-left: 5%;
+  padding: 20px 9px;
+  margin-right: 1%;
   font-family: 'Roboto', sans-serif;;
   font-size: 14px;
   color: black;
   white-space: nowrap;
+}
+
+.nav-btn:hover {
+  background-color: rgba(244, 244, 244, 0.40);
+  border-radius: 5px;
 }
 
 .search-bar {
