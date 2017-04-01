@@ -18,14 +18,10 @@ class NavBar extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.location.pathname !== nextProps.location.pathname) {
-    }
     if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname === "/")
-    {
-      this.setState({ homePage: true }); }
+    { this.setState({ homePage: true }); }
     else if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname !== "/")
-    {
-      this.setState({ homePage: false }); }
+    { this.setState({ homePage: false }); }
     if (nextProps.currentUser) {
       this.props.closeFormModal();
       // this.setState({ showForm: false }); NB change here
@@ -46,7 +42,7 @@ class NavBar extends Component {
 
   checkScroll() {
     if(window.scrollY > 240) {
-      !this.state.searchVisible && this.setState({ searchVisible: true });
+      !this.state.searchVisible && this.setState({ searchVisible: true }); // Don't update state every time, only when necessary
     } else {
       this.state.searchVisible && this.setState({ searchVisible: false });
     }
@@ -112,7 +108,7 @@ class NavBar extends Component {
     );
   }
 
-  loggedIn(currentUser, logout) {
+  loggedIn(currentUser) {
     return(
       <div className={ this.state.homePage ? (this.state.searchVisible ? "stuck" : "unstuck") : "unstuck" }>
         <div className="nav-logged-in">
@@ -130,7 +126,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        { this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logout) : this.loggedOut() }
+        { this.props.currentUser ? this.loggedIn(this.props.currentUser) : this.loggedOut() }
       </div>
     );
   }
