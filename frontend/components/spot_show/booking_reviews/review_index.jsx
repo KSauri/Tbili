@@ -17,7 +17,7 @@ class ReviewIndex extends Component {
 
     return (<div className="review-index flex-column">
       <div className="review-index-header flex-row">
-        <h1 className="">{this.props.reviews.length} Reviews</h1>
+        <h1 className="">{reviews.length} Reviews</h1>
         <img className="average-stars" />
       </div>
       <section>

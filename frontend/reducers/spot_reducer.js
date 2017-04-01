@@ -1,5 +1,5 @@
 import { RECEIVE_SPOTS, CLEAR_SPOT_ERRORS, RECEIVE_SPOT_ERRORS } from '../actions/spot_actions';
-
+import { RECEIVE_BOOKING } from '../actions/booking_actions';
 
 const _defaultSpots = Object.freeze({
   spots: {},

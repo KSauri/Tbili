@@ -379,7 +379,7 @@ reviews = ["Such a lovely place!  The balcony view was fantastic and our
 
 Availability.destroy_all
 Booking.destroy_all
-11.times do |month|
+12.times do |month|
   spots.each do |spot|
     availability = Availability.create!(spot_id: spot.id, start_date: Date.new(2017,month+1,1), end_date: Date.new(2017,month+1,28))
     Booking.create!(guest_id: user_ids.sample, spot_id: spot.id,

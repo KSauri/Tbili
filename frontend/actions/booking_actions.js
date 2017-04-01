@@ -63,8 +63,8 @@ export const createNewBooking = (booking) => dispatch => {
 };
 
 export const createNewReview = (review) => dispatch => {
-  return APIUtil.createReview(review).then(booking => dispatch(
-    receiveBooking(booking)
+  return APIUtil.createReview(review).then(spot => dispatch(
+    receiveSpot(spot)
   ), err => dispatch(receiveReviewErrors(err.responseJSON)));
 };
 
