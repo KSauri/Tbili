@@ -27,11 +27,18 @@
 }
 
 .search-bar {
-  width: 75%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   text-decoration: none;
+}
+
+.search-bar-nav-holder {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
 }
 
 #tbili-logo {

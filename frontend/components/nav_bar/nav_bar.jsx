@@ -30,20 +30,21 @@ class NavBar extends Component {
       this.props.closeFormModal();
       // this.setState({ showForm: false }); NB change here
     }
+  }
 
+  menuDropDownListener() {
+    window.addEventListener("scroll", this.checkScroll);
   }
 
   componentDidMount() {
     if (this.props.router.location.pathname === "/"){
-      this.scrollListener();
+      this.menuDropDownListener();
     } else {
-      this.setState({ homePage: false });
+      this.setState({ homePage: false }); // The navbar only drops down on the home page
     }
   }
 
-
-
-  checkScroll(cb) {
+  checkScroll() {
     if(window.scrollY > 240) {
       !this.state.searchVisible && this.setState({ searchVisible: true });
     } else {
@@ -52,9 +53,6 @@ class NavBar extends Component {
   }
 
 
-  scrollListener() {
-    window.addEventListener("scroll", this.checkScroll);
-  }
 
   switchForm(formType) {
     return (e) => this.props.showFormModal(formType);
@@ -84,17 +82,23 @@ class NavBar extends Component {
     </div>);
   }
 
+  logoAndSearch() {
+    return (
+      <div className="search-bar-nav-holder">
+        <Link to="/">
+          <img id="tbili-logo" className="not-home" src={window.fireplace} />
+        </Link>
+        <div className="search-bar">
+          { (this.state.homePage) ? this.homeSearchBar() : this.searchBar() }
+        </div>
+      </div>);
+  }
+
   loggedOut() {
     return(
       <section className={ this.state.homePage ? (this.state.searchVisible ? "stuck" : "unstuck") : "unstuck" }>
         <nav className="nav-logged-out" >
-          <Link to="/">
-            <img id="tbili-logo" className="not-home" src={window.fireplace} />
-          </Link>
-          <div className="search-bar">
-            { (this.state.homePage) ? this.homeSearchBar() : this.searchBar() }
-          </div>
-
+          { this.logoAndSearch() }
           <button className="nav-btn" onClick={ this.showLogIn() }>Log In/Demo</button>
           <button className="nav-btn" onClick={ this.showSignUp() }>Sign Up</button>
         </nav>
@@ -107,16 +111,11 @@ class NavBar extends Component {
     );
   }
 
-  userInfo(currentUser, logout) {
+  loggedIn(currentUser, logout) {
     return(
       <div className={ this.state.homePage ? (this.state.searchVisible ? "stuck" : "unstuck") : "unstuck" }>
         <hgroup className="nav-logged-in">
-          <Link to="/">
-            <img id="tbili-logo" className="not-home" src={window.fireplace} />
-          </Link>
-          <div className="search-bar">
-            { (this.state.homePage) ? this.homeSearchBar() : this.searchBar() }
-          </div>
+          { this.logoAndSearch() }
           <Link className="nav-btn" to="/create">List your spot!</Link>
           <Link className="nav-btn" to="/listings">Your Listings</Link>
           <Link className="nav-btn" to="/trips">Your trips</Link>
@@ -130,7 +129,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        { this.props.currentUser ? this.userInfo(this.props.currentUser, this.props.logout) : this.loggedOut() }
+        { this.props.currentUser ? this.loggedIn(this.props.currentUser, this.props.logout) : this.loggedOut() }
       </div>
     );
   }
