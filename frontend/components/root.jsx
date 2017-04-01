@@ -22,7 +22,7 @@ const Root = ({ store }) => {
   }
   function redirectUnlessLoggedIn(nextState, replace) {
     if (!isLoggedIn()) {
-      replace('/login');
+      replace('/noaccess');
     }
   }
   return (
@@ -32,9 +32,9 @@ const Root = ({ store }) => {
           <IndexRoute component={ Home } />
           <Route path="/search" component={ SearchResultsContainer } />
           <Route path="/spots/:spotId" component={ SpotShowContainer } />
-          <Route path="/create" component={ ParentFormContainer }/>
-          <Route path="/trips" component={ TripsShowContainer } />
-          <Route path="/listings" component={ HostedSpotsContainer } />
+          <Route path="/create" component={ ParentFormContainer } onEnter={ redirectUnlessLoggedIn }/>
+          <Route path="/trips" component={ TripsShowContainer } onEnter={ redirectUnlessLoggedIn }/>
+          <Route path="/listings" component={ HostedSpotsContainer } onEnter={ redirectUnlessLoggedIn }/>
           <Route path="*" component={NotFound} />
         </Route>
       </Router>

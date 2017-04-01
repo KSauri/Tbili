@@ -38,7 +38,6 @@ class Api::BookingsController < ApplicationController
     booking = Booking.find(booking_params[:booking_id])
     if booking.update(spot_review: booking_params[:spot_review],
       spot_review_star_count: booking_params[:spot_review_star_count])
-
       @spot = Spot.find(booking.spot_id)
       render "api/spots/show"
     else

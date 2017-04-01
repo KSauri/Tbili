@@ -15,7 +15,6 @@ class BookingReviewForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     this.props.createNewReview(this.state)
       .then(this.setState({ spot_review: "", spot_review_star_count: 1 }))
       .then(this.props.fetchSpot(this.props.params.spotId));
@@ -23,6 +22,8 @@ class BookingReviewForm extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.booking === undefined && nextProps.booking !== undefined) {
+      this.setState({ booking_id: nextProps.booking.id });
+    } else if (this.props.booking.id !== nextProps.booking.id) {
       this.setState({ booking_id: nextProps.booking.id });
     }
   }

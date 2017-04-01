@@ -62,7 +62,7 @@ class SearchBar extends Component {
           <input
             className="nav-search-bar"
             value={this.state.address}
-            placeholder="Destination, city, place"
+            placeholder="Destination, city, address"
             onChange={this.changeInput("address")}/>
         </form>
       </div>
